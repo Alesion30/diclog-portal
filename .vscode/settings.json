@@ -4,6 +4,7 @@
     "node_modules": true,
     "yarn.lock": true,
     "package-lock.json": true,
-    "next-env.d.ts": true
+    "next-env.d.ts": true,
+    "tsconfig.tsbuildinfo": true
   }
 }
