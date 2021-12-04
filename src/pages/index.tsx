@@ -4,7 +4,7 @@ import { Layout } from '~/layouts/default'
 import { Button } from '~/components/Button'
 import { Table, TableProps } from '~/components/Table'
 import { Card } from '~/components/Card'
-import { DummyImg } from '~/components/Image'
+import { DummyImage } from '~/components/Image'
 import { classNames } from '~/functions/classNames'
 import { Tabs } from '~/components/Tabs'
 import { Container } from '~/components/Container'
@@ -134,7 +134,7 @@ export const _AboutSection: React.VFC = () => {
               )}
             >
               <div className="mx-10">
-                <DummyImg width={500} />
+                <DummyImage width={500} />
               </div>
               <div className="mx-10 w-96 self-center">
                 <h2 className="text-3xl font-bold text-indigo-800 leading-normal whitespace-pre-wrap">
@@ -191,7 +191,7 @@ export const _InstallSection: React.VFC = () => {
                         className="flex justify-center py-5"
                       >
                         <div className="mx-5">
-                          <DummyImg width={300} />
+                          <DummyImage width={300} />
                         </div>
                         <div className="mx-5 self-center">
                           <h2 className="text-2xl font-bold text-indigo-800">

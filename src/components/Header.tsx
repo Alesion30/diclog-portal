@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Container } from '~/components/Container'
+import { IconImage } from '~/components/Image'
 
 export const Header: React.VFC = () => {
   return (
@@ -9,12 +10,8 @@ export const Header: React.VFC = () => {
       <Container>
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="/">
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                alt=""
-              />
+            <a href="/" className="leading-none">
+              <IconImage width={40} />
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -83,11 +80,7 @@ export const _PopoverPanelContent: React.VFC = () => {
       <div className="pt-5 pb-6 px-5">
         <div className="flex items-center justify-between">
           <div>
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-              alt="Workflow"
-            />
+            <IconImage width={40} />
           </div>
           <div className="-mr-2">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
