@@ -40,9 +40,8 @@ const defaultArgs: TableProps = {
       affiliation: '工学部電気情報工学科',
     },
   ],
-  divide: false,
-  header: false,
-  shadow: true,
+  divide: true,
+  header: true,
 }
 
 export const Default = Template.bind({})

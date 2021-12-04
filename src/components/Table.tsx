@@ -1,3 +1,4 @@
+import React from 'react'
 import { classNames } from '~/functions/classNames'
 
 export type TableProps = {
@@ -6,7 +7,6 @@ export type TableProps = {
   data: any[]
   divide?: boolean
   header?: boolean
-  shadow?: boolean
 }
 
 export type Column = {
@@ -20,16 +20,9 @@ export const Table: React.VFC<TableProps> = ({
   className,
   divide = false,
   header = false,
-  shadow = false,
 }) => {
   return (
-    <div
-      className={classNames(
-        className,
-        shadow ? 'shadow-md' : '',
-        'flex flex-col px-6 py-4 bg-white border rounded-md'
-      )}
-    >
+    <div className={classNames(className, 'flex flex-col')}>
       <div className="overflow-x-auto">
         <div className="align-middle inline-block min-w-full">
           <div
