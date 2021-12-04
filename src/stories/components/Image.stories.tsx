@@ -1,18 +1,25 @@
-import { DummyImg, DummyImgProps } from '~/components/Image'
+import { IconImage, DummyImage, ImageProps } from '~/components/Image'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {
   title: 'Components/Image',
-  component: DummyImg,
-} as ComponentMeta<typeof DummyImg>
+  component: DummyImage,
+} as ComponentMeta<typeof DummyImage>
 
-const Template: ComponentStory<typeof DummyImg> = (args) => (
-  <DummyImg {...args} />
-)
-const defaultArgs: DummyImgProps = {
+const defaultArgs: ImageProps = {
   width: 300,
 }
 
-export const Default = Template.bind({})
-Default.storyName = 'ダミー画像'
-Default.args = defaultArgs
+const IconImageTemplate: ComponentStory<typeof IconImage> = (args) => (
+  <IconImage {...args} />
+)
+export const Icon = IconImageTemplate.bind({})
+Icon.storyName = 'アイコン'
+Icon.args = defaultArgs
+
+const DummyImageTemplate: ComponentStory<typeof DummyImage> = (args) => (
+  <DummyImage {...args} />
+)
+export const Dummy = DummyImageTemplate.bind({})
+Dummy.storyName = 'ダミー画像'
+Dummy.args = defaultArgs
