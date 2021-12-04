@@ -10,7 +10,7 @@ export const Layout: React.VFC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <Head>
-        <title>DicLog</title>
+        <title>Diclog</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header />

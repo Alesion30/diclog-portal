@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import IndexPage, { _TopSection } from '~/pages/index'
+import IndexPage, { _TopSection, _AboutSection } from '~/pages/index'
 
 export default {
   title: 'Pages/Index',
@@ -13,3 +13,8 @@ export const TopSection: ComponentStory<typeof _TopSection> = () => (
   <_TopSection />
 )
 TopSection.storyName = 'トップ'
+
+export const AboutSection: ComponentStory<typeof _AboutSection> = () => (
+  <_AboutSection />
+)
+AboutSection.storyName = 'Diclogとは'
