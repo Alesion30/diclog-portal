@@ -13,7 +13,9 @@
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
@@ -32,6 +34,13 @@
     "sass": "^1.44.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@storybook/addon-actions": "^6.4.7",
+    "@storybook/addon-essentials": "^6.4.7",
+    "@storybook/addon-links": "^6.4.7",
+    "@storybook/builder-webpack5": "^6.4.7",
+    "@storybook/manager-webpack5": "^6.4.7",
+    "@storybook/react": "^6.4.7",
     "@testing-library/react": "^11.2.5",
     "@types/jest": "^26.0.23",
     "@types/node": "^14.14.25",
@@ -40,6 +49,7 @@
     "@typescript-eslint/parser": "^4.14.2",
     "autoprefixer": "^10.4.0",
     "babel-jest": "^27.0.2",
+    "babel-loader": "^8.2.3",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-react": "^7.19.0",
