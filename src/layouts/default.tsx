@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { Header } from '~/components/Header'
+import { Footer } from '~/components/Footer'
 
 type LayoutProps = {
   children: React.ReactChild
@@ -15,6 +16,7 @@ export const Layout: React.VFC<LayoutProps> = ({ children }) => {
       </Head>
       <Header />
       <main>{children}</main>
+      <Footer />
     </div>
   )
 }
