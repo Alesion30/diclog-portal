@@ -3,7 +3,7 @@ import { Header, _PopoverPanelContent } from '~/components/Header'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {
-  title: 'Header',
+  title: 'Components/Header',
   component: Header,
 } as ComponentMeta<typeof Header>
 

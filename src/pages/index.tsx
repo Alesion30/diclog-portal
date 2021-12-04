@@ -1,11 +1,24 @@
-import React from 'react'
+import { Fragment } from 'react'
 import { NextPage } from 'next'
 import { Layout } from '~/layouts/default'
 
-const Home: NextPage = () => (
+// トップページ
+const IndexPage: NextPage = () => (
   <Layout>
-    <p className="text-lg text-red-700">aaa</p>
+    <Fragment>
+      <_TopSection />
+    </Fragment>
   </Layout>
 )
 
-export default Home
+// 「トップ」セクション
+export const _TopSection: React.VFC = () => {
+  return (
+    <div>
+      <h1>DICLOG</h1>
+      <p>英単語学習サプリメントシステム</p>
+    </div>
+  )
+}
+
+export default IndexPage
