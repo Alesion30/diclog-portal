@@ -5,6 +5,8 @@ import { Container } from '~/components/Container'
 import { IconImage } from '~/components/Image'
 import { Scroll } from './Scroll'
 
+export const HEADER_HEIGHT = 90
+
 export const Header: React.VFC = () => {
   const links: { to: string; name: string }[] = [
     { to: 'top', name: 'TOP' },
@@ -16,7 +18,10 @@ export const Header: React.VFC = () => {
   return (
     <Popover className="bg-white sticky top-0 z-50">
       <Container>
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div
+          className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10"
+          style={{ height: HEADER_HEIGHT }}
+        >
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="/" className="leading-none">
               <IconImage width={40} />

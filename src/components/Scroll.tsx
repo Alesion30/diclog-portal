@@ -1,5 +1,6 @@
 import { Link } from 'react-scroll'
 import { classNames } from '~/functions/classNames'
+import { HEADER_HEIGHT } from './Header'
 
 export type ScrollProps = {
   children: React.ReactChild
@@ -12,7 +13,7 @@ export const Scroll: React.VFC<ScrollProps> = ({ children, to, className }) => {
     <Link
       to={to}
       smooth={true}
-      offset={-90}
+      offset={-1 * HEADER_HEIGHT}
       duration={600}
       className={classNames(className, 'cursor-pointer')}
     >
