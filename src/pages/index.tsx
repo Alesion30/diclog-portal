@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { NextPage } from 'next'
 import { Layout } from '~/layouts/default'
 import { Button } from '~/components/Button'
@@ -10,15 +10,24 @@ import { Tabs } from '~/components/Tabs'
 import { Container } from '~/components/Container'
 
 // トップページ
-const IndexPage: NextPage = () => (
-  <Layout>
-    <Fragment>
-      <_TopSection />
-      <_AboutSection />
-      <_InstallSection />
-    </Fragment>
-  </Layout>
-)
+const IndexPage: NextPage = () => {
+  const [loading, setLoading] = useState<boolean>(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000)
+  }, [])
+
+  return (
+    <Layout loading={loading}>
+      <Fragment>
+        <_TopSection />
+        <_AboutSection />
+        <_InstallSection />
+      </Fragment>
+    </Layout>
+  )
+}
 
 // 「TOP」
 export const _TopSection: React.VFC = () => {
@@ -64,28 +73,32 @@ export const _TopSection: React.VFC = () => {
       <div className="flex justify-between content-between">
         <div className="flex-initial">
           <h1 className="text-5xl font-bold">Diclog</h1>
-          <p className="text-xl font-light mt-6">
+          <p className="text-xl font-light mt-6 text-gray-700">
             英単語学習サプリメントシステム
           </p>
-          <Button text="導入方法はこちら" className="mt-4" />
-          <p className="text-lg font-light mt-14">登録単語総数</p>
-          <p className="text-3xl mt-2">{total.toLocaleString()}word</p>
+          <Button text="導入方法はこちら" className="mt-6" />
+          <p className="text-lg font-light mt-20 text-gray-700">登録単語総数</p>
+          <p className="text-3xl mt-2 text-gray-700">
+            {total.toLocaleString()}word
+          </p>
 
           {/* 単語ランキング */}
-          <p className="text-md font-light mt-7">単語ランキング</p>
+          <p className="text-xl mt-9 font-bold text-gray-700">単語ランキング</p>
           <Card className="mt-2 px-6 py-4" shadow>
             <Table {...defaultArgs} className="w-64" />
           </Card>
         </div>
         <div className="flex-initial">
           {/* ユーザーランキング */}
-          <p className="text-md font-light">ユーザーランキング</p>
+          <p className="text-xl mt-9 font-bold text-gray-700">
+            ユーザーランキング
+          </p>
           <Card className="mt-2 px-6 py-4" shadow>
             <Table {...defaultArgs} className="w-64" />
           </Card>
 
           {/* 辞書ランキング */}
-          <p className="text-md font-light mt-7">辞書ランキング</p>
+          <p className="text-xl mt-7 font-bold text-gray-700">辞書ランキング</p>
           <Card className="mt-2 px-6 py-4" shadow>
             <Table {...defaultArgs} className="w-64" />
           </Card>
@@ -119,7 +132,7 @@ export const _AboutSection: React.VFC = () => {
     <Container id="about" className="bg-blue-100 bg-opacity-20 py-20">
       <div className="text-center">
         <h1 className="my-5 text-5xl font-bold text-indigo-800">Diclogとは</h1>
-        <p className="mt-10 mb-40 text-lg leading-relaxed whitespace-pre-wrap">
+        <p className="mt-10 mb-40 text-lg leading-relaxed whitespace-pre-wrap text-gray-700">
           {
             'Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。\nしかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。\n最初にChrome Extensionを入れる必要がありますが、その後はそのExtensionが自動的に調べた英単語を記録してくれます。\nあとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとした隙間時間です。'
           }
@@ -140,7 +153,7 @@ export const _AboutSection: React.VFC = () => {
                 <h2 className="text-3xl font-bold text-indigo-800 leading-normal whitespace-pre-wrap">
                   {v.title}
                 </h2>
-                <p className="mt-4 text-lg leading-normal whitespace-pre-wrap">
+                <p className="mt-4 text-lg leading-normal whitespace-pre-wrap text-gray-700">
                   {v.description}
                 </p>
               </div>
@@ -197,7 +210,7 @@ export const _InstallSection: React.VFC = () => {
                           <h2 className="text-2xl font-bold text-indigo-800">
                             {i + 1}. {v.title}
                           </h2>
-                          <p className="mt-2 text-lg leading-normal whitespace-pre-wrap">
+                          <p className="mt-2 text-lg leading-normal whitespace-pre-wrap text-gray-700">
                             {v.description}
                           </p>
                         </div>

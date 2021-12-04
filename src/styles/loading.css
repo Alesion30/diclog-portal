@@ -1,0 +1,27 @@
+.loading-icon1 {
+  animation: fade 6s 0s ease-in-out infinite;
+}
+
+.loading-icon2 {
+  animation: fade 6s 1s ease-in-out infinite;
+}
+
+.loading-icon3 {
+  animation: fade 6s 2s ease-in-out infinite;
+}
+
+.loading-icon4 {
+  animation: fade 6s 3s ease-in-out infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import type { AppProps } from 'next/app'
 import '~/styles/global.css'
+import '~/styles/loading.css'
 import { AnimatePresence } from 'framer-motion'
 
 const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {

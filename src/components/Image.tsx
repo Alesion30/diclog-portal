@@ -2,12 +2,17 @@ import Image from 'next/image'
 
 export type ImageProps = {
   width: number
+  className?: string
 }
 
-export const IconImage: React.VFC<ImageProps> = ({ width = 128 }) => {
+export const IconImage: React.VFC<ImageProps> = ({
+  width = 128,
+  className,
+}) => {
   const aspectRatio = 1.0
   return (
     <Image
+      className={className}
       src="/assets/img/icon.svg"
       width={width}
       height={width / aspectRatio}
