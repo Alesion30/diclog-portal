@@ -7,7 +7,12 @@ export default {
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
-const defaultArgs: ButtonProps = { text: 'ボタンです', full: false }
+const defaultArgs: ButtonProps = {
+  text: 'ボタンです',
+  full: false,
+  rounded: false,
+  outlined: false,
+}
 
 export const Default = Template.bind({})
 Default.storyName = 'ボタン'
