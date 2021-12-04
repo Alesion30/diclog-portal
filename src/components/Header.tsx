@@ -1,9 +1,9 @@
-import { Fragment } from 'react'
-import { Link as Scroll } from 'react-scroll'
+import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Container } from '~/components/Container'
 import { IconImage } from '~/components/Image'
+import { Scroll } from './Scroll'
 
 export const Header: React.VFC = () => {
   const links: { to: string; name: string }[] = [
@@ -33,10 +33,7 @@ export const Header: React.VFC = () => {
                 <Scroll
                   key={`scroll_link_${i}`}
                   to={link.to}
-                  smooth={true}
-                  offset={-90}
-                  duration={600}
-                  className="text-base font-medium text-gray-500 hover:text-gray-900 cursor-pointer"
+                  className="text-base font-medium text-gray-500 hover:text-gray-900"
                 >
                   {link.name}
                 </Scroll>

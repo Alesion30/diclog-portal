@@ -8,6 +8,7 @@ import { DummyImage } from '~/components/Image'
 import { classNames } from '~/functions/classNames'
 import { Tabs } from '~/components/Tabs'
 import { Container } from '~/components/Container'
+import { Scroll } from '~/components/Scroll'
 
 // トップページ
 const IndexPage: NextPage = () => {
@@ -76,7 +77,9 @@ export const _TopSection: React.VFC = () => {
           <p className="text-xl font-light mt-6 text-gray-700">
             英単語学習サプリメントシステム
           </p>
-          <Button text="導入方法はこちら" className="mt-6" />
+          <Scroll to="install">
+            <Button text="導入方法はこちら" className="mt-6" />
+          </Scroll>
           <p className="text-lg font-light mt-20 text-gray-700">登録単語総数</p>
           <p className="text-3xl mt-2 text-gray-700">
             {total.toLocaleString()}word
