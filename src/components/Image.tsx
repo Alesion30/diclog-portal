@@ -5,7 +5,7 @@ export type DummyImgProps = {
 }
 
 export const DummyImg: React.VFC<DummyImgProps> = ({ width = 960 }) => {
-  const aspectRatio = 960 / 540
+  const aspectRatio = 16 / 9
   return (
     <Image
       src="/assets/img/dummyImg.png"
