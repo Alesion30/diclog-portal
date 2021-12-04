@@ -5,10 +5,10 @@ module.exports = {
     '@storybook/addon-essentials',
     'storybook-addon-material-ui5',
     {
-      name: "@storybook/addon-postcss",
+      name: '@storybook/addon-postcss',
       options: {
         postcssLoaderOptions: {
-          implementation: require("postcss"),
+          implementation: require('postcss'),
         },
       },
     },

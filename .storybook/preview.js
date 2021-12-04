@@ -1,5 +1,5 @@
 import { muiTheme } from 'storybook-addon-material-ui5'
-import "../src/styles/global.css";
+import '../src/styles/global.css'
 
 export const decorators = [muiTheme()]
 
