@@ -1,3 +1,7 @@
+import { muiTheme } from 'storybook-addon-material-ui5'
+
+export const decorators = [muiTheme()]
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
