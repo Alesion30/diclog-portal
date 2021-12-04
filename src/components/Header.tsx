@@ -26,13 +26,31 @@ export const Header: React.VFC = () => {
               href="#"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
-              Diclogとは？
+              TOP
+            </a>
+            <a
+              href="#"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              DicLogとは
             </a>
             <a
               href="#"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               導入方法
+            </a>
+            <a
+              href="#"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              よくある質問
+            </a>
+            <a
+              href="#"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              お問い合わせ
             </a>
           </nav>
         </div>
