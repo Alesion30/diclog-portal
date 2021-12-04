@@ -6,6 +6,8 @@ import { Table, TableProps } from '~/components/Table'
 import { Card } from '~/components/Card'
 import { DummyImg } from '~/components/Image'
 import { classNames } from '~/functions/classNames'
+import { Tabs } from '~/components/Tabs'
+import { Container } from '~/components/Container'
 
 // トップページ
 const IndexPage: NextPage = () => (
@@ -13,6 +15,7 @@ const IndexPage: NextPage = () => (
     <Fragment>
       <_TopSection />
       <_AboutSection />
+      <_InstallSection />
     </Fragment>
   </Layout>
 )
@@ -57,36 +60,38 @@ export const _TopSection: React.VFC = () => {
   }
 
   return (
-    <div className="py-10 flex justify-between content-between">
-      <div className="flex-initial">
-        <h1 className="text-5xl font-bold">Diclog</h1>
-        <p className="text-xl font-light mt-6">
-          英単語学習サプリメントシステム
-        </p>
-        <Button text="導入方法はこちら" className="mt-4" />
-        <p className="text-lg font-light mt-14">登録単語総数</p>
-        <p className="text-3xl mt-2">{total.toLocaleString()}word</p>
+    <Container id="top" className="pt-10 pb-32">
+      <div className="flex justify-between content-between">
+        <div className="flex-initial">
+          <h1 className="text-5xl font-bold">Diclog</h1>
+          <p className="text-xl font-light mt-6">
+            英単語学習サプリメントシステム
+          </p>
+          <Button text="導入方法はこちら" className="mt-4" />
+          <p className="text-lg font-light mt-14">登録単語総数</p>
+          <p className="text-3xl mt-2">{total.toLocaleString()}word</p>
 
-        {/* 単語ランキング */}
-        <p className="text-md font-light mt-7">単語ランキング</p>
-        <Card className="mt-2 px-6 py-4" shadow>
-          <Table {...defaultArgs} className="w-64" />
-        </Card>
-      </div>
-      <div className="flex-initial">
-        {/* ユーザーランキング */}
-        <p className="text-md font-light">ユーザーランキング</p>
-        <Card className="mt-2 px-6 py-4" shadow>
-          <Table {...defaultArgs} className="w-64" />
-        </Card>
+          {/* 単語ランキング */}
+          <p className="text-md font-light mt-7">単語ランキング</p>
+          <Card className="mt-2 px-6 py-4" shadow>
+            <Table {...defaultArgs} className="w-64" />
+          </Card>
+        </div>
+        <div className="flex-initial">
+          {/* ユーザーランキング */}
+          <p className="text-md font-light">ユーザーランキング</p>
+          <Card className="mt-2 px-6 py-4" shadow>
+            <Table {...defaultArgs} className="w-64" />
+          </Card>
 
-        {/* 辞書ランキング */}
-        <p className="text-md font-light mt-7">辞書ランキング</p>
-        <Card className="mt-2 px-6 py-4" shadow>
-          <Table {...defaultArgs} className="w-64" />
-        </Card>
+          {/* 辞書ランキング */}
+          <p className="text-md font-light mt-7">辞書ランキング</p>
+          <Card className="mt-2 px-6 py-4" shadow>
+            <Table {...defaultArgs} className="w-64" />
+          </Card>
+        </div>
       </div>
-    </div>
+    </Container>
   )
 }
 
@@ -99,7 +104,7 @@ export const _AboutSection: React.VFC = () => {
         'Chrome Extensionと連携するだけで、\n単語を調べていくうちにあなただけの単語帳が\n勝手に出来上がります。',
     },
     {
-      title: 'ちょっとした隙間時間に\n英単語学習',
+      title: 'ちょっとしたスキマ時間に\n英単語学習',
       description:
         'Extensionで自動的に登録された単語から\nランダムに出題します。',
     },
@@ -111,37 +116,109 @@ export const _AboutSection: React.VFC = () => {
   ]
 
   return (
-    <div className="py-20 text-center">
-      <h1 className="my-5 text-5xl font-bold text-indigo-800">Diclogとは</h1>
-      <p className="mt-10 mb-40 text-lg leading-relaxed whitespace-pre-wrap">
-        {
-          'Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。\nしかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。\n最初にChrome Extensionを入れる必要がありますが、その後はそのExtensionが自動的に調べた英単語を記録してくれます。\nあとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとした隙間時間です。'
-        }
-      </p>
-      {list.map((v, i) => {
-        return (
-          <div
-            key={`about_section_row_${i}`}
-            className={classNames(
-              i % 2 !== 0 ? 'flex-row-reverse' : '',
-              'my-28 flex justify-center items-stretch'
-            )}
-          >
-            <div className="mx-10">
-              <DummyImg width={500} />
+    <Container id="about" className="bg-blue-100 bg-opacity-20 py-20">
+      <div className="text-center">
+        <h1 className="my-5 text-5xl font-bold text-indigo-800">Diclogとは</h1>
+        <p className="mt-10 mb-40 text-lg leading-relaxed whitespace-pre-wrap">
+          {
+            'Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。\nしかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。\n最初にChrome Extensionを入れる必要がありますが、その後はそのExtensionが自動的に調べた英単語を記録してくれます。\nあとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとした隙間時間です。'
+          }
+        </p>
+        {list.map((v, i) => {
+          return (
+            <div
+              key={`about_section_row_${i}`}
+              className={classNames(
+                i % 2 !== 0 ? 'flex-row-reverse' : '',
+                'my-28 flex justify-center items-stretch'
+              )}
+            >
+              <div className="mx-10">
+                <DummyImg width={500} />
+              </div>
+              <div className="mx-10 w-96 self-center">
+                <h2 className="text-3xl font-bold text-indigo-800 leading-normal whitespace-pre-wrap">
+                  {v.title}
+                </h2>
+                <p className="mt-4 text-lg leading-normal whitespace-pre-wrap">
+                  {v.description}
+                </p>
+              </div>
             </div>
-            <div className="mx-10 w-96 self-center">
-              <h2 className="text-3xl font-bold text-indigo-800 leading-normal whitespace-pre-wrap">
-                {v.title}
-              </h2>
-              <p className="mt-4 text-lg leading-normal whitespace-pre-wrap">
-                {v.description}
-              </p>
-            </div>
-          </div>
-        )
-      })}
-    </div>
+          )
+        })}
+      </div>
+    </Container>
+  )
+}
+
+// 「導入方法」
+export const _InstallSection: React.VFC = () => {
+  const chromes: { title: string; description: string }[] = [
+    {
+      title: 'chrome extensionのダウンロード',
+      description: 'ストアからchrome extensionをダウンロードします。',
+    },
+    {
+      title: 'chrome extensionのダウンロード',
+      description: 'ストアからchrome extensionをダウンロードします。',
+    },
+    {
+      title: 'chrome extensionのダウンロード',
+      description: 'ストアからchrome extensionをダウンロードします。',
+    },
+    {
+      title: 'chrome extensionのダウンロード',
+      description: 'ストアからchrome extensionをダウンロードします。',
+    },
+  ]
+
+  return (
+    <Container id="install" className="py-20">
+      <div className="text-center">
+        <h1 className="my-5 text-5xl font-bold text-indigo-800">導入方法</h1>
+        <Tabs
+          className="py-10"
+          tabs={[
+            {
+              name: 'chrome extension',
+              children: (
+                <div>
+                  {chromes.map((v, i) => {
+                    return (
+                      <div
+                        key={`chrome_${i}`}
+                        className="flex justify-center py-5"
+                      >
+                        <div className="mx-5">
+                          <DummyImg width={300} />
+                        </div>
+                        <div className="mx-5 self-center">
+                          <h2 className="text-2xl font-bold text-indigo-800">
+                            {i + 1}. {v.title}
+                          </h2>
+                          <p className="mt-2 text-lg leading-normal whitespace-pre-wrap">
+                            {v.description}
+                          </p>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              ),
+            },
+            {
+              name: 'スマートフォンアプリ',
+              children: (
+                <div>
+                  <h1>スマートフォンアプリ</h1>
+                </div>
+              ),
+            },
+          ]}
+        />
+      </div>
+    </Container>
   )
 }
 

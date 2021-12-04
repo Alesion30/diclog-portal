@@ -8,7 +8,7 @@ export const Header: React.VFC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
+            <a href="/">
               <img
                 className="h-8 w-auto sm:h-10"
                 src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
@@ -23,31 +23,31 @@ export const Header: React.VFC = () => {
           </div>
           <nav className="hidden md:flex space-x-10">
             <a
-              href="#"
+              href="#top"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               TOP
             </a>
             <a
-              href="#"
+              href="#about"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               Diclogとは
             </a>
             <a
-              href="#"
+              href="#install"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               導入方法
             </a>
             <a
-              href="#"
+              href="#question"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               よくある質問
             </a>
             <a
-              href="#"
+              href="#contact"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               お問い合わせ
