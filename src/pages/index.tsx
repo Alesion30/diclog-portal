@@ -15,7 +15,7 @@ const IndexPage: NextPage = () => (
 export const _TopSection: React.VFC = () => {
   return (
     <div>
-      <h1>DICLOG</h1>
+      <h1 className="text-4xl">DICLOG</h1>
       <p>英単語学習サプリメントシステム</p>
     </div>
   )
