@@ -9,7 +9,7 @@ export const Layout: React.VFC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <Header />
-      <main className="container mx-auto">{children}</main>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6">{children}</main>
     </div>
   )
 }
