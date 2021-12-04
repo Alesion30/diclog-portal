@@ -1,4 +1,5 @@
 import '../src/styles/global.css'
+import '../src/styles/loading.css'
 import * as nextImage from 'next/image'
 
 Object.defineProperty(nextImage, 'default', {

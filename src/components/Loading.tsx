@@ -1,7 +1,7 @@
 import { classNames } from '~/functions/classNames'
 import { IconImage } from './Image'
 
-type LoadingProps = {
+export type LoadingProps = {
   className?: string
   style?: React.CSSProperties
 }
