@@ -9,10 +9,11 @@ import { classNames } from '~/functions/classNames'
 import { Tabs } from '~/components/Tabs'
 import { Container } from '~/components/Container'
 import { Scroll } from '~/components/Scroll'
+import { HEADER_HEIGHT } from '~/components/Header'
 
 // トップページ
 const IndexPage: NextPage = () => {
-  const [loading, setLoading] = useState<boolean>(true)
+  const [loading, setLoading] = useState<boolean>(false)
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
@@ -76,9 +77,15 @@ export const _TopSection: React.VFC = () => {
   }
 
   return (
-    <Container id="top" className="pt-10 pb-32">
-      <div className="flex justify-between content-between">
-        <div className="flex-initial">
+    <Container id="top">
+      <div
+        className="flex justify-between items-center"
+        style={{
+          minHeight: `calc(100vh - ${HEADER_HEIGHT}px)`,
+          paddingBottom: HEADER_HEIGHT,
+        }}
+      >
+        <div className="flex-initial py-10">
           <h1 className="text-5xl font-bold">Diclog</h1>
           <p className="text-xl font-light mt-6 text-gray-700">
             英単語学習サプリメントシステム
@@ -97,7 +104,8 @@ export const _TopSection: React.VFC = () => {
             <Table<WordRankData> {...defaultArgs} className="w-64" />
           </Card>
         </div>
-        <div className="flex-initial">
+
+        <div className="flex-initial py-10">
           {/* ユーザーランキング */}
           <p className="text-xl mt-9 font-bold text-gray-700">
             ユーザーランキング
