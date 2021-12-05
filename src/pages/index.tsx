@@ -34,7 +34,13 @@ const IndexPage: NextPage = () => {
 export const _TopSection: React.VFC = () => {
   const total = 1000 // 登録単語総数
 
-  const defaultArgs: TableProps = {
+  type WordRankData = {
+    rank: number
+    word: string
+    count: number
+  }
+
+  const defaultArgs: TableProps<WordRankData> = {
     columns: [
       { key: 'rank', name: '登録単語' },
       { key: 'word', name: '登録単語' },
@@ -88,7 +94,7 @@ export const _TopSection: React.VFC = () => {
           {/* 単語ランキング */}
           <p className="text-xl mt-9 font-bold text-gray-700">単語ランキング</p>
           <Card className="mt-2 px-6 py-4" shadow>
-            <Table {...defaultArgs} className="w-64" />
+            <Table<WordRankData> {...defaultArgs} className="w-64" />
           </Card>
         </div>
         <div className="flex-initial">
@@ -97,13 +103,13 @@ export const _TopSection: React.VFC = () => {
             ユーザーランキング
           </p>
           <Card className="mt-2 px-6 py-4" shadow>
-            <Table {...defaultArgs} className="w-64" />
+            <Table<WordRankData> {...defaultArgs} className="w-64" />
           </Card>
 
           {/* 辞書ランキング */}
           <p className="text-xl mt-7 font-bold text-gray-700">辞書ランキング</p>
           <Card className="mt-2 px-6 py-4" shadow>
-            <Table {...defaultArgs} className="w-64" />
+            <Table<WordRankData> {...defaultArgs} className="w-64" />
           </Card>
         </div>
       </div>

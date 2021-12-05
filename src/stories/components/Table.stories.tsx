@@ -6,8 +6,13 @@ export default {
   component: Table,
 } as ComponentMeta<typeof Table>
 
-const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />
-const defaultArgs: TableProps = {
+type TableData = {
+  name: string
+  age: number
+  sex: string
+  affiliation: string
+}
+const defaultArgs: TableProps<TableData> = {
   columns: [
     { key: 'name', name: '名前' },
     { key: 'age', name: '年齢' },
@@ -44,6 +49,7 @@ const defaultArgs: TableProps = {
   header: true,
 }
 
+const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />
 export const Default = Template.bind({})
 Default.storyName = 'テーブル'
 Default.args = defaultArgs

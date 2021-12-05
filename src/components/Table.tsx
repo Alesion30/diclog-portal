@@ -1,26 +1,26 @@
 import React from 'react'
 import { classNames } from '~/functions/classNames'
 
-export type TableProps = {
+export type TableProps<T> = {
   className?: string
-  columns: Column[]
-  data: any[]
+  columns: Column<T>[]
+  data: T[]
   divide?: boolean
   header?: boolean
 }
 
-export type Column = {
-  key: string
+export type Column<T> = {
+  key: keyof T
   name: string
 }
 
-export const Table: React.VFC<TableProps> = ({
+export const Table = <T,>({
   columns,
   data,
   className,
   divide = false,
   header = false,
-}) => {
+}: TableProps<T>): JSX.Element => {
   return (
     <div className={classNames(className, 'flex flex-col')}>
       <div className="overflow-x-auto">
