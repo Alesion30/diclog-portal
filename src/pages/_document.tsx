@@ -20,6 +20,14 @@ const MyDocument: React.VFC = () => {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body>
         <Main />

@@ -86,7 +86,7 @@ export const _TopSection: React.VFC = () => {
         }}
       >
         <div className="flex-initial py-10">
-          <h1 className="text-5xl font-bold">Diclog</h1>
+          <h1 className="text-6xl font-bold font-lemon">Diclog</h1>
           <p className="text-xl font-light mt-6 text-gray-700">
             英単語学習サプリメントシステム
           </p>
@@ -148,7 +148,9 @@ export const _AboutSection: React.VFC = () => {
   return (
     <Container id="about" className="bg-blue-100 bg-opacity-20 py-20">
       <div className="text-center">
-        <h1 className="my-5 text-5xl font-bold text-indigo-800">Diclogとは</h1>
+        <h1 className="my-5 text-5xl font-bold text-indigo-800">
+          <span className="font-lemon">Diclog</span>とは
+        </h1>
         <p className="mt-10 mb-40 text-lg leading-relaxed whitespace-pre-wrap text-gray-700">
           {
             'Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。\nしかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。\n最初にChrome Extensionを入れる必要がありますが、その後はそのExtensionが自動的に調べた英単語を記録してくれます。\nあとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとした隙間時間です。'
