@@ -1,7 +1,6 @@
 {
   "private": true,
   "engines": {
-    "node": "16.x",
     "npm": "please_use_yarn_instead"
   },
   "scripts": {
