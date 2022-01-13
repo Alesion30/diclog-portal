@@ -167,6 +167,126 @@ const TopPage: NextPage = () => {
           </div>
         </Container>
       </div>
+
+      <div className="bg-white">
+        <Container className="py-28">
+          <div className="flex flex-col justify-center items-center space-y-10">
+            <h1 className="text-5xl font-bold">ランキング</h1>
+            <div className="flex">
+              {/* ユーザーランキング */}
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 600 }}
+                  className="shadow-lg rounded-lg text-center px-8 py-12 overflow-scroll"
+                >
+                  <div className="space-y-6">
+                    {[
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                    ].map((name, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        >
+                          <div className="flex space-x-4">
+                            <p className="text-lg font-bold text-green-600">
+                              {index + 1}
+                            </p>
+                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                            <p className="text-lg font-bold">{name}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* 英単語ランキング */}
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 600 }}
+                  className="shadow-lg rounded-lg text-center px-8 py-12 overflow-scroll"
+                >
+                  <div className="space-y-6">
+                    {[
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                    ].map((name, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        >
+                          <div className="flex space-x-4">
+                            <p className="text-lg font-bold text-green-600">
+                              {index + 1}
+                            </p>
+                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                            <p className="text-lg font-bold">{name}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* 辞書ランキング */}
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 600 }}
+                  className="shadow-lg rounded-lg text-center px-8 py-12 overflow-scroll"
+                >
+                  <div className="space-y-6">
+                    {[
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                    ].map((name, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        >
+                          <div className="flex space-x-4">
+                            <p className="text-lg font-bold text-green-600">
+                              {index + 1}
+                            </p>
+                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                            <p className="text-lg font-bold">{name}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
     </div>
   )
 }
