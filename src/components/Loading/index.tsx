@@ -1,5 +1,5 @@
 import { classNames } from '~/functions/classNames'
-import { IconImage } from './Image'
+import { IconImage } from '../Image'
 
 export type LoadingProps = {
   className?: string

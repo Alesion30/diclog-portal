@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll'
 import { classNames } from '~/functions/classNames'
-import { HEADER_HEIGHT } from './Header'
+import { HEADER_HEIGHT } from '../Header'
 
 export type ScrollProps = {
   children: React.ReactChild

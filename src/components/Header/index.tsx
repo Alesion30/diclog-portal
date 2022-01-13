@@ -3,7 +3,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Container } from '~/components/Container'
 import { IconImage } from '~/components/Image'
-import { Scroll } from './Scroll'
+import { Scroll } from '../Scroll'
 
 export const HEADER_HEIGHT = 90
 
