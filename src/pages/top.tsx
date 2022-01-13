@@ -65,8 +65,8 @@ const TopPage: NextPage = () => {
 
       {/* Diclogとは？ */}
       <div className="min-h-screen bg-yellow-50">
-        <Container>
-          <div className="flex flex-col justify-center items-center py-28 space-y-10">
+        <Container className="py-28">
+          <div className="flex flex-col justify-center items-center space-y-10">
             <div className="space-y-10 text-center">
               <h1 className="text-5xl font-bold">
                 <span className="font-lemon">Diclog</span>とは？
@@ -85,25 +85,85 @@ const TopPage: NextPage = () => {
             <div className="flex flex-wrap justify-center">
               {[1, 2, 3, 4].map((_, index) => {
                 return (
-                  <div
-                    key={index}
-                    style={{ width: 520 }}
-                    className="bg-white shadow-lg rounded-md flex justify-between px-8 py-12 m-5"
-                  >
-                    <div style={{ width: 232 }} className="space-y-3">
-                      <h2 className="text-lg font-bold">
-                        自分だけのMy単語帳が出来上がります
-                      </h2>
-                      <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
-                        Chrome&nbsp;
-                        Extensionと連携するだけで、単語を調べていくうちにあなただけの単語帳が勝手に出来上がります。
-                      </p>
+                  <div key={index} className="m-5">
+                    <div
+                      style={{ width: 520 }}
+                      className="bg-white shadow-lg rounded-lg flex justify-between px-8 py-12"
+                    >
+                      <div style={{ width: 232 }} className="space-y-3">
+                        <h2 className="text-lg font-bold">
+                          自分だけのMy単語帳が出来上がります
+                        </h2>
+                        <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
+                          Chrome&nbsp;
+                          Extensionと連携するだけで、単語を調べていくうちにあなただけの単語帳が勝手に出来上がります。
+                        </p>
+                      </div>
+                      <DummyImage width={200} />
                     </div>
-                    <DummyImage width={200} />
                   </div>
                 )
               })}
             </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* 使い方 */}
+      <div className="bg-red-50">
+        <Container className="py-28">
+          <div className="flex flex-col justify-center items-center space-y-10">
+            <div className="flex justify-center">
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 280 }}
+                  className="bg-white shadow-lg rounded-lg text-center px-8 py-12"
+                >
+                  <div className="space-y-6">
+                    <p className="text-gray-700 text-lg font-bold">ステップ1</p>
+                    <h2 className="text-xl font-bold">
+                      chrome拡張機能を有効化
+                    </h2>
+                    <p>
+                      chromeウェブストアからchrome拡張機能をダウンロードし、Googleアカウント等でログインします。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 280 }}
+                  className="bg-white shadow-lg rounded-lg text-center px-8 py-12"
+                >
+                  <div className="space-y-6">
+                    <p className="text-gray-700 text-lg font-bold">ステップ2</p>
+                    <h2 className="text-xl font-bold">
+                      英語辞書で英単語を検索
+                    </h2>
+                    <p>対応する英語辞書で英単語を検索します</p>
+                  </div>
+                </div>
+              </div>
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 280 }}
+                  className="bg-white shadow-lg rounded-lg text-center px-8 py-12"
+                >
+                  <div className="space-y-6">
+                    <p className="text-gray-700 text-lg font-bold">ステップ3</p>
+                    <h2 className="text-xl font-bold">アプリで学習</h2>
+                    <p>
+                      ストアからアプリをダウンロードします。あとは、自分だけの英単語帳でランダム学習をするだけ。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Button
+              className="w-60 h-14"
+              text="詳しい導入方法はこちら"
+              outlined
+            />
           </div>
         </Container>
       </div>
