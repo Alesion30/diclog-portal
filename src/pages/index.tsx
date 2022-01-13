@@ -8,11 +8,11 @@ import { Container } from '~/components/Container'
 import { DummyImage, IconImage } from '~/components/Image'
 
 const TopPage: NextPage = () => {
-  const [showMenu, setShowMenu] = useState(true)
+  const [showHeader, setShowHeader] = useState(true)
 
   useScrollPosition(({ prevPos, currPos }) => {
-    const visible = currPos.y > prevPos.y
-    setShowMenu(visible)
+    const visible = currPos.y > prevPos.y || currPos.y > -100
+    setShowHeader(visible)
   }, [])
 
   return (
@@ -21,7 +21,7 @@ const TopPage: NextPage = () => {
       <Container
         className={clsx(
           'w-full fixed top-5 z-10',
-          !showMenu ? 'animate-up' : 'animate-down'
+          !showHeader ? 'animate-up' : 'animate-down'
         )}
       >
         <header className="bg-white justify-between content-center rounded-full flex px-10 py-5 shadow-lg">

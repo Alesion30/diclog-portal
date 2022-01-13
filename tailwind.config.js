@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       animation: {
         up: 'upAnime 0.5s forwards',
-        down: 'downAnime 0.5s forwards'
+        down: 'downAnime 0.5s forwards',
       },
       keyframes: () => ({
         upAnime: {
