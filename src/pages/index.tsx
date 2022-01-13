@@ -2,10 +2,50 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import clsx from 'clsx'
 import { NextPage } from 'next'
 import Image from 'next/image'
-import { useState } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 import { Button } from '~/components/Button'
 import { Container } from '~/components/Container'
 import { DummyImage, IconImage } from '~/components/Image'
+
+type CardProps = {
+  width?: number
+  height?: number
+  delay?: number
+  children: React.ReactNode
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+const Card: React.VFC<CardProps> = ({
+  width,
+  height,
+  delay,
+  children,
+  className,
+  style,
+  ...props
+}) => {
+  const { ref, inView } = useInView({
+    rootMargin: '-50px',
+    threshold: 0.5,
+    delay: delay,
+    triggerOnce: true,
+  })
+
+  return (
+    <div
+      style={{ width, height, ...style }}
+      ref={ref}
+      className={clsx(
+        'bg-white shadow-lg rounded-lg px-8 py-12',
+        inView ? 'animate-fadeIn' : 'opacity-0',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}
 
 const TopPage: NextPage = () => {
   const [showHeader, setShowHeader] = useState(true)
@@ -101,10 +141,7 @@ const TopPage: NextPage = () => {
               {[1, 2, 3, 4].map((_, index) => {
                 return (
                   <div key={index} className="m-5">
-                    <div
-                      style={{ width: 520 }}
-                      className="bg-white shadow-lg rounded-lg flex justify-between px-8 py-12"
-                    >
+                    <Card className="flex justify-between" width={520}>
                       <div style={{ width: 232 }} className="space-y-3">
                         <h2 className="text-lg font-bold">
                           自分だけのMy単語帳が出来上がります
@@ -115,7 +152,7 @@ const TopPage: NextPage = () => {
                         </p>
                       </div>
                       <DummyImage width={200} />
-                    </div>
+                    </Card>
                   </div>
                 )
               })}
@@ -129,50 +166,41 @@ const TopPage: NextPage = () => {
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
             <div className="flex justify-center">
-              <div className="m-5">
-                <div
-                  style={{ width: 400, height: 280 }}
-                  className="bg-white shadow-lg rounded-lg text-center px-8 py-12"
-                >
-                  <div className="space-y-6">
-                    <p className="text-gray-700 text-lg font-bold">ステップ1</p>
-                    <h2 className="text-xl font-bold">
-                      chrome拡張機能を有効化
-                    </h2>
-                    <p>
-                      chromeウェブストアからchrome拡張機能をダウンロードし、Googleアカウント等でログインします。
-                    </p>
-                  </div>
+              <Card width={400} height={280} className="m-5 text-center">
+                <div className="space-y-6">
+                  <p className="text-gray-700 text-lg font-bold">ステップ1</p>
+                  <h2 className="text-xl font-bold">chrome拡張機能を有効化</h2>
+                  <p>
+                    chromeウェブストアからchrome拡張機能をダウンロードし、Googleアカウント等でログインします。
+                  </p>
                 </div>
-              </div>
-              <div className="m-5">
-                <div
-                  style={{ width: 400, height: 280 }}
-                  className="bg-white shadow-lg rounded-lg text-center px-8 py-12"
-                >
-                  <div className="space-y-6">
-                    <p className="text-gray-700 text-lg font-bold">ステップ2</p>
-                    <h2 className="text-xl font-bold">
-                      英語辞書で英単語を検索
-                    </h2>
-                    <p>対応する英語辞書で英単語を検索します</p>
-                  </div>
+              </Card>
+              <Card
+                width={400}
+                height={280}
+                delay={500}
+                className="m-5 text-center"
+              >
+                <div className="space-y-6">
+                  <p className="text-gray-700 text-lg font-bold">ステップ2</p>
+                  <h2 className="text-xl font-bold">英語辞書で英単語を検索</h2>
+                  <p>対応する英語辞書で英単語を検索します</p>
                 </div>
-              </div>
-              <div className="m-5">
-                <div
-                  style={{ width: 400, height: 280 }}
-                  className="bg-white shadow-lg rounded-lg text-center px-8 py-12"
-                >
-                  <div className="space-y-6">
-                    <p className="text-gray-700 text-lg font-bold">ステップ3</p>
-                    <h2 className="text-xl font-bold">アプリで学習</h2>
-                    <p>
-                      ストアからアプリをダウンロードします。あとは、自分だけの英単語帳でランダム学習をするだけ。
-                    </p>
-                  </div>
+              </Card>
+              <Card
+                width={400}
+                height={280}
+                delay={1000}
+                className="m-5 text-center"
+              >
+                <div className="space-y-6">
+                  <p className="text-gray-700 text-lg font-bold">ステップ3</p>
+                  <h2 className="text-xl font-bold">アプリで学習</h2>
+                  <p>
+                    ストアからアプリをダウンロードします。あとは、自分だけの英単語帳でランダム学習をするだけ。
+                  </p>
                 </div>
-              </div>
+              </Card>
             </div>
             <Button
               className="w-60 h-14"
@@ -189,115 +217,112 @@ const TopPage: NextPage = () => {
             <h1 className="text-5xl font-bold">ランキング</h1>
             <div className="flex">
               {/* ユーザーランキング */}
-              <div className="m-5">
-                <div
-                  style={{ width: 400, height: 600 }}
-                  className="shadow-lg rounded-lg text-center px-8 py-12 overflow-scroll"
-                >
-                  <div className="space-y-6">
-                    {[
-                      'Alesion',
-                      'YMShun',
-                      'techiro',
-                      'Alesion',
-                      'YMShun',
-                      'techiro',
-                      'Alesion',
-                      'YMShun',
-                      'techiro',
-                    ].map((name, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
-                        >
-                          <div className="flex space-x-4">
-                            <p className="text-lg font-bold text-green-600">
-                              {index + 1}
-                            </p>
-                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
-                            <p className="text-lg font-bold">{name}</p>
-                          </div>
+              <Card
+                width={400}
+                height={600}
+                className="m-5 text-center overflow-scroll"
+              >
+                <div className="space-y-6">
+                  {[
+                    'Alesion',
+                    'YMShun',
+                    'techiro',
+                    'Alesion',
+                    'YMShun',
+                    'techiro',
+                    'Alesion',
+                    'YMShun',
+                    'techiro',
+                  ].map((name, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                      >
+                        <div className="flex space-x-4">
+                          <p className="text-lg font-bold text-green-600">
+                            {index + 1}
+                          </p>
+                          <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                          <p className="text-lg font-bold">{name}</p>
                         </div>
-                      )
-                    })}
-                  </div>
+                      </div>
+                    )
+                  })}
                 </div>
-              </div>
+              </Card>
 
               {/* 英単語ランキング */}
-              <div className="m-5">
-                <div
-                  style={{ width: 400, height: 600 }}
-                  className="shadow-lg rounded-lg text-center px-8 py-12 overflow-scroll"
-                >
-                  <div className="space-y-6">
-                    {[
-                      'Alesion',
-                      'YMShun',
-                      'techiro',
-                      'Alesion',
-                      'YMShun',
-                      'techiro',
-                      'Alesion',
-                      'YMShun',
-                      'techiro',
-                    ].map((name, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
-                        >
-                          <div className="flex space-x-4">
-                            <p className="text-lg font-bold text-green-600">
-                              {index + 1}
-                            </p>
-                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
-                            <p className="text-lg font-bold">{name}</p>
-                          </div>
+              <Card
+                width={400}
+                height={600}
+                className="m-5 text-center overflow-scroll"
+              >
+                <div className="space-y-6">
+                  {[
+                    'Alesion',
+                    'YMShun',
+                    'techiro',
+                    'Alesion',
+                    'YMShun',
+                    'techiro',
+                    'Alesion',
+                    'YMShun',
+                    'techiro',
+                  ].map((name, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                      >
+                        <div className="flex space-x-4">
+                          <p className="text-lg font-bold text-green-600">
+                            {index + 1}
+                          </p>
+                          <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                          <p className="text-lg font-bold">{name}</p>
                         </div>
-                      )
-                    })}
-                  </div>
+                      </div>
+                    )
+                  })}
                 </div>
-              </div>
+              </Card>
 
               {/* 辞書ランキング */}
-              <div className="m-5">
-                <div
-                  style={{ width: 400, height: 600 }}
-                  className="shadow-lg rounded-lg text-center px-8 py-12 overflow-scroll"
-                >
-                  <div className="space-y-6">
-                    {[
-                      'Alesion',
-                      'YMShun',
-                      'techiro',
-                      'Alesion',
-                      'YMShun',
-                      'techiro',
-                      'Alesion',
-                      'YMShun',
-                      'techiro',
-                    ].map((name, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
-                        >
-                          <div className="flex space-x-4">
-                            <p className="text-lg font-bold text-green-600">
-                              {index + 1}
-                            </p>
-                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
-                            <p className="text-lg font-bold">{name}</p>
-                          </div>
+              <Card
+                width={400}
+                height={600}
+                className="m-5 text-center overflow-scroll"
+              >
+                <div className="space-y-6">
+                  {[
+                    'Alesion',
+                    'YMShun',
+                    'techiro',
+                    'Alesion',
+                    'YMShun',
+                    'techiro',
+                    'Alesion',
+                    'YMShun',
+                    'techiro',
+                  ].map((name, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                      >
+                        <div className="flex space-x-4">
+                          <p className="text-lg font-bold text-green-600">
+                            {index + 1}
+                          </p>
+                          <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                          <p className="text-lg font-bold">{name}</p>
                         </div>
-                      )
-                    })}
-                  </div>
+                      </div>
+                    )
+                  })}
                 </div>
-              </div>
+              </Card>
             </div>
           </div>
         </Container>
