@@ -5,7 +5,22 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        up: 'upAnime 0.5s forwards',
+        down: 'downAnime 0.5s forwards'
+      },
+      keyframes: () => ({
+        upAnime: {
+          from: { transform: 'translateY(0)' },
+          to: { transform: 'translateY(-100px)' },
+        },
+        downAnime: {
+          from: { transform: 'translateY(-100px)' },
+          to: { transform: 'translateY(0)' },
+        },
+      }),
+    },
   },
   variants: {
     extend: {},

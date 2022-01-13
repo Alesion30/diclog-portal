@@ -1,14 +1,29 @@
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import clsx from 'clsx'
 import { NextPage } from 'next'
 import Image from 'next/image'
+import { useState } from 'react'
 import { Button } from '~/components/Button'
 import { Container } from '~/components/Container'
 import { DummyImage, IconImage } from '~/components/Image'
 
 const TopPage: NextPage = () => {
+  const [showMenu, setShowMenu] = useState(true)
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    const visible = currPos.y > prevPos.y
+    setShowMenu(visible)
+  }, [])
+
   return (
-    <div className="">
+    <div>
       {/* ヘッダー */}
-      <Container className="w-full fixed top-5 z-10">
+      <Container
+        className={clsx(
+          'w-full fixed top-5 z-10',
+          !showMenu ? 'animate-up' : 'animate-down'
+        )}
+      >
         <header className="bg-white justify-between content-center rounded-full flex px-10 py-5 shadow-lg">
           <div className="flex space-x-10 items-center">
             <div className="flex space-x-2 content-center">
