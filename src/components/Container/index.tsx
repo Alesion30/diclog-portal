@@ -1,5 +1,5 @@
 export type ContainerProps = {
-  children: React.ReactChild
+  children: React.ReactNode
   id?: string
   className?: string
   style?: React.CSSProperties

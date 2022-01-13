@@ -1,12 +1,14 @@
 import { NextPage } from 'next'
+import Image from 'next/image'
 import { Button } from '~/components/Button'
 import { Container } from '~/components/Container'
 import { IconImage } from '~/components/Image'
 
 const TopPage: NextPage = () => {
   return (
-    <div className="bg-gray-200 h-screen">
-      <Container className="sticky top-5">
+    <div className="">
+      {/* ヘッダー */}
+      <Container className="w-full fixed top-5">
         <header className="bg-white justify-between content-center rounded-full flex px-10 py-5 shadow-lg">
           <div className="flex space-x-10 items-center">
             <div className="flex space-x-2 content-center">
@@ -28,9 +30,38 @@ const TopPage: NextPage = () => {
               </ol>
             </nav>
           </div>
-          <Button text="はじめる" />
         </header>
       </Container>
+
+      {/* TOP */}
+      <div className="h-screen">
+        <Container>
+          <div className="flex justify-evenly items-center h-screen">
+            <div className="space-y-8">
+              <div className="space-y-2">
+                <h1 className="text-4xl font-semibold leading-relaxed">
+                  英単語学習
+                  <br />
+                  サプリメントシステム
+                </h1>
+                <p className="text-base">
+                  chrome拡張と連携し、
+                  <br />
+                  自動であなただけの英単語帳を作成します。
+                </p>
+              </div>
+              <Button text="Diclogをはじめる" outlined />
+            </div>
+            <Image
+              src="/assets/img/pc.png"
+              width={700}
+              height={(700 * 1400) / 1020}
+              objectFit="contain"
+              alt="画像"
+            />
+          </div>
+        </Container>
+      </div>
     </div>
   )
 }
