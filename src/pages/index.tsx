@@ -1,257 +1,294 @@
-import React, { Fragment, useEffect, useState } from 'react'
 import { NextPage } from 'next'
-import { Layout } from '~/layouts/default'
+import Image from 'next/image'
 import { Button } from '~/components/Button'
-import { Table, TableProps } from '~/components/Table'
-import { Card } from '~/components/Card'
-import { DummyImage } from '~/components/Image'
-import { classNames } from '~/functions/classNames'
-import { Tabs } from '~/components/Tabs'
 import { Container } from '~/components/Container'
-import { Scroll } from '~/components/Scroll'
-import { HEADER_HEIGHT } from '~/components/Header'
+import { DummyImage, IconImage } from '~/components/Image'
 
-// トップページ
-const IndexPage: NextPage = () => {
-  const [loading, setLoading] = useState<boolean>(false)
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 3000)
-  }, [])
-
+const TopPage: NextPage = () => {
   return (
-    <Layout loading={loading}>
-      <Fragment>
-        <_TopSection />
-        <_AboutSection />
-        <_InstallSection />
-      </Fragment>
-    </Layout>
-  )
-}
+    <div className="">
+      {/* ヘッダー */}
+      <Container className="w-full fixed top-5 z-10">
+        <header className="bg-white justify-between content-center rounded-full flex px-10 py-5 shadow-lg">
+          <div className="flex space-x-10 items-center">
+            <div className="flex space-x-2 content-center">
+              <IconImage width={40} />
+              <h1 className="text-3xl font-bold font-lemon mt-1">Diclog</h1>
+            </div>
+            <nav className="flex space-x-7 justify-center">
+              <ol className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer">
+                Diclogとは
+              </ol>
+              <ol className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer">
+                導入方法
+              </ol>
+              <ol className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer">
+                よくある質問
+              </ol>
+              <ol className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer">
+                お問い合わせ
+              </ol>
+            </nav>
+          </div>
+        </header>
+      </Container>
 
-// 「TOP」
-export const _TopSection: React.VFC = () => {
-  const total = 1000 // 登録単語総数
-
-  type WordRankData = {
-    rank: number
-    word: string
-    count: number
-  }
-
-  const defaultArgs: TableProps<WordRankData> = {
-    columns: [
-      { key: 'rank', name: '登録単語' },
-      { key: 'word', name: '登録単語' },
-      { key: 'count', name: '検索回数' },
-    ],
-    data: [
-      {
-        rank: 1,
-        word: 'hoge',
-        count: 20,
-      },
-      {
-        rank: 2,
-        word: 'hoge',
-        count: 20,
-      },
-      {
-        rank: 3,
-        word: 'hoge',
-        count: 20,
-      },
-      {
-        rank: 4,
-        word: 'hoge',
-        count: 20,
-      },
-      {
-        rank: 5,
-        word: 'hoge',
-        count: 20,
-      },
-    ],
-  }
-
-  return (
-    <Container id="top">
-      <div
-        className="flex justify-between items-center"
-        style={{
-          minHeight: `calc(100vh - ${HEADER_HEIGHT}px)`,
-          paddingBottom: HEADER_HEIGHT,
-        }}
-      >
-        <div className="flex-initial py-10">
-          <h1 className="text-6xl font-bold font-lemon">Diclog</h1>
-          <p className="text-xl font-light mt-6 text-gray-700">
-            英単語学習サプリメントシステム
-          </p>
-          <Scroll to="install">
-            <Button text="導入方法はこちら" className="mt-6" />
-          </Scroll>
-          <p className="text-lg font-light mt-20 text-gray-700">登録単語総数</p>
-          <p className="text-3xl mt-2 text-gray-700">
-            {total.toLocaleString()}word
-          </p>
-
-          {/* 単語ランキング */}
-          <p className="text-xl mt-9 font-bold text-gray-700">単語ランキング</p>
-          <Card className="mt-2 px-6 py-4" shadow>
-            <Table<WordRankData> {...defaultArgs} className="w-64" />
-          </Card>
-        </div>
-
-        <div className="flex-initial py-10">
-          {/* ユーザーランキング */}
-          <p className="text-xl mt-9 font-bold text-gray-700">
-            ユーザーランキング
-          </p>
-          <Card className="mt-2 px-6 py-4" shadow>
-            <Table<WordRankData> {...defaultArgs} className="w-64" />
-          </Card>
-
-          {/* 辞書ランキング */}
-          <p className="text-xl mt-7 font-bold text-gray-700">辞書ランキング</p>
-          <Card className="mt-2 px-6 py-4" shadow>
-            <Table<WordRankData> {...defaultArgs} className="w-64" />
-          </Card>
-        </div>
-      </div>
-    </Container>
-  )
-}
-
-// 「Diclogとは」
-export const _AboutSection: React.VFC = () => {
-  const list: { title: string; description: string }[] = [
-    {
-      title: '自分だけのMy単語帳が\n出来上がります',
-      description:
-        'Chrome Extensionと連携するだけで、\n単語を調べていくうちにあなただけの単語帳が\n勝手に出来上がります。',
-    },
-    {
-      title: 'ちょっとしたスキマ時間に\n英単語学習',
-      description:
-        'Extensionで自動的に登録された単語から\nランダムに出題します。',
-    },
-    {
-      title: 'プッシュ通知で毎日継続的に学習できます',
-      description:
-        '1日1回、プッシュ通知で単語の意味を\nお聞きします。分からなければ、\nアプリを開いて意味を確認しましょう！',
-    },
-  ]
-
-  return (
-    <Container id="about" className="bg-blue-100 bg-opacity-20 py-20">
-      <div className="text-center">
-        <h1 className="my-5 text-5xl font-bold text-indigo-800">
-          <span className="font-lemon">Diclog</span>とは
-        </h1>
-        <p className="mt-10 mb-40 text-lg leading-relaxed whitespace-pre-wrap text-gray-700">
-          {
-            'Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。\nしかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。\n最初にChrome Extensionを入れる必要がありますが、その後はそのExtensionが自動的に調べた英単語を記録してくれます。\nあとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとした隙間時間です。'
-          }
-        </p>
-        {list.map((v, i) => {
-          return (
-            <div
-              key={`about_section_row_${i}`}
-              className={classNames(
-                i % 2 !== 0 ? 'flex-row-reverse' : '',
-                'my-28 flex justify-center items-stretch'
-              )}
-            >
-              <div className="mx-10">
-                <DummyImage width={500} />
-              </div>
-              <div className="mx-10 w-96 self-center">
-                <h2 className="text-3xl font-bold text-indigo-800 leading-normal whitespace-pre-wrap">
-                  {v.title}
-                </h2>
-                <p className="mt-4 text-lg leading-normal whitespace-pre-wrap text-gray-700">
-                  {v.description}
+      {/* TOP */}
+      <div className="min-h-screen">
+        <Container>
+          <div className="flex justify-evenly items-center h-screen">
+            <div className="space-y-8">
+              <div className="space-y-2">
+                <h1 className="text-4xl font-semibold leading-relaxed">
+                  英単語学習
+                  <br />
+                  サプリメントシステム
+                </h1>
+                <p className="text-base">
+                  chrome拡張と連携し、
+                  <br />
+                  自動であなただけの英単語帳を作成します。
                 </p>
               </div>
+              <Button text="Diclogをはじめる" outlined />
             </div>
-          )
-        })}
+            <Image
+              src="/assets/img/pc.png"
+              width={700}
+              height={(700 * 1400) / 1020}
+              objectFit="contain"
+              alt="画像"
+            />
+          </div>
+        </Container>
       </div>
-    </Container>
-  )
-}
 
-// 「導入方法」
-export const _InstallSection: React.VFC = () => {
-  const chromes: { title: string; description: string }[] = [
-    {
-      title: 'chrome extensionのダウンロード',
-      description: 'ストアからchrome extensionをダウンロードします。',
-    },
-    {
-      title: 'chrome extensionのダウンロード',
-      description: 'ストアからchrome extensionをダウンロードします。',
-    },
-    {
-      title: 'chrome extensionのダウンロード',
-      description: 'ストアからchrome extensionをダウンロードします。',
-    },
-    {
-      title: 'chrome extensionのダウンロード',
-      description: 'ストアからchrome extensionをダウンロードします。',
-    },
-  ]
-
-  return (
-    <Container id="install" className="py-20">
-      <div className="text-center">
-        <h1 className="my-5 text-5xl font-bold text-indigo-800">導入方法</h1>
-        <Tabs
-          className="py-10"
-          tabs={[
-            {
-              name: 'chrome extension',
-              children: (
-                <div>
-                  {chromes.map((v, i) => {
-                    return (
-                      <div
-                        key={`chrome_${i}`}
-                        className="flex justify-center py-5"
-                      >
-                        <div className="mx-5">
-                          <DummyImage width={300} />
-                        </div>
-                        <div className="mx-5 self-center">
-                          <h2 className="text-2xl font-bold text-indigo-800">
-                            {i + 1}. {v.title}
-                          </h2>
-                          <p className="mt-2 text-lg leading-normal whitespace-pre-wrap text-gray-700">
-                            {v.description}
-                          </p>
-                        </div>
+      {/* Diclogとは？ */}
+      <div className="min-h-screen bg-yellow-50">
+        <Container className="py-28">
+          <div className="flex flex-col justify-center items-center space-y-10">
+            <div className="space-y-10 text-center">
+              <h1 className="text-5xl font-bold">
+                <span className="font-lemon">Diclog</span>とは？
+              </h1>
+              <p className="text-lg leading-relaxed whitespace-pre-wrap text-gray-700">
+                Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。
+                <br />
+                しかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。
+                <br />
+                最初にChrome
+                Extensionを入れる必要がありますが、その後はそのExtensionが自動的に調べた英単語を記録してくれます。
+                <br />
+                あとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとした隙間時間です。
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center">
+              {[1, 2, 3, 4].map((_, index) => {
+                return (
+                  <div key={index} className="m-5">
+                    <div
+                      style={{ width: 520 }}
+                      className="bg-white shadow-lg rounded-lg flex justify-between px-8 py-12"
+                    >
+                      <div style={{ width: 232 }} className="space-y-3">
+                        <h2 className="text-lg font-bold">
+                          自分だけのMy単語帳が出来上がります
+                        </h2>
+                        <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
+                          Chrome&nbsp;
+                          Extensionと連携するだけで、単語を調べていくうちにあなただけの単語帳が勝手に出来上がります。
+                        </p>
                       </div>
-                    )
-                  })}
-                </div>
-              ),
-            },
-            {
-              name: 'スマートフォンアプリ',
-              children: (
-                <div>
-                  <h1>スマートフォンアプリ</h1>
-                </div>
-              ),
-            },
-          ]}
-        />
+                      <DummyImage width={200} />
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </Container>
       </div>
-    </Container>
+
+      {/* 使い方 */}
+      <div className="bg-red-50">
+        <Container className="py-28">
+          <div className="flex flex-col justify-center items-center space-y-10">
+            <div className="flex justify-center">
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 280 }}
+                  className="bg-white shadow-lg rounded-lg text-center px-8 py-12"
+                >
+                  <div className="space-y-6">
+                    <p className="text-gray-700 text-lg font-bold">ステップ1</p>
+                    <h2 className="text-xl font-bold">
+                      chrome拡張機能を有効化
+                    </h2>
+                    <p>
+                      chromeウェブストアからchrome拡張機能をダウンロードし、Googleアカウント等でログインします。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 280 }}
+                  className="bg-white shadow-lg rounded-lg text-center px-8 py-12"
+                >
+                  <div className="space-y-6">
+                    <p className="text-gray-700 text-lg font-bold">ステップ2</p>
+                    <h2 className="text-xl font-bold">
+                      英語辞書で英単語を検索
+                    </h2>
+                    <p>対応する英語辞書で英単語を検索します</p>
+                  </div>
+                </div>
+              </div>
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 280 }}
+                  className="bg-white shadow-lg rounded-lg text-center px-8 py-12"
+                >
+                  <div className="space-y-6">
+                    <p className="text-gray-700 text-lg font-bold">ステップ3</p>
+                    <h2 className="text-xl font-bold">アプリで学習</h2>
+                    <p>
+                      ストアからアプリをダウンロードします。あとは、自分だけの英単語帳でランダム学習をするだけ。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Button
+              className="w-60 h-14"
+              text="詳しい導入方法はこちら"
+              outlined
+            />
+          </div>
+        </Container>
+      </div>
+
+      <div className="bg-white">
+        <Container className="py-28">
+          <div className="flex flex-col justify-center items-center space-y-10">
+            <h1 className="text-5xl font-bold">ランキング</h1>
+            <div className="flex">
+              {/* ユーザーランキング */}
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 600 }}
+                  className="shadow-lg rounded-lg text-center px-8 py-12 overflow-scroll"
+                >
+                  <div className="space-y-6">
+                    {[
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                    ].map((name, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        >
+                          <div className="flex space-x-4">
+                            <p className="text-lg font-bold text-green-600">
+                              {index + 1}
+                            </p>
+                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                            <p className="text-lg font-bold">{name}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* 英単語ランキング */}
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 600 }}
+                  className="shadow-lg rounded-lg text-center px-8 py-12 overflow-scroll"
+                >
+                  <div className="space-y-6">
+                    {[
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                    ].map((name, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        >
+                          <div className="flex space-x-4">
+                            <p className="text-lg font-bold text-green-600">
+                              {index + 1}
+                            </p>
+                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                            <p className="text-lg font-bold">{name}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* 辞書ランキング */}
+              <div className="m-5">
+                <div
+                  style={{ width: 400, height: 600 }}
+                  className="shadow-lg rounded-lg text-center px-8 py-12 overflow-scroll"
+                >
+                  <div className="space-y-6">
+                    {[
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                      'Alesion',
+                      'YMShun',
+                      'techiro',
+                    ].map((name, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        >
+                          <div className="flex space-x-4">
+                            <p className="text-lg font-bold text-green-600">
+                              {index + 1}
+                            </p>
+                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                            <p className="text-lg font-bold">{name}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </div>
   )
 }
 
-export default IndexPage
+export default TopPage
