@@ -188,6 +188,7 @@ const TopPage: NextPage = () => {
         </Container>
       </div>
 
+      {/* ランキング */}
       <div className="bg-white">
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
@@ -298,6 +299,25 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
             </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* アプリをダウンロード */}
+      <div className="bg-gray-600">
+        <Container className="py-20 text-center">
+          <h2 className="text-white text-2xl font-bold">
+            今すぐアプリ・Chrome拡張機能をダウンロード
+          </h2>
+          <div className="flex justify-center space-x-4 mt-8">
+            <img
+              src="/assets/img/google-play-badge.png"
+              style={{ height: 60 }}
+            />
+            <img
+              src="/assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+              style={{ height: 60 }}
+            />
           </div>
         </Container>
       </div>
