@@ -326,13 +326,15 @@ const TopPage: NextPage = () => {
           <h2 className="text-white text-2xl font-bold">
             今すぐアプリ・Chrome拡張機能をダウンロード
           </h2>
-          <div className="flex flex-wrap justify-center space-x-4 space-y-4 mt-8">
+          <div className="flex flex-wrap justify-center items-center mt-6">
             <img
               src="/assets/img/google-play-badge.png"
               style={{ height: 60 }}
+              className="m-2"
             />
             <img
               src="/assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+              className="m-2"
               style={{ height: 60 }}
             />
           </div>
