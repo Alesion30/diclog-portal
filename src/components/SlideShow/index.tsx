@@ -7,7 +7,7 @@ import clsx from 'clsx'
 const variants = {
   enter: (direction: number) => {
     return {
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 500 : -500,
       opacity: 0,
     }
   },
@@ -19,7 +19,7 @@ const variants = {
   exit: (direction: number) => {
     return {
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? 500 : -500,
       opacity: 0,
     }
   },
@@ -53,7 +53,7 @@ export const SlideShow: React.VFC<SlideShowProps> = ({
 
   return (
     <div
-      className={clsx('relative', className)}
+      className={clsx('relative overflow-hidden', className)}
       style={{ width, height: width / aspectRatio }}
       {...props}
     >
