@@ -6,7 +6,7 @@ export default {
   component: DummyImage,
 } as ComponentMeta<typeof DummyImage>
 
-const defaultArgs: ImageProps = {
+const defaultArgs: Omit<ImageProps, 'src'> = {
   width: 300,
 }
 
