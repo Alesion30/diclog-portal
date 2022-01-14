@@ -154,7 +154,7 @@ const TopPage: NextPage = () => {
       {/* 使い方 */}
       <div id="usage" className="bg-red-50">
         <Container className="py-28">
-          <div className="flex flex-col justify-center items-center space-y-10">
+          <div className="flex flex-col justify-center items-center space-y-10 text-center">
             <h1 className="text-5xl font-bold">
               <span className="font-lemon">Diclog</span>の使い方
             </h1>
