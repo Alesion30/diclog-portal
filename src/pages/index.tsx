@@ -10,6 +10,7 @@ import { Header } from '~/components/Header'
 import { SlideShow } from '~/components/SlideShow'
 import { useWindowDimensions } from '~/hooks/dimension'
 import { Footer } from '~/components/Footer'
+import { Seo } from '~/layouts/seo'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -26,6 +27,8 @@ const TopPage: NextPage = () => {
 
   return (
     <div>
+      <Seo pageTitle={'TOP'} />
+
       {/* ヘッダー */}
       <Container
         className={clsx(
@@ -323,7 +326,7 @@ const TopPage: NextPage = () => {
           <h2 className="text-white text-2xl font-bold">
             今すぐアプリ・Chrome拡張機能をダウンロード
           </h2>
-          <div className="flex justify-center space-x-4 mt-8">
+          <div className="flex flex-wrap justify-center space-x-4 space-y-4 mt-8">
             <img
               src="/assets/img/google-play-badge.png"
               style={{ height: 60 }}
