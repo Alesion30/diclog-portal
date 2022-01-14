@@ -8,6 +8,8 @@ export type CardProps = {
   height?: number
   minWidth?: number
   minHeight?: number
+  maxWidth?: number
+  maxHeight?: number
   delay?: number
   children: React.ReactNode
   className?: string
@@ -19,6 +21,8 @@ export const Card: React.VFC<CardProps> = ({
   height,
   minWidth,
   minHeight,
+  maxWidth,
+  maxHeight,
   delay,
   children,
   className,
@@ -35,7 +39,15 @@ export const Card: React.VFC<CardProps> = ({
     <motion.div whileHover={{ scale: 1.05 }}>
       <motion.div
         ref={ref}
-        style={{ width, height, minWidth, minHeight, ...style }}
+        style={{
+          width,
+          height,
+          minWidth,
+          minHeight,
+          maxWidth,
+          maxHeight,
+          ...style,
+        }}
         className={clsx(
           'bg-white shadow-lg rounded-lg px-8 py-12',
           inView ? 'animate-fadeIn' : 'opacity-0',

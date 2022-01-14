@@ -87,7 +87,7 @@ const TopPage: NextPage = () => {
             <div className="flex flex-wrap justify-center">
               <Card
                 className="flex justify-between m-5"
-                width={width >= 520 ? 520 : width - 80}
+                maxWidth={520}
                 minHeight={270}
               >
                 <div className="w-60 space-y-3 mr-5">
@@ -103,7 +103,7 @@ const TopPage: NextPage = () => {
               </Card>
               <Card
                 className="flex justify-between m-5"
-                width={width >= 520 ? 520 : width - 80}
+                maxWidth={520}
                 minHeight={270}
               >
                 <div className="w-60 space-y-3 mr-5">
@@ -118,7 +118,7 @@ const TopPage: NextPage = () => {
               </Card>
               <Card
                 className="flex justify-between m-5"
-                width={width >= 520 ? 520 : width - 80}
+                maxWidth={520}
                 minHeight={270}
               >
                 <div className="w-60 space-y-3 mr-5">
@@ -141,7 +141,7 @@ const TopPage: NextPage = () => {
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
             <div className="flex flex-wrap justify-center">
-              <Card width={370} minHeight={280} className="m-5 text-center">
+              <Card maxWidth={370} minHeight={280} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ1</p>
                   <h2 className="text-xl font-bold">chrome拡張機能を有効化</h2>
@@ -151,7 +151,7 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
               <Card
-                width={370}
+                maxWidth={370}
                 minHeight={280}
                 delay={500}
                 className="m-5 text-center"
@@ -163,7 +163,7 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
               <Card
-                width={370}
+                maxWidth={370}
                 minHeight={280}
                 delay={1000}
                 className="m-5 text-center"
@@ -193,9 +193,8 @@ const TopPage: NextPage = () => {
             <div className="flex flex-wrap justify-center">
               {/* ユーザーランキング */}
               <Card
-                width={370}
-                height={600}
-                className="m-5 text-center overflow-scroll"
+                width={width >= 370 ? 370 : width - 80}
+                className="m-5 text-center"
               >
                 <div className="space-y-6">
                   {[
@@ -229,9 +228,8 @@ const TopPage: NextPage = () => {
 
               {/* 英単語ランキング */}
               <Card
-                width={370}
-                height={600}
-                className="m-5 text-center overflow-scroll"
+                width={width >= 370 ? 370 : width - 80}
+                className="m-5 text-center"
               >
                 <div className="space-y-6">
                   {[
@@ -265,9 +263,8 @@ const TopPage: NextPage = () => {
 
               {/* 辞書ランキング */}
               <Card
-                width={370}
-                height={600}
-                className="m-5 text-center overflow-scroll"
+                width={width >= 370 ? 370 : width - 80}
+                className="m-5 text-center"
               >
                 <div className="space-y-6">
                   {[
