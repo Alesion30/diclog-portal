@@ -29,7 +29,7 @@ const TopPage: NextPage = () => {
       {/* ヘッダー */}
       <Container
         className={clsx(
-          'w-full fixed top-5 z-10',
+          'w-full fixed top-5 z-50',
           !showHeader ? 'animate-up' : 'animate-down'
         )}
       >
@@ -133,7 +133,7 @@ const TopPage: NextPage = () => {
                     学習できます
                   </h2>
                   <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
-                    1日1回、プッシュ通知で単語の意味をお聞きします。分からなければ、アプリを開いて意味を確認しましょう!
+                    1日1回、プッシュ通知で単語の意味をお聞きします。分からなければ、アプリを開いて意味を確認しましょう！
                   </p>
                 </div>
                 <Image src="/assets/img/y0327.png" width={200} height={200} />
@@ -179,7 +179,7 @@ const TopPage: NextPage = () => {
                   <p className="text-gray-700 text-lg font-bold">ステップ3</p>
                   <h2 className="text-xl font-bold">アプリで学習</h2>
                   <p>
-                    ストアからアプリをダウンロードします。あとは、自分だけの英単語帳でランダム学習をするだけ。
+                    ストアからアプリをダウンロードします。あとは、自分だけの英単語帳でひたすら単語を覚える！
                   </p>
                 </div>
               </Card>
