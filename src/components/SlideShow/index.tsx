@@ -83,6 +83,7 @@ export const SlideShow: React.VFC<SlideShowProps> = ({
             }
           }}
           className="absolute"
+          alt="img"
         />
       </AnimatePresence>
       <div

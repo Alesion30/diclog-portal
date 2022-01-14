@@ -110,7 +110,12 @@ const TopPage: NextPage = () => {
                     Extensionと連携するだけで、単語を調べていくうちにあなただけの単語帳が勝手に出来上がります。
                   </p>
                 </div>
-                <Image src="/assets/img/y0980.png" width={200} height={200} />
+                <Image
+                  src="/assets/img/y0980.png"
+                  width={200}
+                  height={200}
+                  alt="y0980"
+                />
               </Card>
               <Card
                 className="flex flex-wrap justify-center m-5"
@@ -127,7 +132,12 @@ const TopPage: NextPage = () => {
                     Extensionで自動的に登録された単語からランダムに出題します。
                   </p>
                 </div>
-                <Image src="/assets/img/y1150.png" width={200} height={200} />
+                <Image
+                  src="/assets/img/y1150.png"
+                  width={200}
+                  height={200}
+                  alt="y1150"
+                />
               </Card>
               <Card
                 className="flex flex-wrap justify-center m-5"
@@ -144,7 +154,12 @@ const TopPage: NextPage = () => {
                     1日1回、プッシュ通知で単語の意味をお聞きします。分からなければ、アプリを開いて意味を確認しましょう！
                   </p>
                 </div>
-                <Image src="/assets/img/y0327.png" width={200} height={200} />
+                <Image
+                  src="/assets/img/y0327.png"
+                  width={200}
+                  height={200}
+                  alt="y0327"
+                />
               </Card>
             </div>
           </div>
@@ -328,11 +343,13 @@ const TopPage: NextPage = () => {
               src="/assets/img/google-play-badge.png"
               style={{ height: 60 }}
               className="m-2"
+              alt="google"
             />
             <img
               src="/assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
               className="m-2"
               style={{ height: 60 }}
+              alt="apple"
             />
           </div>
         </Container>

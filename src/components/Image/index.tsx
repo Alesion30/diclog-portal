@@ -20,7 +20,7 @@ export const IconImage: React.VFC<Omit<ImageProps, 'src'>> = ({
       src="/assets/img/icon.svg"
       width={width}
       height={width / aspectRatio}
-      alt="アイコン"
+      alt="icon"
     />
   )
 }

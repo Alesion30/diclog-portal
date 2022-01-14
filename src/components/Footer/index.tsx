@@ -12,6 +12,7 @@ export const Footer: React.VFC = () => {
               layout="fixed"
               width={80}
               height={80}
+              alt="HSLlogo"
             />
             <p>
               〒819-0395
