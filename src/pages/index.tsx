@@ -6,7 +6,8 @@ import { Button } from '~/components/Button'
 import { Card } from '~/components/Card'
 import { Container } from '~/components/Container'
 import { Header } from '~/components/Header'
-import { DummyImage, FadeInImage } from '~/components/Image'
+import { DummyImage } from '~/components/Image'
+import { SlideShow } from '~/components/SlideShow'
 
 const TopPage: NextPage = () => {
   const [showHeader, setShowHeader] = useState(true)
@@ -17,6 +18,8 @@ const TopPage: NextPage = () => {
       setShowHeader(visible)
     }
   }, [])
+
+  const images = ['/assets/img/home.png', '/assets/img/pc.png']
 
   return (
     <div>
@@ -35,7 +38,7 @@ const TopPage: NextPage = () => {
         <Container>
           <div className="flex flex-wrap justify-evenly items-center h-screen">
             <div className="space-y-8">
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <h1 className="text-4xl font-semibold leading-relaxed">
                   英単語学習
                   <br />
@@ -49,11 +52,7 @@ const TopPage: NextPage = () => {
               </div>
               <Button text="Diclogをはじめる" outlined />
             </div>
-            <FadeInImage
-              src="/assets/img/pc.png"
-              width={700}
-              aspectRatio={1400 / 1020}
-            />
+            <SlideShow images={images} width={700} />
           </div>
         </Container>
       </div>
