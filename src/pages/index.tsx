@@ -155,6 +155,12 @@ const TopPage: NextPage = () => {
       <div id="usage" className="bg-red-50">
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
+            <h1 className="text-5xl font-bold">
+              <span className="font-lemon">Diclog</span>の使い方
+            </h1>
+            <p className="text-lg leading-relaxed whitespace-pre-wrap text-gray-700">
+              Diclogを始めるには、Chrome拡張機能とアプリのインストールが必要です。
+            </p>
             <div className="flex flex-wrap justify-center">
               <Card maxWidth={370} minHeight={280} className="m-5 text-center">
                 <div className="space-y-6">
@@ -174,7 +180,7 @@ const TopPage: NextPage = () => {
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ2</p>
                   <h2 className="text-xl font-bold">英語辞書で英単語を検索</h2>
-                  <p>対応する英語辞書で英単語を検索します</p>
+                  <p>対応する英語辞書で英単語を検索します。</p>
                 </div>
               </Card>
               <Card
@@ -192,7 +198,7 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
             </div>
-            <Button text="詳しい導入方法はこちら" outlined />
+            {/* <Button text="詳しい導入方法はこちら" outlined /> */}
           </div>
         </Container>
       </div>
@@ -200,14 +206,20 @@ const TopPage: NextPage = () => {
       {/* ランキング */}
       <div id="ranking" className="bg-white">
         <Container className="py-28">
-          <div className="flex flex-col justify-center items-center space-y-10">
-            <h1 className="text-5xl font-bold">ランキング</h1>
+          <div className="flex flex-col justify-center items-center space-y-10 text-center">
+            <h1 className="text-5xl font-bold">
+              <span className="font-lemon">Diclog</span>のランキング
+            </h1>
+            <p className="text-lg leading-relaxed whitespace-pre-wrap text-gray-700">
+              よく勉強しているユーザー・よく検索されている英単語・よく使われている辞書をランキング形式でTOP10まで紹介します。
+            </p>
             <div className="flex flex-wrap justify-center">
               {/* ユーザーランキング */}
               <Card
                 width={width >= 370 ? 370 : width - 80}
-                className="m-5 text-center"
+                className="m-5 text-center space-y-8"
               >
+                <h2 className="text-xl font-bold">ユーザーランキング</h2>
                 <div className="space-y-6">
                   {[
                     'Alesion',
@@ -241,19 +253,20 @@ const TopPage: NextPage = () => {
               {/* 英単語ランキング */}
               <Card
                 width={width >= 370 ? 370 : width - 80}
-                className="m-5 text-center"
+                className="m-5 text-center space-y-8"
               >
+                <h2 className="text-xl font-bold">英単語ランキング</h2>
                 <div className="space-y-6">
                   {[
+                    'Hello',
+                    'Attitude',
+                    'Good',
+                    'Attitude',
+                    'Dish',
+                    'Morning',
+                    'Blue',
+                    'Download',
                     'Alesion',
-                    'YMShun',
-                    'techiro',
-                    'Alesion',
-                    'YMShun',
-                    'techiro',
-                    'Alesion',
-                    'YMShun',
-                    'techiro',
                   ].map((name, index) => {
                     return (
                       <div
@@ -264,7 +277,6 @@ const TopPage: NextPage = () => {
                           <p className="text-lg font-bold text-green-600">
                             {index + 1}
                           </p>
-                          <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
                           <p className="text-lg font-bold">{name}</p>
                         </div>
                       </div>
@@ -276,35 +288,28 @@ const TopPage: NextPage = () => {
               {/* 辞書ランキング */}
               <Card
                 width={width >= 370 ? 370 : width - 80}
-                className="m-5 text-center"
+                className="m-5 text-center space-y-8"
               >
+                <h2 className="text-xl font-bold">辞書ランキング</h2>
                 <div className="space-y-6">
-                  {[
-                    'Alesion',
-                    'YMShun',
-                    'techiro',
-                    'Alesion',
-                    'YMShun',
-                    'techiro',
-                    'Alesion',
-                    'YMShun',
-                    'techiro',
-                  ].map((name, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
-                      >
-                        <div className="flex space-x-4">
-                          <p className="text-lg font-bold text-green-600">
-                            {index + 1}
-                          </p>
-                          <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
-                          <p className="text-lg font-bold">{name}</p>
+                  {['DeepL翻訳', 'Google翻訳', 'Weblio', '英ナビ！'].map(
+                    (name, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        >
+                          <div className="flex space-x-4">
+                            <p className="text-lg font-bold text-green-600">
+                              {index + 1}
+                            </p>
+                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                            <p className="text-lg font-bold">{name}</p>
+                          </div>
                         </div>
-                      </div>
-                    )
-                  })}
+                      )
+                    }
+                  )}
                 </div>
               </Card>
             </div>
