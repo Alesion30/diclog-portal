@@ -7,7 +7,6 @@ import { Button } from '~/components/Button'
 import { Card } from '~/components/Card'
 import { Container } from '~/components/Container'
 import { Header } from '~/components/Header'
-import { DummyImage } from '~/components/Image'
 import { SlideShow } from '~/components/SlideShow'
 import { useWindowDimensions } from '~/hooks/dimension'
 
