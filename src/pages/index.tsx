@@ -8,8 +8,10 @@ import { Container } from '~/components/Container'
 import { Header } from '~/components/Header'
 import { DummyImage } from '~/components/Image'
 import { SlideShow } from '~/components/SlideShow'
+import { useWindowDimensions } from '~/hooks/dimension'
 
 const TopPage: NextPage = () => {
+  const { width } = useWindowDimensions()
   const [showHeader, setShowHeader] = useState(true)
 
   useScrollPosition(({ prevPos, currPos }) => {
@@ -34,10 +36,13 @@ const TopPage: NextPage = () => {
       </Container>
 
       {/* TOP */}
-      <div className="min-h-screen">
+      <div className={clsx(width >= 1100 ? 'pt-0' : 'pt-20')}>
         <Container>
-          <div className="flex flex-wrap justify-evenly items-center h-screen">
-            <div className="space-y-8">
+          <div className="flex flex-wrap justify-evenly content-center items-center h-screen space-y-20">
+            <div
+              className="flex flex-col items-start space-y-8"
+              style={{ width: width >= 1100 ? undefined : width - 80 }}
+            >
               <div className="space-y-4">
                 <h1 className="text-4xl font-semibold leading-relaxed">
                   英単語学習
@@ -52,7 +57,10 @@ const TopPage: NextPage = () => {
               </div>
               <Button text="Diclogをはじめる" outlined />
             </div>
-            <SlideShow images={images} width={700} />
+            <SlideShow
+              images={images}
+              width={width >= 1100 ? 700 : width - 80}
+            />
           </div>
         </Container>
       </div>
@@ -79,8 +87,8 @@ const TopPage: NextPage = () => {
             <div className="flex flex-wrap justify-center">
               <Card
                 className="flex justify-between m-5"
-                width={520}
-                height={270}
+                width={width >= 520 ? 520 : width - 80}
+                minHeight={270}
               >
                 <div className="w-60 space-y-3 mr-5">
                   <h2 className="text-lg font-bold">
@@ -95,8 +103,8 @@ const TopPage: NextPage = () => {
               </Card>
               <Card
                 className="flex justify-between m-5"
-                width={520}
-                height={270}
+                width={width >= 520 ? 520 : width - 80}
+                minHeight={270}
               >
                 <div className="w-60 space-y-3 mr-5">
                   <h2 className="text-lg font-bold">
@@ -110,8 +118,8 @@ const TopPage: NextPage = () => {
               </Card>
               <Card
                 className="flex justify-between m-5"
-                width={520}
-                height={270}
+                width={width >= 520 ? 520 : width - 80}
+                minHeight={270}
               >
                 <div className="w-60 space-y-3 mr-5">
                   <h2 className="text-lg font-bold">
@@ -133,7 +141,7 @@ const TopPage: NextPage = () => {
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
             <div className="flex flex-wrap justify-center">
-              <Card width={370} height={280} className="m-5 text-center">
+              <Card width={370} minHeight={280} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ1</p>
                   <h2 className="text-xl font-bold">chrome拡張機能を有効化</h2>
@@ -144,7 +152,7 @@ const TopPage: NextPage = () => {
               </Card>
               <Card
                 width={370}
-                height={280}
+                minHeight={280}
                 delay={500}
                 className="m-5 text-center"
               >
@@ -156,7 +164,7 @@ const TopPage: NextPage = () => {
               </Card>
               <Card
                 width={370}
-                height={280}
+                minHeight={280}
                 delay={1000}
                 className="m-5 text-center"
               >

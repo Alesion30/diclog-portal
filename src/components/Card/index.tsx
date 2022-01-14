@@ -6,6 +6,8 @@ import { useInView } from 'react-intersection-observer'
 export type CardProps = {
   width?: number
   height?: number
+  minWidth?: number
+  minHeight?: number
   delay?: number
   children: React.ReactNode
   className?: string
@@ -15,6 +17,8 @@ export type CardProps = {
 export const Card: React.VFC<CardProps> = ({
   width,
   height,
+  minWidth,
+  minHeight,
   delay,
   children,
   className,
@@ -31,7 +35,7 @@ export const Card: React.VFC<CardProps> = ({
     <motion.div whileHover={{ scale: 1.05 }}>
       <motion.div
         ref={ref}
-        style={{ width, height, ...style }}
+        style={{ width, height, minWidth, minHeight, ...style }}
         className={clsx(
           'bg-white shadow-lg rounded-lg px-8 py-12',
           inView ? 'animate-fadeIn' : 'opacity-0',
