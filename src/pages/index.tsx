@@ -9,6 +9,7 @@ import { Container } from '~/components/Container'
 import { Header } from '~/components/Header'
 import { SlideShow } from '~/components/SlideShow'
 import { useWindowDimensions } from '~/hooks/dimension'
+import { Footer } from '~/components/Footer'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -321,6 +322,9 @@ const TopPage: NextPage = () => {
           </div>
         </Container>
       </div>
+
+      {/* フッター */}
+      <Footer />
     </div>
   )
 }
