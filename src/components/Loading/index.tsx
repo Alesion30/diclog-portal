@@ -1,4 +1,4 @@
-import { classNames } from '~/functions/classNames'
+import clsx from 'clsx'
 import { IconImage } from '../Image'
 
 export type LoadingProps = {
@@ -8,7 +8,7 @@ export type LoadingProps = {
 
 export const Loading: React.VFC<LoadingProps> = ({ className, style }) => {
   return (
-    <div className={classNames('text-center', className)} style={style}>
+    <div className={clsx('text-center', className)} style={style}>
       <div className="m-0 w-72 h-72 relative">
         <div className="absolute bottom-2 right-36">
           <IconImage className="loading-icon1 opacity-0" width={40} />

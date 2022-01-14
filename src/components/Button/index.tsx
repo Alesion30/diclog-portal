@@ -1,4 +1,4 @@
-import { classNames } from '~/functions/classNames'
+import clsx from 'clsx'
 
 export type ButtonProps = {
   text: string
@@ -20,7 +20,7 @@ export const Button: React.VFC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={classNames(
+      className={clsx(
         className,
         'flex items-center justify-center px-4 py-2 border shadow-sm text-base font-medium',
         full ? 'w-full' : '',

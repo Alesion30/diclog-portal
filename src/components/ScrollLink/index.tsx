@@ -1,5 +1,5 @@
+import clsx from 'clsx'
 import { Link } from 'react-scroll'
-import { classNames } from '~/functions/classNames'
 
 export type ScrollLinkProps = {
   children: React.ReactChild
@@ -17,7 +17,7 @@ export const ScrollLink: React.VFC<ScrollLinkProps> = ({
       to={to}
       smooth={true}
       duration={600}
-      className={classNames(className, 'cursor-pointer')}
+      className={clsx(className, 'cursor-pointer')}
     >
       {children}
     </Link>
