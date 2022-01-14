@@ -37,7 +37,15 @@ const TopPage: NextPage = () => {
       </Container>
 
       {/* TOP */}
-      <div className={clsx(width >= 1100 ? 'pt-0' : 'pt-20')}>
+      <div
+        id="top"
+        className={clsx(width >= 1100 ? 'pt-0' : 'pt-20')}
+        style={{
+          backgroundImage: 'url(/assets/img/bg-top-wave.svg)',
+          backgroundPosition: 'top',
+          backgroundRepeat: 'repeat-x',
+        }}
+      >
         <Container>
           <div className="flex flex-wrap justify-evenly content-center items-center h-screen space-y-20">
             <div
@@ -67,7 +75,7 @@ const TopPage: NextPage = () => {
       </div>
 
       {/* Diclogとは？ */}
-      <div className="min-h-screen bg-yellow-50">
+      <div id="about" className="min-h-screen bg-yellow-50">
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
             <div className="space-y-10 text-center">
@@ -144,7 +152,7 @@ const TopPage: NextPage = () => {
       </div>
 
       {/* 使い方 */}
-      <div className="bg-red-50">
+      <div id="usage" className="bg-red-50">
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
             <div className="flex flex-wrap justify-center">
@@ -190,7 +198,7 @@ const TopPage: NextPage = () => {
       </div>
 
       {/* ランキング */}
-      <div className="bg-white">
+      <div id="ranking" className="bg-white">
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
             <h1 className="text-5xl font-bold">ランキング</h1>
