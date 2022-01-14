@@ -8,9 +8,18 @@ export default {
 
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />
 const defaultArgs: CardProps = {
-  children: <p>カードです</p>,
-  className: 'p-5',
-  shadow: true,
+  children: (
+    <div className="space-y-6 text-center">
+      <p className="text-gray-700 text-lg font-bold">ステップ1</p>
+      <h2 className="text-xl font-bold">chrome拡張機能を有効化</h2>
+      <p>
+        chromeウェブストアからchrome拡張機能をダウンロードし、Googleアカウント等でログインします。
+      </p>
+    </div>
+  ),
+  width: 400,
+  height: 280,
+  delay: 0,
 }
 
 export const Default = Template.bind({})

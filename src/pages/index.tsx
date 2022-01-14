@@ -1,58 +1,21 @@
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import clsx from 'clsx'
 import { NextPage } from 'next'
-import Image from 'next/image'
-import { DetailedHTMLProps, HTMLAttributes, useState } from 'react'
-import { useInView } from 'react-intersection-observer'
+import { useState } from 'react'
 import { Button } from '~/components/Button'
+import { Card } from '~/components/Card'
 import { Container } from '~/components/Container'
-import { DummyImage, IconImage } from '~/components/Image'
-
-type CardProps = {
-  width?: number
-  height?: number
-  delay?: number
-  children: React.ReactNode
-} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-
-const Card: React.VFC<CardProps> = ({
-  width,
-  height,
-  delay,
-  children,
-  className,
-  style,
-  ...props
-}) => {
-  const { ref, inView } = useInView({
-    rootMargin: '-50px',
-    threshold: 0.5,
-    delay: delay,
-    triggerOnce: true,
-  })
-
-  return (
-    <div
-      style={{ width, height, ...style }}
-      ref={ref}
-      className={clsx(
-        'bg-white shadow-lg rounded-lg px-8 py-12',
-        inView ? 'animate-fadeIn' : 'opacity-0',
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+import { Header } from '~/components/Header'
+import { DummyImage, FadeInImage } from '~/components/Image'
 
 const TopPage: NextPage = () => {
   const [showHeader, setShowHeader] = useState(true)
 
   useScrollPosition(({ prevPos, currPos }) => {
-    const visible = currPos.y > prevPos.y || currPos.y > -100
-    setShowHeader(visible)
+    if (Math.abs(currPos.y - prevPos.y) > 10) {
+      const visible = currPos.y > prevPos.y || currPos.y > -100
+      setShowHeader(visible)
+    }
   }, [])
 
   return (
@@ -64,28 +27,7 @@ const TopPage: NextPage = () => {
           !showHeader ? 'animate-up' : 'animate-down'
         )}
       >
-        <header className="bg-white justify-between content-center rounded-full flex px-10 py-5 shadow-lg">
-          <div className="flex space-x-10 items-center">
-            <div className="flex space-x-2 content-center">
-              <IconImage width={40} />
-              <h1 className="text-3xl font-bold font-lemon mt-1">Diclog</h1>
-            </div>
-            <nav className="flex space-x-7 justify-center">
-              <ol className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer">
-                Diclogとは
-              </ol>
-              <ol className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer">
-                導入方法
-              </ol>
-              <ol className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer">
-                よくある質問
-              </ol>
-              <ol className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer">
-                お問い合わせ
-              </ol>
-            </nav>
-          </div>
-        </header>
+        <Header />
       </Container>
 
       {/* TOP */}
@@ -107,12 +49,10 @@ const TopPage: NextPage = () => {
               </div>
               <Button text="Diclogをはじめる" outlined />
             </div>
-            <Image
+            <FadeInImage
               src="/assets/img/pc.png"
               width={700}
-              height={(700 * 1400) / 1020}
-              objectFit="contain"
-              alt="画像"
+              aspectRatio={1400 / 1020}
             />
           </div>
         </Container>
@@ -138,24 +78,40 @@ const TopPage: NextPage = () => {
               </p>
             </div>
             <div className="flex flex-wrap justify-center">
-              {[1, 2, 3, 4].map((_, index) => {
-                return (
-                  <div key={index} className="m-5">
-                    <Card className="flex justify-between" width={520}>
-                      <div style={{ width: 232 }} className="space-y-3">
-                        <h2 className="text-lg font-bold">
-                          自分だけのMy単語帳が出来上がります
-                        </h2>
-                        <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
-                          Chrome&nbsp;
-                          Extensionと連携するだけで、単語を調べていくうちにあなただけの単語帳が勝手に出来上がります。
-                        </p>
-                      </div>
-                      <DummyImage width={200} />
-                    </Card>
-                  </div>
-                )
-              })}
+              <Card className="flex justify-between m-5" width={520}>
+                <div style={{ width: 232 }} className="space-y-3">
+                  <h2 className="text-lg font-bold">
+                    自分だけのMy単語帳が出来上がります
+                  </h2>
+                  <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
+                    Chrome&nbsp;
+                    Extensionと連携するだけで、単語を調べていくうちにあなただけの単語帳が勝手に出来上がります。
+                  </p>
+                </div>
+                <DummyImage width={200} />
+              </Card>
+              <Card className="flex justify-between m-5" width={520}>
+                <div style={{ width: 232 }} className="space-y-3">
+                  <h2 className="text-lg font-bold">
+                    ちょっとしたスキマ時間に英単語学習
+                  </h2>
+                  <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
+                    Extensionで自動的に登録された単語からランダムに出題します。
+                  </p>
+                </div>
+                <DummyImage width={200} />
+              </Card>
+              <Card className="flex justify-between m-5" width={520}>
+                <div style={{ width: 232 }} className="space-y-3">
+                  <h2 className="text-lg font-bold">
+                    プッシュ通知で毎日継続的に学習できます
+                  </h2>
+                  <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
+                    1日1回、プッシュ通知で単語の意味をお聞きします。分からなければ、アプリを開いて意味を確認しましょう!
+                  </p>
+                </div>
+                <DummyImage width={200} />
+              </Card>
             </div>
           </div>
         </Container>
