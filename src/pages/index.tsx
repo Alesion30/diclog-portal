@@ -10,7 +10,6 @@ import { Header } from '~/components/Header'
 import { SlideShow } from '~/components/SlideShow'
 import { useWindowDimensions } from '~/hooks/dimension'
 import { Footer } from '~/components/Footer'
-import { Seo } from '~/layouts/seo'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -27,8 +26,6 @@ const TopPage: NextPage = () => {
 
   return (
     <div>
-      <Seo pageTitle={'TOP'} />
-
       {/* ヘッダー */}
       <Container
         className={clsx(
