@@ -55,7 +55,7 @@ const TopPage: NextPage = () => {
                   自動であなただけの英単語帳を作成します。
                 </p>
               </div>
-              <Button text="Diclogをはじめる" outlined />
+              <Button text="Diclogをはじめる" />
             </div>
             <SlideShow
               images={images}
