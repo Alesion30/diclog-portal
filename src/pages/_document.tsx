@@ -5,7 +5,6 @@ const MyDocument: React.VFC = () => {
   return (
     <Html lang="ja">
       <Head>
-        <meta name="description" content="英単語学習サプリメントシステム" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <link
