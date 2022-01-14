@@ -22,7 +22,7 @@ export const Button: React.VFC<ButtonProps> = ({
       onClick={onClick}
       className={clsx(
         className,
-        'flex items-center justify-center px-4 py-2 border shadow-sm text-base font-medium',
+        'flex items-center justify-center px-6 py-3 border shadow-sm text-base font-medium',
         full ? 'w-full' : '',
         rounded ? 'rounded-full' : 'rounded-md',
         outlined

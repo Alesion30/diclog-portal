@@ -1,4 +1,5 @@
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import Image from 'next/image'
 import clsx from 'clsx'
 import { NextPage } from 'next'
 import { useState } from 'react'
@@ -90,46 +91,52 @@ const TopPage: NextPage = () => {
                 maxWidth={520}
                 minHeight={270}
               >
-                <div className="w-60 space-y-3 mr-5">
+                <div className="w-60 space-y-3">
                   <h2 className="text-lg font-bold">
-                    自分だけのMy単語帳が出来上がります
+                    自分だけのMy単語帳が
+                    <br />
+                    出来上がります
                   </h2>
                   <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
                     Chrome&nbsp;
                     Extensionと連携するだけで、単語を調べていくうちにあなただけの単語帳が勝手に出来上がります。
                   </p>
                 </div>
-                <DummyImage width={200} />
+                <Image src="/assets/img/y0980.png" width={200} height={200} />
               </Card>
               <Card
                 className="flex justify-between m-5"
                 maxWidth={520}
                 minHeight={270}
               >
-                <div className="w-60 space-y-3 mr-5">
+                <div className="w-60 space-y-3">
                   <h2 className="text-lg font-bold">
-                    ちょっとしたスキマ時間に英単語学習
+                    ちょっとしたスキマ時間に
+                    <br />
+                    英単語学習
                   </h2>
                   <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
                     Extensionで自動的に登録された単語からランダムに出題します。
                   </p>
                 </div>
-                <DummyImage width={200} />
+                <Image src="/assets/img/y1150.png" width={200} height={200} />
               </Card>
               <Card
                 className="flex justify-between m-5"
                 maxWidth={520}
                 minHeight={270}
               >
-                <div className="w-60 space-y-3 mr-5">
+                <div className="w-60 space-y-3">
                   <h2 className="text-lg font-bold">
-                    プッシュ通知で毎日継続的に学習できます
+                    プッシュ通知で毎日継続的に
+                    <br />
+                    学習できます
                   </h2>
                   <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
                     1日1回、プッシュ通知で単語の意味をお聞きします。分からなければ、アプリを開いて意味を確認しましょう!
                   </p>
                 </div>
-                <DummyImage width={200} />
+                <Image src="/assets/img/y0327.png" width={200} height={200} />
               </Card>
             </div>
           </div>
@@ -177,11 +184,7 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
             </div>
-            <Button
-              className="w-60 h-14"
-              text="詳しい導入方法はこちら"
-              outlined
-            />
+            <Button text="詳しい導入方法はこちら" outlined />
           </div>
         </Container>
       </div>
