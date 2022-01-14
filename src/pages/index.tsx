@@ -95,7 +95,7 @@ const TopPage: NextPage = () => {
             </div>
             <div className="flex flex-wrap justify-center">
               <Card
-                className="flex justify-between m-5"
+                className="flex flex-wrap justify-center m-5"
                 maxWidth={520}
                 minHeight={270}
               >
@@ -113,7 +113,7 @@ const TopPage: NextPage = () => {
                 <Image src="/assets/img/y0980.png" width={200} height={200} />
               </Card>
               <Card
-                className="flex justify-between m-5"
+                className="flex flex-wrap justify-center m-5"
                 maxWidth={520}
                 minHeight={270}
               >
@@ -130,7 +130,7 @@ const TopPage: NextPage = () => {
                 <Image src="/assets/img/y1150.png" width={200} height={200} />
               </Card>
               <Card
-                className="flex justify-between m-5"
+                className="flex flex-wrap justify-center m-5"
                 maxWidth={520}
                 minHeight={270}
               >
