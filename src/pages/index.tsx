@@ -78,7 +78,11 @@ const TopPage: NextPage = () => {
               </p>
             </div>
             <div className="flex flex-wrap justify-center">
-              <Card className="flex justify-between m-5" width={520}>
+              <Card
+                className="flex justify-between m-5"
+                width={520}
+                height={270}
+              >
                 <div style={{ width: 232 }} className="space-y-3">
                   <h2 className="text-lg font-bold">
                     自分だけのMy単語帳が出来上がります
@@ -90,7 +94,11 @@ const TopPage: NextPage = () => {
                 </div>
                 <DummyImage width={200} />
               </Card>
-              <Card className="flex justify-between m-5" width={520}>
+              <Card
+                className="flex justify-between m-5"
+                width={520}
+                height={270}
+              >
                 <div style={{ width: 232 }} className="space-y-3">
                   <h2 className="text-lg font-bold">
                     ちょっとしたスキマ時間に英単語学習
@@ -101,7 +109,11 @@ const TopPage: NextPage = () => {
                 </div>
                 <DummyImage width={200} />
               </Card>
-              <Card className="flex justify-between m-5" width={520}>
+              <Card
+                className="flex justify-between m-5"
+                width={520}
+                height={270}
+              >
                 <div style={{ width: 232 }} className="space-y-3">
                   <h2 className="text-lg font-bold">
                     プッシュ通知で毎日継続的に学習できます

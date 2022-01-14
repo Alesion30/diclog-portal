@@ -1,5 +1,6 @@
 import clsx from 'clsx'
-import { DetailedHTMLProps, HTMLAttributes } from 'react'
+import { motion } from 'framer-motion'
+import { CSSProperties } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 export type CardProps = {
@@ -7,7 +8,9 @@ export type CardProps = {
   height?: number
   delay?: number
   children: React.ReactNode
-} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+  className?: string
+  style?: CSSProperties
+}
 
 export const Card: React.VFC<CardProps> = ({
   width,
@@ -16,7 +19,6 @@ export const Card: React.VFC<CardProps> = ({
   children,
   className,
   style,
-  ...props
 }) => {
   const { ref, inView } = useInView({
     rootMargin: '-50px',
@@ -26,17 +28,18 @@ export const Card: React.VFC<CardProps> = ({
   })
 
   return (
-    <div
-      style={{ width, height, ...style }}
-      ref={ref}
-      className={clsx(
-        'bg-white shadow-lg rounded-lg px-8 py-12',
-        inView ? 'animate-fadeIn' : 'opacity-0',
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
+    <motion.div whileHover={{ scale: 1.05 }}>
+      <motion.div
+        ref={ref}
+        style={{ width, height, ...style }}
+        className={clsx(
+          'bg-white shadow-lg rounded-lg px-8 py-12',
+          inView ? 'animate-fadeIn' : 'opacity-0',
+          className
+        )}
+      >
+        {children}
+      </motion.div>
+    </motion.div>
   )
 }

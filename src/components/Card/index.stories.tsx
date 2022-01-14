@@ -20,6 +20,7 @@ const defaultArgs: CardProps = {
   width: 400,
   height: 280,
   delay: 0,
+  className: 'm-5',
 }
 
 export const Default = Template.bind({})
