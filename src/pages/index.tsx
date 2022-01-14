@@ -33,7 +33,7 @@ const TopPage: NextPage = () => {
       {/* TOP */}
       <div className="min-h-screen">
         <Container>
-          <div className="flex justify-evenly items-center h-screen">
+          <div className="flex flex-wrap justify-evenly items-center h-screen">
             <div className="space-y-8">
               <div className="space-y-2">
                 <h1 className="text-4xl font-semibold leading-relaxed">
@@ -83,7 +83,7 @@ const TopPage: NextPage = () => {
                 width={520}
                 height={270}
               >
-                <div style={{ width: 232 }} className="space-y-3">
+                <div className="w-60 space-y-3 mr-5">
                   <h2 className="text-lg font-bold">
                     自分だけのMy単語帳が出来上がります
                   </h2>
@@ -99,7 +99,7 @@ const TopPage: NextPage = () => {
                 width={520}
                 height={270}
               >
-                <div style={{ width: 232 }} className="space-y-3">
+                <div className="w-60 space-y-3 mr-5">
                   <h2 className="text-lg font-bold">
                     ちょっとしたスキマ時間に英単語学習
                   </h2>
@@ -114,7 +114,7 @@ const TopPage: NextPage = () => {
                 width={520}
                 height={270}
               >
-                <div style={{ width: 232 }} className="space-y-3">
+                <div className="w-60 space-y-3 mr-5">
                   <h2 className="text-lg font-bold">
                     プッシュ通知で毎日継続的に学習できます
                   </h2>
@@ -133,8 +133,8 @@ const TopPage: NextPage = () => {
       <div className="bg-red-50">
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
-            <div className="flex justify-center">
-              <Card width={400} height={280} className="m-5 text-center">
+            <div className="flex flex-wrap justify-center">
+              <Card width={370} height={280} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ1</p>
                   <h2 className="text-xl font-bold">chrome拡張機能を有効化</h2>
@@ -144,7 +144,7 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
               <Card
-                width={400}
+                width={370}
                 height={280}
                 delay={500}
                 className="m-5 text-center"
@@ -156,7 +156,7 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
               <Card
-                width={400}
+                width={370}
                 height={280}
                 delay={1000}
                 className="m-5 text-center"
@@ -183,10 +183,10 @@ const TopPage: NextPage = () => {
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
             <h1 className="text-5xl font-bold">ランキング</h1>
-            <div className="flex">
+            <div className="flex flex-wrap justify-center">
               {/* ユーザーランキング */}
               <Card
-                width={400}
+                width={370}
                 height={600}
                 className="m-5 text-center overflow-scroll"
               >
@@ -222,7 +222,7 @@ const TopPage: NextPage = () => {
 
               {/* 英単語ランキング */}
               <Card
-                width={400}
+                width={370}
                 height={600}
                 className="m-5 text-center overflow-scroll"
               >
@@ -258,7 +258,7 @@ const TopPage: NextPage = () => {
 
               {/* 辞書ランキング */}
               <Card
-                width={400}
+                width={370}
                 height={600}
                 className="m-5 text-center overflow-scroll"
               >
