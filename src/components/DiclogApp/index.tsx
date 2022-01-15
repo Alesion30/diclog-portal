@@ -94,7 +94,7 @@ export const DiclogApp: React.VFC = () => {
                 <div
                   key="front"
                   onClick={() => setIsFlipped(true)}
-                  className="bg-white flex justify-center items-center border rounded-lg shadow-lg w-full h-full"
+                  className="bg-white flex justify-center items-center border rounded-lg shadow-lg w-full h-full cursor-pointer"
                 >
                   <p className="text-4xl select-none">
                     {words[wordIndex].word}
@@ -103,7 +103,7 @@ export const DiclogApp: React.VFC = () => {
                 <div
                   key="back"
                   onClick={() => setIsFlipped(false)}
-                  className="bg-white flex justify-center items-center border rounded-lg shadow-lg w-full h-full"
+                  className="bg-white flex justify-center items-center border rounded-lg shadow-lg w-full h-full cursor-pointer"
                 >
                   <p className="text-4xl select-none">
                     {words[wordIndex].trans}
