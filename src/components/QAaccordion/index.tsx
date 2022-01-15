@@ -44,7 +44,7 @@ export const QAaccordion: React.VFC<QAaccordionProps> = ({
           transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
         >
           <div className="flex">
-            <p className="text-red-500 font-bold text-2xl mr-7 pb-1">A.</p>
+            <p className="text-red-500 font-bold text-2xl mr-7 pb-1 pl-1">A.</p>
             <h2 className="text-xl">{answer}</h2>
           </div>
         </motion.section>
