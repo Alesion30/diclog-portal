@@ -22,13 +22,18 @@ export const DiclogChromeEx: React.VFC = () => {
           />
         </div>
         <div className="p-4 space-y-6 w-7/12 text-left">
-          <p className="text-xl font-bold">英語翻訳サイト（仮）</p>
+          <div className="space-y-2">
+            <p className="text-xl font-bold">英語翻訳サイト（仮）</p>
+            <p className="text-sm text-gray-400">
+              ※15文字以内の英単語・英熟語を入力してください。翻訳には「Bing
+              Translate API」を使用しています。
+            </p>
+          </div>
           <div className="flex flex-col items-center space-y-5">
-            <textarea
+            <input
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
-              rows={3}
-              placeholder="翻訳するにはテキストを入力してください"
-            ></textarea>
+              placeholder="英単語を入力してください"
+            />
             <Button text="翻訳する" className="w-36" />
             <textarea
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
