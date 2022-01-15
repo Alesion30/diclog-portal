@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
 
 export type ImageProps = {
-  width: number
+  width?: number
+  height?: number
   src: string
   aspectRatio?: number
   className?: string
@@ -38,6 +39,38 @@ export const DummyImage: React.VFC<Omit<ImageProps, 'src'>> = ({
       height={width / aspectRatio}
       alt="ダミー画像"
     />
+  )
+}
+
+export const AppleStoreImage: React.VFC<Omit<ImageProps, 'src'>> = ({
+  height = 60,
+  className,
+}) => {
+  return (
+    <a href="https://www.apple.com/jp/app-store/">
+      <img
+        src="/assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+        className={className}
+        style={{ height }}
+        alt="apple"
+      />
+    </a>
+  )
+}
+
+export const GoogleStoreImage: React.VFC<Omit<ImageProps, 'src'>> = ({
+  height = 60,
+  className,
+}) => {
+  return (
+    <a href="https://play.google.com/store/apps?hl=ja&gl=US">
+      <img
+        src="/assets/img/google-play-badge.png"
+        style={{ height }}
+        className={className}
+        alt="google"
+      />
+    </a>
   )
 }
 

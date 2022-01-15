@@ -14,6 +14,7 @@ import { SubTitleText, TitleText } from '~/components/Text'
 import { DiclogChromeEx } from '~/components/DiclogChromeEx'
 import { DiclogApp } from '~/components/DiclogApp'
 import { QAaccordion } from '~/components/QAaccordion'
+import { AppleStoreImage, GoogleStoreImage } from '~/components/Image'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -429,18 +430,8 @@ const TopPage: NextPage = () => {
             今すぐアプリ・Chrome拡張機能をダウンロード
           </h2>
           <div className="flex flex-wrap justify-center items-center mt-6">
-            <img
-              src="/assets/img/google-play-badge.png"
-              style={{ height: 60 }}
-              className="m-2"
-              alt="google"
-            />
-            <img
-              src="/assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-              className="m-2"
-              style={{ height: 60 }}
-              alt="apple"
-            />
+            <AppleStoreImage className="m-5" height={60} />
+            <GoogleStoreImage className="m-5" height={60} />
           </div>
         </Container>
       </div>
