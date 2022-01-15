@@ -249,7 +249,7 @@ const TopPage: NextPage = () => {
                   ].map((name, index) => {
                     return (
                       <div
-                        key={index}
+                        key={`user_rank_${index}`}
                         className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
                       >
                         <div className="flex space-x-4">
@@ -285,7 +285,7 @@ const TopPage: NextPage = () => {
                   ].map((name, index) => {
                     return (
                       <div
-                        key={index}
+                        key={`word_rank_${index}`}
                         className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
                       >
                         <div className="flex space-x-4">
@@ -311,7 +311,7 @@ const TopPage: NextPage = () => {
                     (name, index) => {
                       return (
                         <div
-                          key={index}
+                          key={`dic_rank_${index}`}
                           className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
                         >
                           <div className="flex space-x-4">

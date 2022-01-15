@@ -59,7 +59,7 @@ export const SlideShow: React.VFC<SlideShowProps> = ({
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
-          key={page}
+          key={`slide_show_${page}`}
           src={images[imageIndex]}
           custom={direction}
           variants={variants}
