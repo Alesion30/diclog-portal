@@ -1,5 +1,4 @@
 import { useWindowDimensions } from '~/hooks/dimension'
-import Image from 'next/image'
 
 export type IPhoneBoardProps = {
   children?: React.ReactNode
@@ -19,11 +18,10 @@ export const IPhoneBoard: React.VFC<IPhoneBoardProps> = ({
     >
       <div className="bg-white flex flex-col rounded-3xl w-full h-full overflow-y-scroll">
         <div className="flex justify-between items-center px-4 pt-2">
-          <p className="text-sm font-bold pt-1">8:12</p>
-          <Image
+          <p className="text-sm font-bold">8:12</p>
+          <img
             src="/assets/img/battery-full-solid.svg"
-            width={30}
-            height={10}
+            style={{ height: 15 }}
           />
         </div>
         <div className="grow h-full">{children}</div>

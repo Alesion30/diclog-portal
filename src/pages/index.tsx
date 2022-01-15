@@ -12,6 +12,7 @@ import { useWindowDimensions } from '~/hooks/dimension'
 import { Footer } from '~/components/Footer'
 import { SubTitleText, TitleText } from '~/components/Text'
 import { DiclogChromeEx } from '~/components/DiclogChromeEx'
+import { IPhoneBoard } from '~/components/iPhoneBoard'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -214,37 +215,63 @@ const TopPage: NextPage = () => {
       </div>
 
       {/* Diclogを試す */}
-      <div className="bg-green-50">
-        <Container className="py-28">
-          <div className="flex flex-col justify-center items-center space-y-12 text-center">
-            <TitleText>
-              <span className="font-lemon mr-1">Diclog</span>を試す
-            </TitleText>
-            <div className="flex flex-wrap justify-center items-center">
-              <div className="m-5">
-                <DiclogChromeEx />
+      {width >= 600 && (
+        <div className="bg-green-50">
+          <Container className="py-28">
+            <div className="flex flex-col justify-center items-center space-y-12 text-center">
+              <TitleText>
+                <span className="font-lemon mr-1">Diclog</span>を試す
+              </TitleText>
+
+              {/* Chrome拡張機能 */}
+              <div className="flex flex-wrap w-full justify-evenly items-center">
+                <div className="m-5">
+                  <DiclogChromeEx />
+                </div>
+                <Card className="text-left m-5">
+                  <ol className="space-y-4 list-decimal pl-5">
+                    <li className="text-base font-bold">
+                      左のサイトで、調べたい英単語を
+                      <br />
+                      入力してください。
+                    </li>
+                    <li className="text-base font-bold">
+                      翻訳ボタンを押すと、英単語が日本語に
+                      <br />
+                      翻訳されます。
+                    </li>
+                    <li className="text-base font-bold">
+                      調べた単語が自動で登録されます。
+                    </li>
+                  </ol>
+                </Card>
               </div>
-              <Card className="text-left m-5" maxWidth={420}>
-                <ol className="space-y-4 list-decimal pl-5">
-                  <li className="text-base font-bold">
-                    左のサイトで、調べたい英単語を
-                    <br />
-                    入力してください。
-                  </li>
-                  <li className="text-base font-bold">
-                    翻訳ボタンを押すと、英単語が日本語に
-                    <br />
-                    翻訳されます。
-                  </li>
-                  <li className="text-base font-bold">
-                    調べた単語が自動で登録されます。
-                  </li>
-                </ol>
-              </Card>
+
+              {/* ネイティブアプリ */}
+              <div className="flex flex-wrap w-full justify-evenly items-center">
+                <div className="m-5">
+                  <IPhoneBoard />
+                </div>
+                <Card className="text-left m-5">
+                  <ol className="space-y-4 list-decimal pl-5">
+                    <li className="text-base font-bold">
+                      chrome拡張機能で登録した単語をアプリで
+                      <br />
+                      確認できます。
+                    </li>
+                    <li className="text-base font-bold">
+                      タップすると、単語の意味が表示されます。
+                    </li>
+                    <li className="text-base font-bold">
+                      スワイプすると次の単語が表示されます。
+                    </li>
+                  </ol>
+                </Card>
+              </div>
             </div>
-          </div>
-        </Container>
-      </div>
+          </Container>
+        </div>
+      )}
 
       {/* ランキング */}
       <div id="ranking" className="bg-blue-50">
