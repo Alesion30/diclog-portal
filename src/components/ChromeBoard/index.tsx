@@ -13,7 +13,7 @@ export const ChromeBoard: React.VFC<ChromeBoardProps> = ({
   const boardWidth = dimension.width >= width ? width : dimension.width - 80
   return (
     <div
-      className="bg-white rounded-md shadow-md m-5"
+      className="bg-white rounded-md shadow-md"
       style={{ width: boardWidth, height: boardWidth * (960 / 1280) }}
     >
       <div className="bg-gray-700 w-full h-6 rounded-t-md flex items-center px-2 space-x-1">
@@ -21,7 +21,9 @@ export const ChromeBoard: React.VFC<ChromeBoardProps> = ({
         <div className="bg-yellow-400 w-2 h-2 rounded-full" />
         <div className="bg-green-400 w-2 h-2 rounded-full" />
       </div>
-      <div className="rounded-b-md w-full h-full">{children}</div>
+      <div className="rounded-b-md w-full h-full overflow-y-scroll">
+        {children}
+      </div>
     </div>
   )
 }

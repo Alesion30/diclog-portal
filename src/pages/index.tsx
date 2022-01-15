@@ -223,8 +223,43 @@ const TopPage: NextPage = () => {
             <div className="flex flex-wrap justify-center items-center">
               <div className="m-5">
                 <ChromeBoard width={600}>
-                  <div className="p-4">
-                    <p>英単語翻訳サイト</p>
+                  <div className="relative w-full">
+                    <div className="absolute top-1 right-2 border shadow-md bg-white w-40 max-h-72 overflow-y-scroll">
+                      <div className="py-4 space-y-2">
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                        <p>あああ</p>
+                      </div>
+                    </div>
+                    <div className="p-4 space-y-6 mr-20 text-left">
+                      <p className="text-xl font-bold">英語翻訳サイト（仮）</p>
+                      <div className="flex flex-col items-center space-y-5">
+                        <textarea
+                          className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
+                          rows={3}
+                          placeholder="翻訳するにはテキストを入力してください"
+                        ></textarea>
+                        <Button text="翻訳する" className="w-36" />
+                        <textarea
+                          className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
+                          rows={3}
+                          disabled
+                        ></textarea>
+                      </div>
+                    </div>
                   </div>
                 </ChromeBoard>
               </div>
