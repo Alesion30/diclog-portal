@@ -13,6 +13,7 @@ const variants = {
   center: {
     zIndex: 1,
     x: 0,
+    y: 0,
     opacity: 1,
   },
   exit: (direction: number) => {
@@ -22,6 +23,11 @@ const variants = {
       opacity: 0,
     }
   },
+}
+
+const swipeConfidenceThreshold = 10000
+const swipePower = (offset: number, velocity: number) => {
+  return Math.abs(offset) * velocity
 }
 
 export const DiclogApp: React.VFC = () => {
@@ -63,6 +69,7 @@ export const DiclogApp: React.VFC = () => {
               className="h-full"
               transition={{
                 x: { type: 'spring', stiffness: 300, damping: 30 },
+                y: { type: 'spring', stiffness: 300, damping: 30 },
                 opacity: { duration: 0.2 },
               }}
               custom={direction}
@@ -71,10 +78,16 @@ export const DiclogApp: React.VFC = () => {
               animate="center"
               exit="exit"
               drag
-              dragConstraints={{ left: 0, right: 0 }}
+              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
               dragElastic={1}
-              onDragEnd={() => {
-                paginate(1)
+              onDragEnd={(e, { offset, velocity }) => {
+                const swipeX = swipePower(offset.x, velocity.x)
+
+                if (swipeX < -swipeConfidenceThreshold) {
+                  paginate(1)
+                } else if (swipeX > swipeConfidenceThreshold) {
+                  paginate(1)
+                }
               }}
             >
               <ReactCardFlip isFlipped={isFlipped} containerClassName="h-full">
