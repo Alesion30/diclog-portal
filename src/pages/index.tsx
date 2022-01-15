@@ -12,7 +12,7 @@ import { useWindowDimensions } from '~/hooks/dimension'
 import { Footer } from '~/components/Footer'
 import { SubTitleText, TitleText } from '~/components/Text'
 import { DiclogChromeEx } from '~/components/DiclogChromeEx'
-import { IPhoneBoard } from '~/components/iPhoneBoard'
+import { DiclogApp } from '~/components/DiclogApp'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -250,7 +250,7 @@ const TopPage: NextPage = () => {
               {/* ネイティブアプリ */}
               <div className="flex flex-wrap w-full justify-evenly items-center">
                 <div className="m-5">
-                  <IPhoneBoard />
+                  <DiclogApp />
                 </div>
                 <Card className="text-left m-5">
                   <ol className="space-y-4 list-decimal pl-5">
