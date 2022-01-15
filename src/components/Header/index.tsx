@@ -21,7 +21,7 @@ export const Header: React.VFC = () => {
           <ScrollLink to="ranking">ランキング</ScrollLink>
         </li>
         <li className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer list-none">
-          よくある質問
+          <ScrollLink to="question">よくある質問</ScrollLink>
         </li>
         <li className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer list-none">
           お問い合わせ

@@ -13,6 +13,7 @@ import { Footer } from '~/components/Footer'
 import { SubTitleText, TitleText } from '~/components/Text'
 import { DiclogChromeEx } from '~/components/DiclogChromeEx'
 import { DiclogApp } from '~/components/DiclogApp'
+import { QAaccordion } from '~/components/QAaccordion'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -393,6 +394,26 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
             </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* よくある質問 */}
+      <div id="question" className="bg-purple-50">
+        <Container className="py-28">
+          <div className="flex flex-col justify-center items-center space-y-24 text-center">
+            <TitleText>よくある質問</TitleText>
+            <div className="flex flex-col space-y-6 w-4/5">
+              <QAaccordion
+                question="アプリだけの利用はできますか？"
+                answer="Chrome拡張機能経由でのみ単語を登録できるので、アプリだけの利用はできません。"
+              />
+              <QAaccordion
+                question="対応する辞書サイトはなんですか？"
+                answer="2022年1月時点では、weblio・英次郎・英ナビ！・DeepL翻訳・Google翻訳に対応しています。"
+              />
+            </div>
+            <Button text="その他の質問はこちら" />
           </div>
         </Container>
       </div>
