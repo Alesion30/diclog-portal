@@ -228,23 +228,28 @@ const TopPage: NextPage = () => {
                 <div className="m-5">
                   <DiclogChromeEx />
                 </div>
-                <Card className="text-left m-5">
-                  <ol className="space-y-4 list-decimal pl-5">
-                    <li className="text-base font-bold">
-                      左のサイトで、調べたい英単語を
-                      <br />
-                      入力してください。
-                    </li>
-                    <li className="text-base font-bold">
-                      翻訳ボタンを押すと、英単語が日本語に
-                      <br />
-                      翻訳されます。
-                    </li>
-                    <li className="text-base font-bold">
-                      調べた単語が自動で登録されます。
-                    </li>
-                  </ol>
-                </Card>
+                <div className="text-left m-5 space-y-8">
+                  <h2 className="text-3xl font-bold text-yellow-600">
+                    Chrome拡張機能
+                  </h2>
+                  <Card className="text-left">
+                    <ol className="space-y-4 list-decimal pl-5">
+                      <li className="text-base font-bold">
+                        左のサイトで、調べたい英単語を
+                        <br />
+                        入力してください。
+                      </li>
+                      <li className="text-base font-bold">
+                        翻訳ボタンを押すと、英単語が日本語に
+                        <br />
+                        翻訳されます。
+                      </li>
+                      <li className="text-base font-bold">
+                        調べた単語が自動で登録されます。
+                      </li>
+                    </ol>
+                  </Card>
+                </div>
               </div>
 
               {/* ネイティブアプリ */}
@@ -252,21 +257,26 @@ const TopPage: NextPage = () => {
                 <div className="m-5">
                   <DiclogApp />
                 </div>
-                <Card className="text-left m-5">
-                  <ol className="space-y-4 list-decimal pl-5">
-                    <li className="text-base font-bold">
-                      chrome拡張機能で登録した単語をアプリで
-                      <br />
-                      確認できます。
-                    </li>
-                    <li className="text-base font-bold">
-                      タップすると、単語の意味が表示されます。
-                    </li>
-                    <li className="text-base font-bold">
-                      スワイプすると次の単語が表示されます。
-                    </li>
-                  </ol>
-                </Card>
+                <div className="text-left m-5 space-y-8">
+                  <h2 className="text-3xl font-bold text-yellow-600">
+                    スマホアプリ
+                  </h2>
+                  <Card className="text-left">
+                    <ol className="space-y-4 list-decimal pl-5">
+                      <li className="text-base font-bold">
+                        chrome拡張機能で登録した単語をアプリで
+                        <br />
+                        確認できます。
+                      </li>
+                      <li className="text-base font-bold">
+                        タップすると、単語の意味が表示されます。
+                      </li>
+                      <li className="text-base font-bold">
+                        スワイプすると次の単語が表示されます。
+                      </li>
+                    </ol>
+                  </Card>
+                </div>
               </div>
             </div>
           </Container>
