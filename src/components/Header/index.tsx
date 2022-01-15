@@ -3,7 +3,7 @@ import { ScrollLink } from '../ScrollLink'
 
 export const Header: React.VFC = () => {
   return (
-    <header className="bg-white w-full justify-between content-center rounded-full flex px-14 py-5 shadow-lg">
+    <header className="bg-white w-full justify-between content-center rounded-full flex px-6 lg:px-14 py-5 shadow-lg">
       <a href="/">
         <div className="flex space-x-2 content-center">
           <IconImage width={40} />
