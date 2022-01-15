@@ -30,7 +30,6 @@ export const Card: React.VFC<CardProps> = ({
 }) => {
   const { ref, inView } = useInView({
     rootMargin: '-50px',
-    threshold: 0.5,
     delay: delay,
     triggerOnce: true,
   })
