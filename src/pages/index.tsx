@@ -10,6 +10,7 @@ import { Header } from '~/components/Header'
 import { SlideShow } from '~/components/SlideShow'
 import { useWindowDimensions } from '~/hooks/dimension'
 import { Footer } from '~/components/Footer'
+import { SubTitleText, TitleText } from '~/components/Text'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -75,23 +76,17 @@ const TopPage: NextPage = () => {
       </div>
 
       {/* Diclogとは？ */}
-      <div id="about" className="min-h-screen bg-yellow-50">
+      <div id="about" className="bg-yellow-50">
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10">
             <div className="space-y-10 text-center">
-              <h1 className="text-5xl font-bold">
+              <TitleText>
                 <span className="font-lemon">Diclog</span>とは？
-              </h1>
-              <p className="text-lg leading-relaxed whitespace-pre-wrap text-gray-700">
-                Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。
-                <br />
-                しかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。
-                <br />
-                最初にChrome
-                Extensionを入れる必要がありますが、その後はそのExtensionが自動的に調べた英単語を記録してくれます。
-                <br />
-                あとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとした隙間時間です。
-              </p>
+              </TitleText>
+              <SubTitleText>
+                Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。しかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。最初にChrome
+                Extensionを入れる必要がありますが、その後はそのExtensionが自動的に調べた英単語を記録してくれます。あとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとした隙間時間です。
+              </SubTitleText>
             </div>
             <div className="flex flex-wrap justify-center">
               <Card
@@ -170,12 +165,12 @@ const TopPage: NextPage = () => {
       <div id="usage" className="bg-red-50">
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10 text-center">
-            <h1 className="text-5xl font-bold">
+            <TitleText>
               <span className="font-lemon">Diclog</span>の使い方
-            </h1>
-            <p className="text-lg leading-relaxed whitespace-pre-wrap text-gray-700">
+            </TitleText>
+            <SubTitleText>
               Diclogを始めるには、Chrome拡張機能とアプリのインストールが必要です。
-            </p>
+            </SubTitleText>
             <div className="flex flex-wrap justify-center">
               <Card maxWidth={370} minHeight={280} className="m-5 text-center">
                 <div className="space-y-6">
@@ -218,16 +213,21 @@ const TopPage: NextPage = () => {
         </Container>
       </div>
 
+      {/* Diclogを試す */}
+      <div className="bg-green-50">
+        <Container className="py-28"></Container>
+      </div>
+
       {/* ランキング */}
-      <div id="ranking" className="bg-white">
+      <div id="ranking" className="bg-blue-50">
         <Container className="py-28">
           <div className="flex flex-col justify-center items-center space-y-10 text-center">
-            <h1 className="text-5xl font-bold">
+            <TitleText>
               <span className="font-lemon">Diclog</span>のランキング
-            </h1>
-            <p className="text-lg leading-relaxed whitespace-pre-wrap text-gray-700">
+            </TitleText>
+            <SubTitleText>
               よく勉強しているユーザー・よく検索されている英単語・よく使われている辞書をランキング形式でTOP10まで紹介します。
-            </p>
+            </SubTitleText>
             <div className="flex flex-wrap justify-center">
               {/* ユーザーランキング */}
               <Card
