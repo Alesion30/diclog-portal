@@ -27,6 +27,7 @@
     "@heroicons/react": "^1.0.5",
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "clsx": "^1.1.1",
+    "dayjs": "^1.10.7",
     "framer-motion": "^5.3.3",
     "next": "latest",
     "next-seo": "^4.28.1",

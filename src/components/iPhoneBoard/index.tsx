@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useWindowDimensions } from '~/hooks/dimension'
+import dayjs from '~/plugins/dayjs'
 
 export type IPhoneBoardProps = {
   children?: React.ReactNode
@@ -28,9 +29,7 @@ export const IPhoneBoard: React.VFC<IPhoneBoardProps> = ({
     >
       <div className="bg-white flex flex-col rounded-3xl w-full h-full overflow-y-scroll">
         <div className="flex justify-between items-center w-full absolute top-6 left-0 px-8">
-          <p className="text-sm font-bold">
-            {time.getHours()}:{time.getMinutes()}
-          </p>
+          <p className="text-sm font-bold">{dayjs(time).format('HH:mm')}</p>
           <img
             src="/assets/img/battery-full-solid.svg"
             style={{ height: 15 }}
