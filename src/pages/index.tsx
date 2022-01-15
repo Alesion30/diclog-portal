@@ -412,6 +412,10 @@ const TopPage: NextPage = () => {
                 question="対応する辞書サイトはなんですか？"
                 answer="2022年1月時点では、weblio・英次郎・英ナビ！・DeepL翻訳・Google翻訳に対応しています。"
               />
+              <QAaccordion
+                question="Chrome以外のブラウザは使用できますか？"
+                answer="Chrome拡張機能のみの提供になるので、Chrome以外のブラウザは使用できません。"
+              />
             </div>
             <Button text="その他の質問はこちら" />
           </div>
