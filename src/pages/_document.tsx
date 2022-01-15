@@ -4,30 +4,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 const MyDocument: React.VFC = () => {
   return (
     <Html lang="ja">
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-
-        {/* Googleフォント */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <Head />
       <body>
         <Main />
         <NextScript />
