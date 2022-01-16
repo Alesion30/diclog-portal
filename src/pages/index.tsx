@@ -15,10 +15,13 @@ import { DiclogChromeEx } from '~/components/DiclogChromeEx'
 import { DiclogApp } from '~/components/DiclogApp'
 import { QAaccordion } from '~/components/QAaccordion'
 import { AppleStoreImage, GoogleStoreImage } from '~/components/Image'
+import { useGlobalWordState } from '~/store/word'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
   const [showHeader, setShowHeader] = useState(true)
+
+  const { resetWords } = useGlobalWordState()
 
   useScrollPosition(({ prevPos, currPos }) => {
     if (Math.abs(currPos.y - prevPos.y) > 10) {
@@ -251,6 +254,13 @@ const TopPage: NextPage = () => {
                       </li>
                     </ol>
                   </Card>
+                  <div className="w-full flex justify-center">
+                    <Button
+                      text="初期状態に戻す"
+                      outlined
+                      onClick={resetWords}
+                    />
+                  </div>
                 </div>
               </div>
 

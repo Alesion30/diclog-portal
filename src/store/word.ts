@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { atom, useRecoilState } from 'recoil'
 import { recoilPersist } from 'recoil-persist'
+import { translate } from '~/data/api/bingTranslate'
 
 const { persistAtom } = recoilPersist()
 
@@ -44,5 +45,25 @@ export const useGlobalWordState = () => {
     setState({ words: initialWords })
   }
 
-  return { words, resetWords }
+  /**
+   * 登録を登録
+   */
+  const registerWord = async (text: string) => {
+    const result = await translate(text, 'ja')
+    if (result.detectedLanguage.language === 'en') {
+      const _words: Word[] = JSON.parse(JSON.stringify(words))
+      const word: Word = {
+        value: text,
+        trans: result.translation.text,
+      }
+      _words.push(word)
+      setState({ words: _words })
+      return result.translation.text
+    } else {
+      console.error('error')
+      throw new Error()
+    }
+  }
+
+  return { words, resetWords, registerWord }
 }

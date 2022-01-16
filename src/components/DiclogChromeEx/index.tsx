@@ -1,11 +1,52 @@
+import { useEffect, useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { useGlobalWordState } from '~/store/word'
 import { Button } from '../Button'
 import { ChromeBoard } from '../ChromeBoard'
 import { Table } from '../Table'
 
+type Inputs = {
+  searchText: string
+}
+
 // Diclog chrome拡張機能ページ
 export const DiclogChromeEx: React.VFC = () => {
-  const { words } = useGlobalWordState()
+  const { words, registerWord } = useGlobalWordState()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>()
+
+  const [error, setError] = useState<string>(null)
+  const [loading, setLoading] = useState<boolean>(false)
+  const [transWord, setTransWord] = useState<string>('')
+
+  // エラーメッセージ初期化
+  useEffect(() => {
+    setError(null)
+  }, [watch('searchText')])
+
+  // 送信
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    if (!loading) {
+      // ロード開始
+      setTransWord('')
+      setLoading(true)
+
+      // 翻訳
+      try {
+        const transWord = await registerWord(data.searchText)
+        setTransWord(transWord)
+      } catch (err) {
+        setError('この単語は登録できません')
+      }
+
+      // ロード終了
+      setLoading(false)
+    }
+  }
 
   return (
     <ChromeBoard width={600}>
@@ -27,18 +68,33 @@ export const DiclogChromeEx: React.VFC = () => {
               Translate API」を使用しています。
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-5">
-            <input
-              className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
-              placeholder="英単語を入力してください"
-            />
-            <Button text="翻訳する" className="w-36" />
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col items-center space-y-5"
+          >
+            <div className="w-full space-y-4">
+              <input
+                {...register('searchText', { required: true })}
+                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
+                placeholder="英単語を入力してください"
+              />
+              {errors.searchText && (
+                <span className="text-red-500 text-sm ml-2">
+                  この項目は必須です
+                </span>
+              )}
+              {error && (
+                <span className="text-red-500 text-sm ml-2">{error}</span>
+              )}
+            </div>
+            <Button type="submit" text="翻訳する" className="w-36" />
             <textarea
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
               rows={3}
+              value={transWord}
               disabled
             ></textarea>
-          </div>
+          </form>
         </div>
       </div>
     </ChromeBoard>

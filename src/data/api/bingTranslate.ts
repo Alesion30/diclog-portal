@@ -14,7 +14,7 @@ export type Translate = {
     language: Lang
     score: number
   }
-  translations: { text: string; to: string }
+  translation: { text: string; to: string }
 }
 
 type TranslateResult = {
@@ -60,7 +60,7 @@ export const translate = async (
   if (data.length > 0 && data[0].translations.length > 0) {
     return {
       detectedLanguage: data[0].detectedLanguage,
-      translations: data[0].translations[0],
+      translation: data[0].translations[0],
     }
   } else {
     throw new Error()
