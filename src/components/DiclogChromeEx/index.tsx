@@ -1,24 +1,22 @@
+import { useGlobalWordState } from '~/store/word'
 import { Button } from '../Button'
 import { ChromeBoard } from '../ChromeBoard'
 import { Table } from '../Table'
 
 // Diclog chrome拡張機能ページ
 export const DiclogChromeEx: React.VFC = () => {
+  const { words } = useGlobalWordState()
+
   return (
     <ChromeBoard width={600}>
       <div className="relative w-full">
         <div className="absolute top-1 right-2 border shadow-md bg-white w-52 max-h-72 overflow-y-scroll">
           <Table
             columns={[
-              { key: 'word', name: '検索単語' },
+              { key: 'value', name: '検索単語' },
               { key: 'trans', name: '翻訳' },
             ]}
-            data={[
-              { word: 'hello', trans: 'こんにちは' },
-              { word: 'hello', trans: 'こんにちは' },
-              { word: 'hello', trans: 'こんにちは' },
-              { word: 'hello', trans: 'こんにちは' },
-            ]}
+            data={words}
           />
         </div>
         <div className="p-4 space-y-6 w-7/12 text-left">

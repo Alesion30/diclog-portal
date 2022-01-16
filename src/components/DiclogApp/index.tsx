@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { wrap } from 'popmotion'
 import { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
+import { useGlobalWordState } from '~/store/word'
 import { IPhoneBoard } from '../iPhoneBoard'
 
 const variants = {
@@ -31,24 +32,11 @@ const swipePower = (offset: number, velocity: number) => {
 }
 
 export const DiclogApp: React.VFC = () => {
+  const { words } = useGlobalWordState()
+
   const [isFlipped, setIsFlipped] = useState<boolean>(false)
 
   const [[page, direction], setPage] = useState([0, 0])
-
-  const words = [
-    {
-      word: 'Hello',
-      trans: 'こんにちは',
-    },
-    {
-      word: 'Good',
-      trans: '良い',
-    },
-    {
-      word: 'He',
-      trans: '彼',
-    },
-  ]
 
   const wordIndex = wrap(0, words.length, page)
 
@@ -97,7 +85,7 @@ export const DiclogApp: React.VFC = () => {
                   className="bg-white flex justify-center items-center border rounded-lg shadow-lg w-full h-full cursor-pointer"
                 >
                   <p className="text-4xl select-none">
-                    {words[wordIndex].word}
+                    {words[wordIndex].value}
                   </p>
                 </div>
                 <div
