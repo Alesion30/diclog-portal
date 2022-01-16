@@ -1,0 +1,2 @@
+export const BING_TRANSLATE_API_KEY =
+  process.env.NEXT_PUBLIC_BING_TRANSLATE_API_KEY || ''
