@@ -21,12 +21,15 @@ export const Footer: React.VFC = () => {
               <br />
               ウエスト２号館912/956
               <br />
-              TEL: 092-802-3792/3794&nbsp; MAIL: staff@arakawa-lab.com
+              <span>TEL: 092-802-3792/3794</span>&nbsp;&nbsp;
+              <span>MAIL: staff@arakawa-lab.com</span>
               <br />
               HP:{' '}
               <a
                 href="https://arakawa-lab.com/"
-                className="border-b border-black"
+                className="underline"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 https://arakawa-lab.com/
               </a>
@@ -34,6 +37,20 @@ export const Footer: React.VFC = () => {
           </div>
           <p className="text-gray-700 text-lg font-base ml-4">
             &copy; {new Date().getFullYear()} HumanoPhilic Systems Lab.
+          </p>
+        </div>
+        <div className="mt-16 text-center">
+          <p>
+            本アプリケーションは、JST CREST 「
+            <a
+              href="https://www.jst.go.jp/kisoken/crest/project/1111083/1111083_09.html"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              経験サプリメントによる行動変容と創造的協働
+            </a>
+            」の研究成果です。
           </p>
         </div>
       </Container>
