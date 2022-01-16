@@ -16,6 +16,7 @@ import { DiclogApp } from '~/components/DiclogApp'
 import { QAaccordion } from '~/components/QAaccordion'
 import { AppleStoreImage, GoogleStoreImage } from '~/components/Image'
 import { useGlobalWordState } from '~/store/word'
+import { ScrollLink } from '~/components/ScrollLink'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -71,7 +72,9 @@ const TopPage: NextPage = () => {
                   自動であなただけの英単語帳を作成します。
                 </p>
               </div>
-              <Button text="Diclogをはじめる" />
+              <ScrollLink to="tutorial">
+                <Button text="Diclogを試してみる" />
+              </ScrollLink>
             </div>
             <SlideShow
               images={images}
@@ -220,15 +223,15 @@ const TopPage: NextPage = () => {
       </div>
 
       {/* Diclogを試す */}
-      {width >= 600 && (
-        <div className="bg-green-50">
-          <Container className="py-28">
-            <div className="flex flex-col justify-center items-center space-y-12 text-center">
-              <TitleText>
-                <span className="font-lemon mr-1">Diclog</span>を試す
-              </TitleText>
+      <div id="tutorial" className="bg-green-50">
+        <Container className="py-28">
+          <div className="flex flex-col justify-center items-center space-y-12 text-center">
+            <TitleText>
+              <span className="font-lemon mr-1">Diclog</span>を試す
+            </TitleText>
 
-              {/* Chrome拡張機能 */}
+            {/* Chrome拡張機能 */}
+            {width >= 600 && (
               <div className="flex flex-wrap w-full justify-evenly items-center">
                 <div className="m-5">
                   <DiclogChromeEx />
@@ -263,37 +266,37 @@ const TopPage: NextPage = () => {
                   </div>
                 </div>
               </div>
+            )}
 
-              {/* ネイティブアプリ */}
-              <div className="flex flex-wrap w-full justify-evenly items-center">
-                <div className="m-5">
-                  <DiclogApp />
-                </div>
-                <div className="text-left m-5 space-y-8">
-                  <h2 className="text-3xl font-bold text-yellow-600">
-                    スマホアプリ
-                  </h2>
-                  <Card className="text-left">
-                    <ol className="space-y-4 list-decimal pl-5">
-                      <li className="text-base font-bold">
-                        chrome拡張機能で登録した単語をアプリで
-                        <br />
-                        確認できます。
-                      </li>
-                      <li className="text-base font-bold">
-                        タップすると、単語の意味が表示されます。
-                      </li>
-                      <li className="text-base font-bold">
-                        スワイプすると次の単語が表示されます。
-                      </li>
-                    </ol>
-                  </Card>
-                </div>
+            {/* ネイティブアプリ */}
+            <div className="flex flex-wrap w-full justify-evenly items-center">
+              <div className="m-5">
+                <DiclogApp />
+              </div>
+              <div className="text-left m-5 space-y-8">
+                <h2 className="text-3xl font-bold text-yellow-600">
+                  スマホアプリ
+                </h2>
+                <Card className="text-left">
+                  <ol className="space-y-4 list-decimal pl-5">
+                    <li className="text-base font-bold">
+                      chrome拡張機能で登録した単語をアプリで
+                      <br />
+                      確認できます。
+                    </li>
+                    <li className="text-base font-bold">
+                      タップすると、単語の意味が表示されます。
+                    </li>
+                    <li className="text-base font-bold">
+                      スワイプすると次の単語が表示されます。
+                    </li>
+                  </ol>
+                </Card>
               </div>
             </div>
-          </Container>
-        </div>
-      )}
+          </div>
+        </Container>
+      </div>
 
       {/* ランキング */}
       <div id="ranking" className="bg-blue-50">
