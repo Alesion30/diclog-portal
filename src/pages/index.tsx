@@ -30,7 +30,7 @@ const TopPage: NextPage = () => {
   const images = ['/assets/img/home.png', '/assets/img/pc.png']
 
   return (
-    <div>
+    <div className="w-screen overflow-x-hidden">
       {/* ヘッダー */}
       <Container
         className={clsx(
