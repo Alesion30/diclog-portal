@@ -16,7 +16,7 @@ export const DiclogChromeEx: React.VFC = () => {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<Inputs>()
 
   const [error, setError] = useState<string>(null)
@@ -26,6 +26,9 @@ export const DiclogChromeEx: React.VFC = () => {
   // エラーメッセージ初期化
   useEffect(() => {
     setError(null)
+    if (watch('searchText') === '') {
+      setTransWord('')
+    }
   }, [watch('searchText')])
 
   // 送信
@@ -35,12 +38,14 @@ export const DiclogChromeEx: React.VFC = () => {
       setTransWord('')
       setLoading(true)
 
-      // 翻訳
+      // 単語を登録
       try {
         const transWord = await registerWord(data.searchText)
         setTransWord(transWord)
       } catch (err) {
-        setError('この単語は登録できません')
+        if (err instanceof Error) {
+          setError(err.message)
+        }
       }
 
       // ロード終了
@@ -78,11 +83,11 @@ export const DiclogChromeEx: React.VFC = () => {
                 className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
                 placeholder="英単語を入力してください"
               />
-              {errors.searchText && (
+              {/* {errors.searchText && (
                 <span className="text-red-500 text-sm ml-2">
                   この項目は必須です
                 </span>
-              )}
+              )} */}
               {error && (
                 <span className="text-red-500 text-sm ml-2">{error}</span>
               )}
