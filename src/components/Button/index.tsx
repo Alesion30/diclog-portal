@@ -23,12 +23,12 @@ export const Button: React.VFC<ButtonProps> = ({
     <button
       className={clsx(
         className,
-        'flex items-center justify-center px-6 py-3 border shadow-sm text-base font-medium',
+        'flex items-center justify-center px-8 py-3 border shadow-md text-lg font-bold hover:opacity-70',
         full ? 'w-full' : '',
         rounded ? 'rounded-full' : 'rounded-md',
         outlined
-          ? 'border-yellow-600 text-yellow-600 bg-white hover:bg-yellow-50'
-          : 'border-transparent text-white bg-yellow-600 hover:bg-yellow-700'
+          ? 'text-yellow-500 bg-white'
+          : 'border-transparent text-white bg-yellow-500'
       )}
       {...props}
     >
