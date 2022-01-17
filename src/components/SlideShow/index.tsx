@@ -3,6 +3,7 @@ import { DetailedHTMLProps, HTMLAttributes, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from 'popmotion'
 import clsx from 'clsx'
+import useInterval from '~/hooks/useInterval'
 
 const variants = {
   enter: (direction: number) => {
@@ -50,6 +51,10 @@ export const SlideShow: React.VFC<SlideShowProps> = ({
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection])
   }
+
+  useInterval(() => {
+    paginate(1)
+  }, 5000)
 
   return (
     <div
