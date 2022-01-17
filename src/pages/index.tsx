@@ -67,7 +67,7 @@ const TopPage: NextPage = () => {
                   サプリメントシステム
                 </h1>
                 <p className="text-base">
-                  chrome拡張と連携し、
+                  Chrome拡張機能と連携し、
                   <br />
                   自動であなただけの英単語帳を作成します。
                 </p>
@@ -93,8 +93,15 @@ const TopPage: NextPage = () => {
                 <span className="font-lemon mr-1">Diclog</span>とは？
               </TitleText>
               <SubTitleText>
-                Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。しかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。最初にChrome
-                Extensionを入れる必要がありますが、その後はそのExtensionが自動的に調べた英単語を記録してくれます。あとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとした隙間時間です。
+                <span>
+                  Diclogは自分の経験に基づいて、『こないだ調べたあの単語』を『復習』することによって記憶の定着を図る英単語帳です。
+                </span>
+                <span>
+                  しかも、単語登録の手間を完全に自動化してあります。DropboxやEvernoteを使っている人なら、自動同期の快適さは理解できると思います。
+                </span>
+                <span>
+                  最初にChrome拡張機能を入れる必要がありますが、その後はその拡張機能が自動的に調べた英単語を記録してくれます。あとは、スマホでチェックして、消していくだけです。チェックするのは、トイレでも電車でも、ほんのちょっとしたスキマ時間です。
+                </span>
               </SubTitleText>
             </div>
             <div className="flex flex-wrap justify-center">
@@ -110,8 +117,7 @@ const TopPage: NextPage = () => {
                     出来上がります
                   </h2>
                   <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
-                    Chrome&nbsp;
-                    Extensionと連携するだけで、単語を調べていくうちにあなただけの単語帳が勝手に出来上がります。
+                    Chrome拡張機能と連携するだけで、単語を調べていくうちにあなただけの単語帳が勝手に出来上がります。
                   </p>
                 </div>
                 <Image
@@ -133,7 +139,7 @@ const TopPage: NextPage = () => {
                     英単語学習
                   </h2>
                   <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
-                    Extensionで自動的に登録された単語からランダムに出題します。
+                    スマートフォンアプリで英単語学習ができます。拡張機能で自動的に登録された単語を気軽に学習できます。
                   </p>
                 </div>
                 <Image
@@ -184,9 +190,9 @@ const TopPage: NextPage = () => {
               <Card maxWidth={370} minHeight={280} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ1</p>
-                  <h2 className="text-xl font-bold">chrome拡張機能を有効化</h2>
+                  <h2 className="text-xl font-bold">Chrome拡張機能を有効化</h2>
                   <p>
-                    chromeウェブストアからchrome拡張機能をダウンロードし、Googleアカウント等でログインします。
+                    ChromeウェブストアからChrome拡張機能をダウンロードし、Googleアカウント等でログインします。
                   </p>
                 </div>
               </Card>
@@ -237,7 +243,7 @@ const TopPage: NextPage = () => {
                   <DiclogChromeEx />
                 </div>
                 <div className="text-left m-5 space-y-8">
-                  <h2 className="text-3xl font-bold text-yellow-600">
+                  <h2 className="text-4xl font-bold text-yellow-500">
                     Chrome拡張機能
                   </h2>
                   <Card className="text-left">
@@ -274,13 +280,13 @@ const TopPage: NextPage = () => {
                 <DiclogApp />
               </div>
               <div className="text-left m-5 space-y-8">
-                <h2 className="text-3xl font-bold text-yellow-600">
+                <h2 className="text-4xl font-bold text-yellow-500">
                   スマホアプリ
                 </h2>
                 <Card className="text-left">
                   <ol className="space-y-4 list-decimal pl-5">
                     <li className="text-base font-bold">
-                      chrome拡張機能で登録した単語をアプリで
+                      Chrome拡張機能で登録した単語をアプリで
                       <br />
                       確認できます。
                     </li>
@@ -427,8 +433,8 @@ const TopPage: NextPage = () => {
                 answer="2022年1月時点では、weblio・英次郎・英ナビ！・DeepL翻訳・Google翻訳に対応しています。"
               />
               <QAaccordion
-                question="Chrome以外のブラウザは使用できますか？"
-                answer="Chrome拡張機能のみの提供になるので、Chrome以外のブラウザは使用できません。"
+                question="Google Chrome以外のブラウザは使用できますか？"
+                answer="Chrome拡張機能のみの提供になるので、Google Chrome以外のブラウザは使用できません。"
               />
             </div>
             <Button text="その他の質問はこちら" />
