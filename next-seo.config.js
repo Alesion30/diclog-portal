@@ -6,7 +6,8 @@ export default {
   noindex: false,
   openGraph: {
     title: 'Diclog（ディクログ）- まったく新しい英単語帳システム',
-    description: 'Chrome拡張機能と連携し、自動であなただけの英単語帳を作成します。',
+    description:
+      'Chrome拡張機能と連携し、自動であなただけの英単語帳を作成します。',
     images: [
       {
         url: '/ogp.png',
