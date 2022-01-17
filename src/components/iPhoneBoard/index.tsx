@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useWindowDimensions } from '~/hooks/dimension'
+import { useWindowDimensions } from '~/hooks/useDimension'
 import dayjs from '~/plugins/dayjs'
 
 export type IPhoneBoardProps = {

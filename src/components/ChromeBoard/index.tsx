@@ -1,4 +1,4 @@
-import { useWindowDimensions } from '~/hooks/dimension'
+import { useWindowDimensions } from '~/hooks/useDimension'
 
 export type ChromeBoardProps = {
   children?: React.ReactNode
