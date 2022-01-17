@@ -55,7 +55,7 @@ const TopPage: NextPage = () => {
         }}
       >
         <Container>
-          <div className="flex flex-wrap justify-evenly content-center items-center py-56 space-y-20">
+          <div className="flex flex-wrap justify-evenly content-center items-center py-52 space-y-20">
             <div
               className="flex flex-col items-start space-y-8"
               style={{ width: width >= 1100 ? undefined : width - 80 }}
