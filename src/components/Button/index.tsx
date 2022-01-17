@@ -27,8 +27,8 @@ export const Button: React.VFC<ButtonProps> = ({
         full ? 'w-full' : '',
         rounded ? 'rounded-full' : 'rounded-md',
         outlined
-          ? 'text-yellow-500 bg-white'
-          : 'border-transparent text-white bg-yellow-500'
+          ? 'text-amber-500 bg-white'
+          : 'border-transparent text-white bg-amber-500'
       )}
       {...props}
     >

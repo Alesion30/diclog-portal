@@ -35,6 +35,26 @@ const TopPage: NextPage = () => {
 
   return (
     <div className="w-screen overflow-x-hidden">
+      {/* TOPに戻るボタン */}
+      <div className="fixed bottom-10 right-10 z-40">
+        <ScrollLink to="top">
+          <button className="bg-white w-14 h-14 shadow-lg rounded-full flex justify-center items-center">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="chevron-up"
+              className="fill-amber-500 w-5 h-5 svg-inline--fa fa-chevron-up fa-w-14"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path>
+            </svg>
+          </button>
+        </ScrollLink>
+      </div>
+
       {/* ヘッダー */}
       <Container
         className={clsx(
@@ -245,7 +265,7 @@ const TopPage: NextPage = () => {
                   <DiclogChromeEx />
                 </div>
                 <div className="text-left m-5 space-y-8">
-                  <h2 className="text-4xl font-bold text-yellow-500">
+                  <h2 className="text-3xl font-bold text-amber-500">
                     Chrome拡張機能
                   </h2>
                   <Card className="text-left">
@@ -282,7 +302,7 @@ const TopPage: NextPage = () => {
                 <DiclogApp />
               </div>
               <div className="text-left m-5 space-y-8">
-                <h2 className="text-4xl font-bold text-yellow-500">
+                <h2 className="text-3xl font-bold text-amber-500">
                   スマホアプリ
                 </h2>
                 <Card className="text-left">

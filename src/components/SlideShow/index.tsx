@@ -119,7 +119,7 @@ export const SlideShow: React.VFC<SlideShowProps> = ({
               key={`slide_show_dot_${index}`}
               className={clsx(
                 'w-3 h-3 rounded-full cursor-pointer',
-                isActive ? 'bg-yellow-500' : 'border border-yellow-500'
+                isActive ? 'bg-amber-500' : 'border border-yellow-500'
               )}
               onClick={() => movePage(index)}
             />
