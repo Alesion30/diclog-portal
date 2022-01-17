@@ -10,10 +10,9 @@ export default {
       'Chrome拡張機能と連携し、自動であなただけの英単語帳を作成します。',
     images: [
       {
-        url: 'https://user-images.githubusercontent.com/50891407/149706873-2ede83fe-a10d-4cff-914e-b7b715f777a9.png',
-        width: 1280,
-        height: 720,
-        alt: 'Diclog OGP Image',
+        url: 'https://user-images.githubusercontent.com/50891407/149707263-d5bbf1ce-6693-4abe-94f0-7aee6c2aa977.png',
+        width: 300,
+        height: 300,
       },
     ],
     site_name: 'Diclog（ディクログ）',
