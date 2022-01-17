@@ -20,7 +20,8 @@ import { ScrollLink } from '~/components/ScrollLink'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
-  const [showHeader, setShowHeader] = useState(true)
+  const [showHeader, setShowHeader] = useState<boolean>(true)
+  const [showTopBtn, setShowTopBtn] = useState<boolean>(false)
 
   const { resetWords } = useGlobalWordState()
 
@@ -29,6 +30,7 @@ const TopPage: NextPage = () => {
       const visible = currPos.y > prevPos.y || currPos.y > -100
       setShowHeader(visible)
     }
+    setShowTopBtn(Math.abs(currPos.y) > 500)
   }, [])
 
   const images = ['/assets/img/home.png', '/assets/img/pc.png']
@@ -36,15 +38,20 @@ const TopPage: NextPage = () => {
   return (
     <div className="w-screen overflow-x-hidden">
       {/* TOPに戻るボタン */}
-      <div className="fixed bottom-10 right-10 z-40">
+      <div
+        className={clsx(
+          'fixed bottom-10 right-10 z-40 opacity-0',
+          showTopBtn ? 'animate-fadeIn' : 'animate-fadeOut'
+        )}
+      >
         <ScrollLink to="top">
-          <button className="bg-white w-14 h-14 shadow-lg rounded-full flex justify-center items-center">
+          <button className="bg-white hover:opacity-70 w-14 h-14 border-transparent shadow-lg rounded-full flex justify-center items-center">
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="chevron-up"
-              className="fill-amber-500 w-5 h-5 svg-inline--fa fa-chevron-up fa-w-14"
+              className="fill-amber-500 w-6 h-6 svg-inline--fa fa-chevron-up fa-w-14"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"

@@ -10,6 +10,7 @@ module.exports = {
         up: 'upAnime 0.5s forwards',
         down: 'downAnime 0.5s forwards',
         fadeIn: 'fadeInAnime 2s forwards',
+        fadeOut: 'fadeOutAnime 1s forwards',
       },
       keyframes: () => ({
         upAnime: {
@@ -23,6 +24,10 @@ module.exports = {
         fadeInAnime: {
           from: { opacity: 0, transform: 'translateY(20px)' },
           to: { opacity: 1, transform: 'translateY(0px)' },
+        },
+        fadeOutAnime: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
         },
       }),
     },
