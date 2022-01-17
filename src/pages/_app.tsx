@@ -14,7 +14,7 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
       <AnimatePresence exitBeforeEnter initial={true}>
         <DefaultSeo {...SEO} />
         <Head>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="favicon.svg" type="image/svg+xml" />
           <meta httpEquiv="x-ua-compatible" content="IE=edge; chrome=1" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
 
