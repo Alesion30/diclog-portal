@@ -223,7 +223,7 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
             </div>
-            {/* <Button text="詳しい導入方法はこちら" outlined /> */}
+            <Button text="詳しい導入方法はこちら" />
           </div>
         </Container>
       </div>
