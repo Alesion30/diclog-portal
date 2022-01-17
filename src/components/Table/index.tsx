@@ -1,4 +1,4 @@
-import classnames from 'classnames'
+import clsx from 'clsx'
 import * as React from 'react'
 
 export type TableProps = {
@@ -21,7 +21,7 @@ export const Table: React.VFC<TableProps> = ({
   onClick,
 }) => {
   return (
-    <div className={classnames(className, 'flex flex-col')}>
+    <div className={clsx(className, 'flex flex-col')}>
       <div className="overflow-x-auto">
         <div className="align-middle inline-block min-w-full">
           <div className="shadow overflow-hidden border-b border-gray-200">
@@ -46,7 +46,7 @@ export const Table: React.VFC<TableProps> = ({
                   return (
                     <tr
                       key={`table_tbody_tr_${i}`}
-                      className={classnames(
+                      className={clsx(
                         onClick ? 'cursor-pointer' : '',
                         'hover:bg-gray-100'
                       )}
