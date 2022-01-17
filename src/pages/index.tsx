@@ -205,7 +205,9 @@ const TopPage: NextPage = () => {
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ2</p>
                   <h2 className="text-xl font-bold">英語辞書で英単語を検索</h2>
-                  <p>対応する英語辞書で英単語を検索します。</p>
+                  <p>
+                    対応する辞書サイトで英単語を検索します。検索した単語は自動であなたの英単語帳に登録されます。
+                  </p>
                 </div>
               </Card>
               <Card
