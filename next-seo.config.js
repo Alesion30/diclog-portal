@@ -16,6 +16,6 @@ export default {
         alt: 'Diclog OGP Image',
       },
     ],
-    site_name: 'Diclog（ディクログ）- まったく新しい英単語帳システム',
+    site_name: 'Diclog（ディクログ）',
   },
 }
