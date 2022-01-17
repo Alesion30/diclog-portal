@@ -11,8 +11,8 @@ export default {
     images: [
       {
         url: 'https://user-images.githubusercontent.com/50891407/149707263-d5bbf1ce-6693-4abe-94f0-7aee6c2aa977.png',
-        width: 300,
-        height: 300,
+        width: 150,
+        height: 150,
       },
     ],
     site_name: 'Diclog（ディクログ）',
