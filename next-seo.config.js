@@ -11,7 +11,7 @@ export default {
       'Chrome拡張機能と連携し、自動であなただけの英単語帳を作成します。',
     images: [
       {
-        url: 'https://user-images.githubusercontent.com/50891407/149851313-aaa4f306-f18e-44af-9318-e40fcceefec0.png',
+        url: 'https://user-images.githubusercontent.com/50891407/149852212-de6af654-7a65-429b-9211-c59dee6022fa.png',
         width: 1200,
         height: 630,
       },
