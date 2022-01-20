@@ -29,6 +29,7 @@
     "axios": "^0.24.0",
     "clsx": "^1.1.1",
     "dayjs": "^1.10.7",
+    "firebase": "^9.6.3",
     "framer-motion": "^5.6.0",
     "next": "12.0.8",
     "next-seo": "^4.28.1",
@@ -37,6 +38,7 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.24.0",
     "react-intersection-observer": "^8.33.1",
+    "react-query": "^3.34.8",
     "recoil": "^0.5.2",
     "recoil-persist": "^4.0.0"
   },
