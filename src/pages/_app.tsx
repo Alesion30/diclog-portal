@@ -8,6 +8,7 @@ import SEO from '../../next-seo.config'
 import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
   const queryClient = new QueryClient({
@@ -22,6 +23,7 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
       <RecoilRoot>
         <AnimatePresence exitBeforeEnter initial={true}>
           <DefaultSeo {...SEO} />
