@@ -56,6 +56,9 @@ export const useGlobalRankingState = () => {
   useEffect(() => {
     if (fetchUserRankingResult.data) {
       const users = fetchUserRankingResult.data.users
+        .sort((a, b) => {
+          return a.isLearnedWordCount < b.isLearnedWordCount ? 1 : -1
+        })
         .map((v) => {
           return {
             uid: v.uid,
@@ -88,6 +91,9 @@ export const useGlobalRankingState = () => {
   useEffect(() => {
     if (fetchWordRankingResult.data) {
       const words = fetchWordRankingResult.data.words
+        .sort((a, b) => {
+          return a.count < b.count ? 1 : -1
+        })
         .map((v) => {
           return {
             value: v.word.value,
@@ -118,14 +124,16 @@ export const useGlobalRankingState = () => {
   })
   useEffect(() => {
     if (fetchDictionaryRankingResult.data) {
-      const dictionaries = fetchDictionaryRankingResult.data.dictionaries.map(
-        (v) => {
+      const dictionaries = fetchDictionaryRankingResult.data.dictionaries
+        .sort((a, b) => {
+          return a.wordCount < b.wordCount ? 1 : -1
+        })
+        .map((v) => {
           return {
             name: v.dictionary.name,
             wordCount: v.wordCount,
           }
-        }
-      )
+        })
       setState((state) => ({ ...state, dictionaries }))
     }
   }, [fetchDictionaryRankingResult.data])
