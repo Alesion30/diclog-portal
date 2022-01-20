@@ -1,11 +1,8 @@
 import { useEffect } from 'react'
-import { useQuery } from 'react-query'
 import { atom, useRecoilState } from 'recoil'
-import { firebaseRefs } from '~/data/schema'
-import { DictionaryRankingDocument } from '~/data/schema/dictionaryRanking'
-import { UserRankingDocument } from '~/data/schema/userRanking'
-import { WordRankingDocument } from '~/data/schema/wordRanking'
-import { getDocs, limit, orderBy, query } from '~/plugins/firebase'
+import { useDictionaryRanking } from '~/data/api/dictionaryRanking'
+import { useUserRanking } from '~/data/api/userRanking'
+import { useWordRanking } from '~/data/api/wordRanking'
 
 type RankingState = {
   users: {
@@ -37,22 +34,7 @@ export const useGlobalRankingState = () => {
   const [state, setState] = useRecoilState(rankingState)
 
   // ユーザーランキング
-  const fetchUserRankingResult = useQuery<UserRankingDocument, Error>(
-    'fetchUserRanking',
-    async () => {
-      const querySnapshot = await getDocs(
-        query(
-          firebaseRefs.userRanking.parent,
-          orderBy('createdAt', 'desc'),
-          limit(1)
-        )
-      )
-      if (querySnapshot.docs.length === 0) {
-        throw new Error('No data exists.')
-      }
-      return querySnapshot.docs[0].data()
-    }
-  )
+  const fetchUserRankingResult = useUserRanking()
   useEffect(() => {
     if (fetchUserRankingResult.data) {
       const users = fetchUserRankingResult.data.users
@@ -72,22 +54,7 @@ export const useGlobalRankingState = () => {
   }, [fetchUserRankingResult.data])
 
   // 単語ランキング
-  const fetchWordRankingResult = useQuery<WordRankingDocument, Error>(
-    'fetchWordRanking',
-    async () => {
-      const querySnapshot = await getDocs(
-        query(
-          firebaseRefs.wordRanking.parent,
-          orderBy('createdAt', 'desc'),
-          limit(1)
-        )
-      )
-      if (querySnapshot.docs.length === 0) {
-        throw new Error('No data exists.')
-      }
-      return querySnapshot.docs[0].data()
-    }
-  )
+  const fetchWordRankingResult = useWordRanking()
   useEffect(() => {
     if (fetchWordRankingResult.data) {
       const words = fetchWordRankingResult.data.words
@@ -106,22 +73,7 @@ export const useGlobalRankingState = () => {
   }, [fetchWordRankingResult.data])
 
   // 辞書ランキング
-  const fetchDictionaryRankingResult = useQuery<
-    DictionaryRankingDocument,
-    Error
-  >('fetchDictionaryRanking', async () => {
-    const querySnapshot = await getDocs(
-      query(
-        firebaseRefs.dictionaryRanking.parent,
-        orderBy('createdAt', 'desc'),
-        limit(1)
-      )
-    )
-    if (querySnapshot.docs.length === 0) {
-      throw new Error('No data exists.')
-    }
-    return querySnapshot.docs[0].data()
-  })
+  const fetchDictionaryRankingResult = useDictionaryRanking()
   useEffect(() => {
     if (fetchDictionaryRankingResult.data) {
       const dictionaries = fetchDictionaryRankingResult.data.dictionaries
