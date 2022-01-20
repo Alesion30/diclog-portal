@@ -17,6 +17,7 @@ import { QAaccordion } from '~/components/QAaccordion'
 import { AppleStoreImage, GoogleStoreImage } from '~/components/Image'
 import { useGlobalWordState } from '~/store/word'
 import { ScrollLink } from '~/components/ScrollLink'
+import { useGlobalRankingState } from '~/store/ranking'
 
 const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -24,6 +25,7 @@ const TopPage: NextPage = () => {
   const [showTopBtn, setShowTopBtn] = useState<boolean>(false)
 
   const { resetWords } = useGlobalWordState()
+  const ranking = useGlobalRankingState()
 
   useScrollPosition(({ prevPos, currPos }) => {
     if (Math.abs(currPos.y - prevPos.y) > 10) {
@@ -351,17 +353,7 @@ const TopPage: NextPage = () => {
               >
                 <h2 className="text-xl font-bold">ユーザーランキング</h2>
                 <div className="space-y-6">
-                  {[
-                    'Alesion',
-                    'YMShun',
-                    'techiro',
-                    'Alesion',
-                    'YMShun',
-                    'techiro',
-                    'Alesion',
-                    'YMShun',
-                    'techiro',
-                  ].map((name, index) => {
+                  {ranking.state.users.map((user, index) => {
                     return (
                       <div
                         key={`user_rank_${index}`}
@@ -371,8 +363,17 @@ const TopPage: NextPage = () => {
                           <p className="text-lg font-bold text-green-600">
                             {index + 1}
                           </p>
-                          <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
-                          <p className="text-lg font-bold">{name}</p>
+                          {user.photoURL && (
+                            <img
+                              src={user.photoURL}
+                              className="w-8 h-8 rounded-lg"
+                              alt=""
+                            />
+                          )}
+                          {!user.photoURL && (
+                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
+                          )}
+                          <p className="text-lg font-bold">{user.nickName}</p>
                         </div>
                       </div>
                     )
@@ -387,17 +388,7 @@ const TopPage: NextPage = () => {
               >
                 <h2 className="text-xl font-bold">英単語ランキング</h2>
                 <div className="space-y-6">
-                  {[
-                    'Hello',
-                    'Attitude',
-                    'Good',
-                    'Attitude',
-                    'Dish',
-                    'Morning',
-                    'Blue',
-                    'Download',
-                    'Alesion',
-                  ].map((name, index) => {
+                  {ranking.state.words.map((word, index) => {
                     return (
                       <div
                         key={`word_rank_${index}`}
@@ -407,7 +398,7 @@ const TopPage: NextPage = () => {
                           <p className="text-lg font-bold text-green-600">
                             {index + 1}
                           </p>
-                          <p className="text-lg font-bold">{name}</p>
+                          <p className="text-lg font-bold">{word.value}</p>
                         </div>
                       </div>
                     )
@@ -422,24 +413,21 @@ const TopPage: NextPage = () => {
               >
                 <h2 className="text-xl font-bold">辞書ランキング</h2>
                 <div className="space-y-6">
-                  {['DeepL翻訳', 'Google翻訳', 'Weblio', '英ナビ！'].map(
-                    (name, index) => {
-                      return (
-                        <div
-                          key={`dic_rank_${index}`}
-                          className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
-                        >
-                          <div className="flex space-x-4">
-                            <p className="text-lg font-bold text-green-600">
-                              {index + 1}
-                            </p>
-                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
-                            <p className="text-lg font-bold">{name}</p>
-                          </div>
+                  {ranking.state.dictionaries.map((dic, index) => {
+                    return (
+                      <div
+                        key={`dic_rank_${index}`}
+                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                      >
+                        <div className="flex space-x-4">
+                          <p className="text-lg font-bold text-green-600">
+                            {index + 1}
+                          </p>
+                          <p className="text-lg font-bold">{dic.name}</p>
                         </div>
-                      )
-                    }
-                  )}
+                      </div>
+                    )
+                  })}
                 </div>
               </Card>
             </div>
