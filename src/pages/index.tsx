@@ -216,21 +216,25 @@ const TopPage: NextPage = () => {
               Diclogを始めるには、Chrome拡張機能とアプリのインストールが必要です。
             </SubTitleText>
             <div className="flex flex-wrap justify-center">
-              <Card maxWidth={370} minHeight={280} className="m-5 text-center">
+              <Card maxWidth={370} minHeight={320} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ1</p>
                   <h2 className="text-xl font-bold">Chrome拡張機能を有効化</h2>
                   <p>
                     ChromeウェブストアからChrome拡張機能をダウンロードし、Googleアカウント等でログインします。
+                    <br />
+                    （※ベータ版については
+                    <a
+                      className="underline"
+                      href="https://storage.googleapis.com/diclog-dev-public/build.zip"
+                    >
+                      こちら
+                    </a>
+                    からダウンロード可能です。）
                   </p>
                 </div>
               </Card>
-              <Card
-                maxWidth={370}
-                minHeight={280}
-                delay={500}
-                className="m-5 text-center"
-              >
+              <Card maxWidth={370} minHeight={320} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ2</p>
                   <h2 className="text-xl font-bold">英語辞書で英単語を検索</h2>
@@ -239,12 +243,7 @@ const TopPage: NextPage = () => {
                   </p>
                 </div>
               </Card>
-              <Card
-                maxWidth={370}
-                minHeight={280}
-                delay={1000}
-                className="m-5 text-center"
-              >
+              <Card maxWidth={370} minHeight={320} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ3</p>
                   <h2 className="text-xl font-bold">アプリで学習</h2>
@@ -254,7 +253,7 @@ const TopPage: NextPage = () => {
                 </div>
               </Card>
             </div>
-            <Button text="詳しい導入方法はこちら" />
+            {/* <Button text="詳しい導入方法はこちら" /> */}
           </div>
         </Container>
       </div>
