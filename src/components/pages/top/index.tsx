@@ -402,7 +402,7 @@ const TopPage: NextPage = () => {
                 answer="Chrome拡張機能のみの提供になるので、Google Chrome以外のブラウザは使用できません。"
               />
             </div>
-            <Button text="その他の質問はこちら" />
+            {/* <Button text="その他の質問はこちら" /> */}
           </div>
         </Container>
       </div>
