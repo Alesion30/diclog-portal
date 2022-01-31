@@ -47,7 +47,7 @@ export const AppleStoreImage: React.VFC<Omit<ImageProps, 'src'>> = ({
   className,
 }) => {
   return (
-    <a href="https://www.apple.com/jp/app-store/">
+    <a href="https://apps.apple.com/app/diclog-%E8%8B%B1%E5%8D%98%E8%AA%9E%E5%B8%B3/id1603935437">
       <img
         src="/assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
         className={className}
