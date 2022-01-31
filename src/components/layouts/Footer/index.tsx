@@ -34,13 +34,22 @@ export const Footer: React.VFC = () => {
               >
                 https://arakawa-lab.com/
               </a>
-              <p className="mt-3">
-                <Link href="privacy_policy">
-                  <a href="privacy_policy" className=" hover:underline">
-                    プライバシーポリシー
-                  </a>
-                </Link>
-              </p>
+              <div className="mt-3">
+                <p>
+                  <Link href="privacy_policy">
+                    <a href="privacy_policy" className=" hover:underline">
+                      プライバシーポリシー
+                    </a>
+                  </Link>
+                </p>
+                <p>
+                  <Link href="term">
+                    <a href="term" className=" hover:underline">
+                      利用規約
+                    </a>
+                  </Link>
+                </p>
+              </div>
             </p>
           </div>
           <div className="ml-4">
