@@ -36,17 +36,13 @@ export const Footer: React.VFC = () => {
               </a>
               <div className="mt-3">
                 <p>
-                  <Link href="privacy_policy">
-                    <a href="privacy_policy" className=" hover:underline">
-                      プライバシーポリシー
-                    </a>
+                  <Link href="/privacy_policy">
+                    <a className="hover:underline">プライバシーポリシー</a>
                   </Link>
                 </p>
                 <p>
-                  <Link href="term">
-                    <a href="term" className=" hover:underline">
-                      利用規約
-                    </a>
+                  <Link href="/term">
+                    <a className="hover:underline">利用規約</a>
                   </Link>
                 </p>
               </div>
