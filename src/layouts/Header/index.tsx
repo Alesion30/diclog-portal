@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { IconImage } from '~/components/Image'
-import { ScrollLink } from '../ScrollLink'
+import { IconImage } from '~/components/uiParts/Image'
+import { ScrollLink } from '../../components/uiParts/ScrollLink'
 
 export const Header: React.VFC = () => {
   return (

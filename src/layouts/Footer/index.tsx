@@ -1,4 +1,4 @@
-import { Container } from '~/components/Container'
+import { Container } from '~/components/uiParts/Container'
 import Image from 'next/image'
 import Link from 'next/link'
 

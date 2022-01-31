@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
-import { Container } from '~/components/Container'
+import { Container } from '~/components/uiParts/Container'
 import { DefaultLayout } from '~/layouts/default'
 
 const PrivacyPolicyPage: NextPage = () => (

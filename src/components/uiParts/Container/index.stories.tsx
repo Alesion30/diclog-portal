@@ -1,4 +1,4 @@
-import { Container, ContainerProps } from '~/components/Container'
+import { Container, ContainerProps } from '.'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {

@@ -1,4 +1,4 @@
-import { Header } from '~/components/Header'
+import { Header } from '.'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {

@@ -1,4 +1,4 @@
-import { SlideShow, SlideShowProps } from '~/components/SlideShow'
+import { SlideShow, SlideShowProps } from '.'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {

@@ -1,4 +1,4 @@
-import { IPhoneBoard, IPhoneBoardProps } from '~/components/iPhoneBoard'
+import { IPhoneBoard, IPhoneBoardProps } from '.'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {

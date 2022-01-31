@@ -1,4 +1,4 @@
-import { IconImage, DummyImage, ImageProps } from '~/components/Image'
+import { IconImage, DummyImage, ImageProps } from '.'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {

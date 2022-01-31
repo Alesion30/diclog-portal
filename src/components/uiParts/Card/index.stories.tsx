@@ -1,17 +1,15 @@
-import { ChromeBoard, ChromeBoardProps } from '~/components/ChromeBoard'
+import { Card, CardProps } from '.'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {
-  title: 'Components/ChromeBoard',
-  component: ChromeBoard,
-} as ComponentMeta<typeof ChromeBoard>
+  title: 'Components/Card',
+  component: Card,
+} as ComponentMeta<typeof Card>
 
-const Template: ComponentStory<typeof ChromeBoard> = (args) => (
-  <ChromeBoard {...args} />
-)
-const defaultArgs: ChromeBoardProps = {
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />
+const defaultArgs: CardProps = {
   children: (
-    <div className="space-y-6 text-center m-5">
+    <div className="space-y-6 text-center">
       <p className="text-gray-700 text-lg font-bold">ステップ1</p>
       <h2 className="text-xl font-bold">chrome拡張機能を有効化</h2>
       <p>
@@ -20,8 +18,11 @@ const defaultArgs: ChromeBoardProps = {
     </div>
   ),
   width: 400,
+  height: 280,
+  delay: 0,
+  className: 'm-5',
 }
 
 export const Default = Template.bind({})
-Default.storyName = 'Chromeボード'
+Default.storyName = 'カード'
 Default.args = defaultArgs

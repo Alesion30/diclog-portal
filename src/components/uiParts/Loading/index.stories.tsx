@@ -1,4 +1,4 @@
-import { Loading, LoadingProps } from '~/components/Loading'
+import { Loading, LoadingProps } from '.'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {

@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from '~/components/Button'
+import { Button, ButtonProps } from '.'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 export default {

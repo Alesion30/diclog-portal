@@ -1,9 +1,9 @@
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import clsx from 'clsx'
 import { useState } from 'react'
-import { Container } from '~/components/Container'
-import { Header } from '~/components/Header'
-import { Footer } from '~/components/Footer'
+import { Container } from '~/components/uiParts/Container'
+import { Header } from './Header'
+import { Footer } from './Footer'
 import { motion } from 'framer-motion'
 import { animateScroll } from 'react-scroll'
 
