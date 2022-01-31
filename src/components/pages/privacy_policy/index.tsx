@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import { Container } from '~/components/uiParts/Container'
 import { DefaultLayout } from '~/components/layouts/default'
 
-const PrivacyPolicyPage: NextPage = () => (
+export const PrivacyPolicyPage: NextPage = () => (
   <DefaultLayout>
     <div className="bg-yellow-50">
       <Container>
@@ -302,5 +302,3 @@ const PrivacyPolicyPage: NextPage = () => (
     </div>
   </DefaultLayout>
 )
-
-export default PrivacyPolicyPage

@@ -15,7 +15,7 @@ import { DefaultLayout } from '~/components/layouts/default'
 import { DiclogApp } from './DiclogApp'
 import { DiclogChromeEx } from './DiclogChromeEx'
 
-const TopPage: NextPage = () => {
+export const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
   const { resetWords } = useGlobalWordState()
   const ranking = useGlobalRankingState()
@@ -422,5 +422,3 @@ const TopPage: NextPage = () => {
     </DefaultLayout>
   )
 }
-
-export default TopPage
