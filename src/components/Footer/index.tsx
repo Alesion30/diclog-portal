@@ -1,5 +1,6 @@
 import { Container } from '~/components/Container'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const Footer: React.VFC = () => {
   return (
@@ -14,7 +15,7 @@ export const Footer: React.VFC = () => {
               height={80}
               alt="HSLlogo"
             />
-            <p>
+            <p className="text-gray-700">
               〒819-0395
               <br />
               福岡市西区元岡744番地
@@ -33,11 +34,20 @@ export const Footer: React.VFC = () => {
               >
                 https://arakawa-lab.com/
               </a>
+              <p className="mt-3">
+                <Link href="privacy_policy">
+                  <a href="privacy_policy" className=" hover:underline">
+                    プライバシーポリシー
+                  </a>
+                </Link>
+              </p>
             </p>
           </div>
-          <p className="text-gray-700 text-lg font-base ml-4">
-            &copy; {new Date().getFullYear()} HumanoPhilic Systems Lab.
-          </p>
+          <div className="ml-4">
+            <p className="text-gray-700 text-lg font-base">
+              &copy; {new Date().getFullYear()} HumanoPhilic Systems Lab.
+            </p>
+          </div>
         </div>
         <div className="mt-16 text-center">
           <p>
