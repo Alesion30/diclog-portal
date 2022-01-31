@@ -2,7 +2,7 @@ import React from 'react'
 import type { AppProps } from 'next/app'
 import '~/styles/global.css'
 import '~/styles/loading.css'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../../next-seo.config'
 import Head from 'next/head'
@@ -61,7 +61,14 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
               rel="stylesheet"
             />
           </Head>
-          <Component {...pageProps} />
+          <motion.div
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <Component {...pageProps} />
+          </motion.div>
         </AnimatePresence>
       </RecoilRoot>
     </QueryClientProvider>
