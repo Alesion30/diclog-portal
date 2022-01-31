@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { Button } from '~/components/uiParts/Button'
+import { ChromeBoard } from '~/components/uiParts/ChromeBoard'
+import { Table } from '~/components/uiParts/Table'
 import { useGlobalWordState } from '~/store/word'
-import { Button } from '../Button'
-import { ChromeBoard } from '../ChromeBoard'
-import { Table } from '../Table'
 
 type Inputs = {
   searchText: string

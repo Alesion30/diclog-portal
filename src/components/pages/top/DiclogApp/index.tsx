@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { wrap } from 'popmotion'
 import { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
+import { IPhoneBoard } from '~/components/uiParts/iPhoneBoard'
 import { useGlobalWordState } from '~/store/word'
-import { IPhoneBoard } from '../iPhoneBoard'
 
 const variants = {
   enter: () => {
