@@ -4,7 +4,7 @@ import { firebaseRefs } from '../schema'
 import { WordRankingDocument } from '../schema/wordRanking'
 
 /**
- * 辞書ランキング
+ * 英単語ランキング
  */
 const getWordRanking = async () => {
   const querySnapshot = await getDocs(
@@ -17,7 +17,15 @@ const getWordRanking = async () => {
   if (querySnapshot.docs.length === 0) {
     throw new Error('No data exists.')
   }
-  return querySnapshot.docs[0].data()
+  const data = querySnapshot.docs[0].data()
+  const words = data.words
+  const enWords = words.filter((word) => {
+    return word.word.lang === 'en'
+  })
+  return {
+    words: enWords,
+    ...data,
+  }
 }
 
 /**
