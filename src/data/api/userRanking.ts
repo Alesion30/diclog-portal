@@ -3,6 +3,9 @@ import { useQuery } from 'react-query'
 import { firebaseRefs } from '../schema'
 import { UserRankingDocument } from '../schema/userRanking'
 
+/**
+ * ユーザーランキング
+ */
 const getUserRanking = async () => {
   const querySnapshot = await getDocs(
     query(
@@ -17,6 +20,9 @@ const getUserRanking = async () => {
   return querySnapshot.docs[0].data()
 }
 
+/**
+ * ユーザーランキング hook
+ */
 export const useUserRanking = () => {
   return useQuery<UserRankingDocument, Error>('getUserRanking', getUserRanking)
 }

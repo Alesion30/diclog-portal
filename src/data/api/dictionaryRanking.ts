@@ -3,6 +3,9 @@ import { useQuery } from 'react-query'
 import { firebaseRefs } from '../schema'
 import { DictionaryRankingDocument } from '../schema/dictionaryRanking'
 
+/**
+ * 辞書ランキング
+ */
 const getDictionaryRanking = async () => {
   const querySnapshot = await getDocs(
     query(
@@ -17,6 +20,9 @@ const getDictionaryRanking = async () => {
   return querySnapshot.docs[0].data()
 }
 
+/**
+ * 辞書ランキング hook
+ */
 export const useDictionaryRanking = () => {
   return useQuery<DictionaryRankingDocument, Error>(
     'getDictionaryRanking',
