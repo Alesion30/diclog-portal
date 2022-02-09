@@ -18,6 +18,12 @@ import { useGlobalRankingState } from '~/store/ranking'
 import { DefaultLayout } from '~/components/layouts/default'
 import { DiclogApp } from './DiclogApp'
 import { DiclogChromeEx } from './DiclogChromeEx'
+import {
+  APPLE_STORE_LINK,
+  CHROME_EXT_BETA,
+  CHROME_WEB_STORE_LINK,
+  GOOGLE_PLAY_STORE_LINK,
+} from '~/constants/link'
 
 export const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
@@ -169,39 +175,67 @@ export const TopPage: NextPage = () => {
               Diclogを始めるには、Chrome拡張機能とアプリのインストールが必要です。
             </SubTitleText>
             <div className="flex flex-wrap justify-center">
-              <Card maxWidth={370} minHeight={320} className="m-5 text-center">
+              <Card maxWidth={370} minHeight={335} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ1</p>
                   <h2 className="text-xl font-bold">Chrome拡張機能を有効化</h2>
-                  <p>
-                    ChromeウェブストアからChrome拡張機能をダウンロードし、Googleアカウント等でログインします。
-                    <br />
-                    （※ベータ版については
+                  <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
                     <a
                       className="underline"
-                      href="https://storage.googleapis.com/diclog-dev-public/build.zip"
+                      href={CHROME_WEB_STORE_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
+                      Chromeウェブストア
+                    </a>
+                    からChrome拡張機能をダウンロードし、Googleアカウント等でログインします。
+                    <br />
+                    （※ベータ版については
+                    <a className="underline" href={CHROME_EXT_BETA}>
                       こちら
                     </a>
                     からダウンロード可能です。）
                   </p>
                 </div>
               </Card>
-              <Card maxWidth={370} minHeight={320} className="m-5 text-center">
+              <Card maxWidth={370} minHeight={335} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ2</p>
                   <h2 className="text-xl font-bold">英語辞書で英単語を検索</h2>
-                  <p>
-                    対応する辞書サイトで英単語を検索します。検索した単語は自動であなたの英単語帳に登録されます。
+                  <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
+                    辞書サイトで英単語を検索します。
+                    <br />
+                    検索した単語は自動であなたの英単語帳に登録されます。
+                    <br />
+                    （※weblio・英次郎・英ナビ！・DeepL翻訳・Google翻訳に対応しています。）
                   </p>
                 </div>
               </Card>
-              <Card maxWidth={370} minHeight={320} className="m-5 text-center">
+              <Card maxWidth={370} minHeight={335} className="m-5 text-center">
                 <div className="space-y-6">
                   <p className="text-gray-700 text-lg font-bold">ステップ3</p>
                   <h2 className="text-xl font-bold">アプリで学習</h2>
-                  <p>
-                    ストアからアプリをダウンロードします。あとは、自分だけの英単語帳でひたすら単語を覚える！
+                  <p className="text-base leading-relaxed whitespace-pre-wrap text-gray-700">
+                    <a
+                      className="underline"
+                      href={GOOGLE_PLAY_STORE_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Google Play Store
+                    </a>
+                    もしくは
+                    <a
+                      className="underline"
+                      href={APPLE_STORE_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Apple Store
+                    </a>
+                    からアプリをダウンロードします。
+                    <br />
+                    あとは、自分だけの英単語帳でひたすら単語を覚える！
                   </p>
                 </div>
               </Card>
