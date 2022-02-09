@@ -7,7 +7,11 @@ import { SlideShow } from '~/components/uiParts/SlideShow'
 import { useWindowDimensions } from '~/hooks/useDimension'
 import { SubTitleText, TitleText } from '~/components/uiParts/Text'
 import { QAaccordion } from '~/components/uiParts/QAaccordion'
-import { AppleStoreImage, GoogleStoreImage } from '~/components/uiParts/Image'
+import {
+  AppleStoreImage,
+  ChromeWebStoreImage,
+  GoogleStoreImage,
+} from '~/components/uiParts/Image'
 import { useGlobalWordState } from '~/store/word'
 import { ScrollLink } from '~/components/uiParts/ScrollLink'
 import { useGlobalRankingState } from '~/store/ranking'
@@ -416,6 +420,7 @@ export const TopPage: NextPage = () => {
           <div className="flex flex-wrap justify-center items-center mt-6">
             <AppleStoreImage className="m-5" height={60} />
             <GoogleStoreImage className="m-5" height={60} />
+            <ChromeWebStoreImage className="m-5" height={60} />
           </div>
         </Container>
       </div>
