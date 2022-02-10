@@ -32,6 +32,7 @@ export const IPhoneBoard: React.VFC<IPhoneBoardProps> = ({
           <p className="text-sm font-bold">{dayjs(time).format('H:mm')}</p>
           <img
             src="/assets/img/battery-full-solid.svg"
+            alt="battery"
             style={{ height: 15 }}
           />
         </div>

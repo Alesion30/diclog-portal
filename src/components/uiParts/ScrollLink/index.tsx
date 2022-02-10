@@ -18,6 +18,7 @@ export const ScrollLink: React.VFC<ScrollLinkProps> = ({
       smooth={true}
       duration={600}
       className={clsx(className, 'cursor-pointer')}
+      href="#"
     >
       {children}
     </Link>
