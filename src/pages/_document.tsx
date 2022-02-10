@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 const MyDocument: React.VFC = () => {
   return (
-    <Html lang="ja" prefix="og: https://diclog-portal.vercel.app">
+    <Html lang="ja" prefix="og: https://diclog.arakawa-lab.com">
       <Head />
       <body>
         <Main />
