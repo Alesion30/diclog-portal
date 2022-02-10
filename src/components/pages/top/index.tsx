@@ -330,6 +330,8 @@ export const TopPage: NextPage = () => {
             </TitleText>
             <SubTitleText>
               よく勉強しているユーザー・よく検索されている英単語・よく使われている辞書をランキング形式でTOP10まで紹介します。
+              <br />
+              （※ランキングは1週間に1回更新されます。）
             </SubTitleText>
             <div className="flex flex-wrap justify-center">
               {/* ユーザーランキング */}
