@@ -1,6 +1,7 @@
 import { Container } from '~/components/uiParts/Container'
 import Image from 'next/image'
 import Link from 'next/link'
+import { CONTACT_LINK } from '~/constants/link'
 
 export const Footer: React.VFC = () => {
   return (
@@ -34,21 +35,26 @@ export const Footer: React.VFC = () => {
               >
                 https://arakawa-lab.com/
               </a>
-              <div className="mt-3">
-                <p>
-                  <Link href="/privacy_policy">
-                    <a className="hover:underline">プライバシーポリシー</a>
-                  </Link>
-                </p>
-                <p>
-                  <Link href="/term">
-                    <a className="hover:underline">利用規約</a>
-                  </Link>
-                </p>
-              </div>
             </p>
           </div>
-          <div className="ml-4">
+          <div className="ml-4 space-y-4">
+            <div className="space-y-1 text-gray-700">
+              <p>
+                <Link href="/privacy_policy">
+                  <a className="hover:underline">プライバシーポリシー</a>
+                </Link>
+              </p>
+              <p>
+                <Link href="/term">
+                  <a className="hover:underline">利用規約</a>
+                </Link>
+              </p>
+              <p>
+                <Link href={CONTACT_LINK}>
+                  <a className="hover:underline">お問い合わせ</a>
+                </Link>
+              </p>
+            </div>
             <p className="text-gray-700 text-lg font-base">
               &copy; {new Date().getFullYear()} HumanoPhilic Systems Lab.
             </p>
