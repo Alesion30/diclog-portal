@@ -63,6 +63,9 @@ export const useGlobalRankingState = () => {
         .sort((a, b) => {
           return a.count < b.count ? 1 : -1
         })
+        .filter((v) => {
+          return v.word.lang === 'en' // MARK: 英語のみをフィルタリング
+        })
         .map((v) => {
           return {
             value: v.word.value,

@@ -18,12 +18,8 @@ const getWordRanking = async () => {
     throw new Error('No data exists.')
   }
   const data = querySnapshot.docs[0].data()
-  const words = data.words
-  const enWords = words.filter((word) => {
-    return word.word.lang === 'en'
-  })
   return {
-    words: enWords,
+    words: data.words,
     ...data,
   }
 }
