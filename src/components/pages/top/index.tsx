@@ -353,10 +353,10 @@ export const TopPage: NextPage = () => {
                     return (
                       <div
                         key={`user_rank_${index}`}
-                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-3 py-2"
                       >
                         <div className="flex shrink-0 w-full">
-                          <p className="text-lg font-bold text-green-600 mr-4">
+                          <p className="text-lg font-bold text-green-600 w-5 text-right mr-3">
                             {index + 1}
                           </p>
                           {user.photoURL && (
@@ -401,10 +401,10 @@ export const TopPage: NextPage = () => {
                     return (
                       <div
                         key={`word_rank_${index}`}
-                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-3 py-2"
                       >
                         <div className="flex shrink-0 w-full">
-                          <p className="text-lg font-bold text-green-600 mr-4">
+                          <p className="text-lg font-bold text-green-600 w-5 text-right mr-3">
                             {index + 1}
                           </p>
                           <p className="text-lg font-bold truncate mr-4">
@@ -442,10 +442,10 @@ export const TopPage: NextPage = () => {
                     return (
                       <div
                         key={`dic_rank_${index}`}
-                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
+                        className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-3 py-2"
                       >
                         <div className="flex shrink-0 w-full">
-                          <p className="text-lg font-bold text-green-600 mr-4">
+                          <p className="text-lg font-bold text-green-600 w-5 text-right mr-3">
                             {index + 1}
                           </p>
                           <p className="text-lg font-bold truncate mr-4">
