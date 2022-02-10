@@ -367,6 +367,12 @@ export const TopPage: NextPage = () => {
                     )
                   })}
                 </div>
+                <div className="flex space-x-1 justify-center">
+                  <p className="text-base text-gray-700">※</p>
+                  <p className="text-base text-gray-700">
+                    覚えた単語数を指標としています
+                  </p>
+                </div>
               </Card>
 
               {/* 英単語ランキング */}
@@ -397,6 +403,12 @@ export const TopPage: NextPage = () => {
                     )
                   })}
                 </div>
+                <div className="flex space-x-1 justify-center">
+                  <p className="text-base text-gray-700">※</p>
+                  <p className="text-base text-gray-700">
+                    検索された回数を指標としています
+                  </p>
+                </div>
               </Card>
 
               {/* 辞書ランキング */}
@@ -426,6 +438,12 @@ export const TopPage: NextPage = () => {
                       </div>
                     )
                   })}
+                </div>
+                <div className="flex space-x-1 justify-center">
+                  <p className="text-base text-gray-700">※</p>
+                  <p className="text-base text-gray-700">
+                    検索された回数を指標としています
+                  </p>
                 </div>
               </Card>
             </div>
