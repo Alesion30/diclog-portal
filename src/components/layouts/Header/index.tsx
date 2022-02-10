@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { IconImage } from '~/components/uiParts/Image'
+import { CONTACT_LINK } from '~/constants/link'
 import { ScrollLink } from '../../uiParts/ScrollLink'
 
 export const Header: React.VFC = () => {
@@ -45,7 +46,9 @@ export const Header: React.VFC = () => {
           <NavLink to="question">よくある質問</NavLink>
         </li>
         <li className="text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer list-none">
-          お問い合わせ
+          <a href={CONTACT_LINK} target="_blank" rel="noopener noreferrer">
+            お問い合わせ
+          </a>
         </li>
       </ul>
     </header>

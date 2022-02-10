@@ -11,3 +11,6 @@ export const CHROME_WEB_STORE_LINK =
 /** Chrome拡張機能 ベータ版 */
 export const CHROME_EXT_BETA =
   'https://storage.googleapis.com/diclog-dev-public/build.zip'
+
+/** お問い合わせフォーム */
+export const CONTACT_LINK = 'https://link.arakawa-lab.com/diclog-form'
