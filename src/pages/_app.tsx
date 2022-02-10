@@ -16,7 +16,8 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
       queries: {
         retry: true,
         refetchOnWindowFocus: false,
-        staleTime: 300000,
+        cacheTime: 30 * 60 * 1000, // 30 minutes
+        staleTime: Infinity,
       },
     },
   })
