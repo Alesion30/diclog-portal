@@ -24,11 +24,13 @@ import {
   CHROME_WEB_STORE_LINK,
   GOOGLE_PLAY_STORE_LINK,
 } from '~/constants/link'
+import { useGlobalStatisticsState } from '~/store/statistics'
 
 export const TopPage: NextPage = () => {
   const { width } = useWindowDimensions()
   const { resetWords } = useGlobalWordState()
   const ranking = useGlobalRankingState()
+  const statistics = useGlobalStatisticsState()
   const images = ['/assets/img/home.png', '/assets/img/pc.png']
 
   return (
@@ -332,6 +334,7 @@ export const TopPage: NextPage = () => {
               よく勉強しているユーザー・よく検索されている英単語・よく使われている辞書をランキング形式でTOP10まで紹介します。
               <br />
               （※ランキングは1週間に1回更新されます。）
+              <br />
             </SubTitleText>
             <div className="flex flex-wrap justify-center">
               {/* ユーザーランキング */}
@@ -339,7 +342,12 @@ export const TopPage: NextPage = () => {
                 width={width >= 370 ? 370 : width - 80}
                 className="m-5 text-center space-y-8"
               >
-                <h2 className="text-xl font-bold">ユーザーランキング</h2>
+                <div className="space-y-2">
+                  <h2 className="text-xl font-bold">ユーザーランキング</h2>
+                  <p className="text-base text-gray-700">
+                    ユーザー数: {statistics.state.userCount}人
+                  </p>
+                </div>
                 <div className="space-y-6">
                   {ranking.state.users.map((user, index) => {
                     return (
@@ -382,7 +390,12 @@ export const TopPage: NextPage = () => {
                 width={width >= 370 ? 370 : width - 80}
                 className="m-5 text-center space-y-8"
               >
-                <h2 className="text-xl font-bold">英単語ランキング</h2>
+                <div className="space-y-2">
+                  <h2 className="text-xl font-bold">英単語ランキング</h2>
+                  <p className="text-base text-gray-700">
+                    登録単語数: {statistics.state.wordCount}語
+                  </p>
+                </div>
                 <div className="space-y-6">
                   {ranking.state.words.map((word, index) => {
                     return (
@@ -418,7 +431,12 @@ export const TopPage: NextPage = () => {
                 width={width >= 370 ? 370 : width - 80}
                 className="m-5 text-center space-y-8"
               >
-                <h2 className="text-xl font-bold">辞書ランキング</h2>
+                <div className="space-y-2">
+                  <h2 className="text-xl font-bold">辞書ランキング</h2>
+                  <p className="text-base text-gray-700">
+                    検索回数: {statistics.state.searchCount}回
+                  </p>
+                </div>
                 <div className="space-y-6">
                   {ranking.state.dictionaries.map((dic, index) => {
                     return (
