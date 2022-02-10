@@ -382,11 +382,16 @@ export const TopPage: NextPage = () => {
                         key={`word_rank_${index}`}
                         className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
                       >
-                        <div className="flex space-x-4">
-                          <p className="text-lg font-bold text-green-600">
+                        <div className="flex shrink-0 w-full">
+                          <p className="text-lg font-bold text-green-600 mr-4">
                             {index + 1}
                           </p>
-                          <p className="text-lg font-bold">{word.value}</p>
+                          <p className="text-lg font-bold truncate mr-4">
+                            {word.value}
+                          </p>
+                          <p className="text-lg font-bold grow text-right">
+                            {word.count}回
+                          </p>
                         </div>
                       </div>
                     )
@@ -407,11 +412,16 @@ export const TopPage: NextPage = () => {
                         key={`dic_rank_${index}`}
                         className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
                       >
-                        <div className="flex space-x-4">
-                          <p className="text-lg font-bold text-green-600">
+                        <div className="flex shrink-0 w-full">
+                          <p className="text-lg font-bold text-green-600 mr-4">
                             {index + 1}
                           </p>
-                          <p className="text-lg font-bold">{dic.name}</p>
+                          <p className="text-lg font-bold truncate mr-4">
+                            {dic.name}
+                          </p>
+                          <p className="text-lg font-bold grow text-right">
+                            {dic.wordCount}回
+                          </p>
                         </div>
                       </div>
                     )
