@@ -345,21 +345,23 @@ export const TopPage: NextPage = () => {
                         key={`user_rank_${index}`}
                         className="bg-white rounded-lg border border-gray-700 hover:border-pink-600 px-4 py-2"
                       >
-                        <div className="flex space-x-4">
-                          <p className="text-lg font-bold text-green-600">
+                        <div className="flex shrink-0 w-full">
+                          <p className="text-lg font-bold text-green-600 mr-4">
                             {index + 1}
                           </p>
                           {user.photoURL && (
                             <img
                               src={user.photoURL}
-                              className="w-8 h-8 rounded-lg"
+                              className="w-8 h-8 rounded-lg mr-2"
                               alt=""
                             />
                           )}
-                          {!user.photoURL && (
-                            <div className="bg-blue-500 w-8 h-8 rounded-lg"></div>
-                          )}
-                          <p className="text-lg font-bold">{user.nickName}</p>
+                          <p className="text-lg font-bold truncate mr-4">
+                            {user.nickName}
+                          </p>
+                          <p className="text-lg font-bold grow text-right">
+                            {user.isLearnedWordCount}語
+                          </p>
                         </div>
                       </div>
                     )

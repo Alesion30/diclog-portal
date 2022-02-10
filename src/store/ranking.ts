@@ -9,6 +9,7 @@ type RankingState = {
     uid: string // ユーザーID
     nickName: string // ユーザー名
     photoURL: string | null // ユーザー画像
+    isLearnedWordCount: number // 覚えた単語数
   }[]
   words: {
     value: string // 登録単語
@@ -46,6 +47,7 @@ export const useGlobalRankingState = () => {
             uid: v.uid,
             nickName: v.nickName,
             photoURL: v.photoURL,
+            isLearnedWordCount: v.isLearnedWordCount,
           }
         })
         .slice(0, 10)
