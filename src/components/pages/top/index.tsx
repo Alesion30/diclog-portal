@@ -369,7 +369,7 @@ export const TopPage: NextPage = () => {
                           <p className="text-lg font-bold truncate mr-4">
                             {user.nickName}
                           </p>
-                          <p className="text-lg font-bold grow text-right">
+                          <p className="text-lg font-bold grow text-right whitespace-nowrap">
                             {user.isLearnedWordCount}語
                           </p>
                         </div>
@@ -410,7 +410,7 @@ export const TopPage: NextPage = () => {
                           <p className="text-lg font-bold truncate mr-4">
                             {word.value}
                           </p>
-                          <p className="text-lg font-bold grow text-right">
+                          <p className="text-lg font-bold grow text-right whitespace-nowrap">
                             {word.count}回
                           </p>
                         </div>
@@ -451,7 +451,7 @@ export const TopPage: NextPage = () => {
                           <p className="text-lg font-bold truncate mr-4">
                             {dic.name}
                           </p>
-                          <p className="text-lg font-bold grow text-right">
+                          <p className="text-lg font-bold grow text-right whitespace-nowrap">
                             {dic.wordCount}回
                           </p>
                         </div>
