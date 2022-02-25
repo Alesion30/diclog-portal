@@ -2,7 +2,8 @@
 export const APPLE_STORE_LINK = 'https://link.arakawa-lab.com/diclog-ios'
 
 /** Google Play Store */
-export const GOOGLE_PLAY_STORE_LINK = 'https://play.google.com/store/apps?hl=ja'
+export const GOOGLE_PLAY_STORE_LINK =
+  'https://link.arakawa-lab.com/diclog-android'
 
 /** Chrome Web Store */
 export const CHROME_WEB_STORE_LINK =
